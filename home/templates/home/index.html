@@ -39,6 +39,10 @@
     <link id="switcher" href="{% static 'css/themes/yellow-theme.css' %}" rel="stylesheet">
     <!-- Main structure css file -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!--Owl Carousel -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
    
     <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>   
@@ -228,6 +232,27 @@
       </div>
     </section>
     <!--=========== END SLIDER SECTION ================-->
+
+
+    <!--============BEGIN NOTICE SECTION ==============-->
+    <section id="notice">
+      <div class="container">
+        <div class="row">
+          <div class="owl-carousel owl-theme col-md-12">
+            {% for notice in notices %}
+              <div class="item"><img src="{{notice.photo.url}}"></img></div>
+              
+             {% endfor %}
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!--=========== END NOTICE SECTION ================-->
+
+
+
+
 
     <!--=========== BEGIN ABOUT US SECTION ================-->
     <section id="aboutUs">
@@ -1008,6 +1033,8 @@
    
     <!-- Custom js-->
     <script src="{% static 'js/custom.js' %}"></script>
+
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <!--=============================================== 
     Template Design By WpFreeware Team.
     Author URI : http://www.wpfreeware.com/
@@ -1024,6 +1051,27 @@
     messagingSenderId: "388579451977"
   };
   firebase.initializeApp(config);
+
+  $(document).ready(function(){
+ 
+      $('.owl-carousel').owlCarousel({
+        stagePadding: 50,
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    })
+});
 </script>
 
 
