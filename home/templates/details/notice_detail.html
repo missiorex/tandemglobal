@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <!--=========== BEGIN SLIDER SECTION ================-->
+    <section id="slider">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+
+            <div>
+            {% if notice.published_date %}
+                <div class="date">
+                    {{ notice.published_date }}
+                </div>
+            {% endif %}
+            <h1>{{ notice.title }}</h1>
+            <h4>{{ notice.sub_title }}</h4>
+            <img src="../../{{notice.photo.url}}"></img>
+            <p>{{ notice.text|linebreaksbr }}</p>
+          </div>
+          
+        </div>
+        <!-- End Our courses content -->
+      </div>
+    </section>
+    <!--=========== END STUDENTS TESTIMONIAL SECTION ================-->    
+    
+{% endblock %}  
