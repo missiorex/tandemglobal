@@ -235,12 +235,11 @@
 
 
     <!--============BEGIN NOTICE SECTION ==============-->
-    <section id="notice">
+    <section class="notice-section" id="notice">
       <div class="container">
-        <div class="row">
-          <div class="owl-carousel owl-theme col-md-12">
+          <div class="owl-carousel owl-theme col-md-12 col-lg-12 col-xs-12">
             {% for notice in notices %}
-              <div class="item"><img src="{{notice.photo.url}}"></img></div>
+              <div class="item outer-box"><img src="{{notice.photo.url}}"><div class="inner-box"><h4>{{notice.title}}</h4><div>{{notice.sub_title}}</div></div></div>
               
              {% endfor %}
           </div>
@@ -1063,11 +1062,12 @@
             0:{
                 items:1
             },
-            600:{
-                items:3
+            300:{
+                items:3,
+                nav:false
             },
             1000:{
-                items:5
+                items:4
             }
         }
     })

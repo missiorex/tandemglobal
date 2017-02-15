@@ -494,7 +494,56 @@ font-variant-caps: all-petite-caps;
 }
 
 
+/*--------------------*/
+/* NOTICE SECTION */
+/*--------------------*/
 
+.notice-section{
+
+background-color:   #303030;
+
+}
+
+/* line 3, ../sass/style.scss */
+.outer-box {
+  width: 287px;
+  height: auto;
+  display: block;
+  position: relative;
+}
+/* line 9, ../sass/style.scss */
+.outer-box img {
+  width: 287px;
+  height: auto;
+}
+/* line 14, ../sass/style.scss */
+.outer-box .inner-box {
+  background: #FFF;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  width :200px;
+  height:60px;
+  text-align:center;
+
+  bottom: 0;
+  right: 87px;
+  position: absolute;
+  padding: 0;
+  transition: opacity .5s;
+}
+/* line 25, ../sass/style.scss */
+.outer-box .inner-box p {
+  color: #fff;
+  line-height: 150px;
+  font-family: 'arial';
+  text-align: center;
+}
+/* line 34, ../sass/style.scss */
+.outer-box:hover .inner-box {
+  opacity: .9;
+  transition: opacity .5s;
+}
 
 
 
