@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts',
     'home',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ENV_PATH = os.path.abspath(os.path.dirname(__file__))
 MEDIA_ROOT = os.path.join(ENV_PATH, 'media/')
 MEDIA_URL = 'media/'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'tandemglobal'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 {% block content %}
 
     <!--=========== BEGIN SLIDER SECTION ================-->
@@ -32,27 +33,32 @@
 
                         <div class="col-lg-6 col-md-6 slider_form">
                           <h2 style="color:White">Enquiry</h2>
+                              
+   
+                     <form role="form" action="" method="post">
 
-                              <form action="#">
+                               {% csrf_token %}
                                   <div class="row form-group">
                                     <div class="col-md-12">
-                                      <!-- <label for="fname">First Name</label> -->
-                                      <input type="text" id="name" class="form-control" placeholder="Your Name">
+                                    {% render_field form.contact_name class+="form-control" placeholder="Your Name"%}
+                                    
+                                      <!-- <input type="text" id="name" class="form-control" placeholder="Your Name"> -->
+                                
                                     </div>
                                     
                                   </div>
 
                                   <div class="row form-group">
                                     <div class="col-md-12">
-                                      <!-- <label for="email">Email</label> -->
-                                      <input type="text" id="phone" class="form-control" placeholder="Your phone number">
+                                      {% render_field form.contact_phone class+="form-control" placeholder="Your Phone"%}
+                                     <!--  <input type="text" id="phone" class="form-control" placeholder="Your phone number"> -->
                                     </div>
                                   </div>
 
                                   <div class="row form-group">
                                     <div class="col-md-12">
-                                      <!-- <label for="email">Email</label> -->
-                                      <input type="text" id="email" class="form-control" placeholder="Your email address">
+                                      {% render_field form.contact_email class+="form-control" placeholder="Your email"%}
+                                      <!-- <input type="text" id="email" class="form-control" placeholder="Your email address"> -->
                                     </div>
                                   </div>
 
@@ -60,8 +66,8 @@
 
                                   <div class="row form-group">
                                     <div class="col-md-12">
-                                      <!-- <label for="message">Message</label> -->
-                                      <textarea name="message" id="message" cols="30" rows="4" class="form-control" placeholder="Course Details"></textarea>
+                                      {% render_field form.course_details class+="form-control" placeholder="Course Details"%}
+                                      <!-- <textarea name="message" id="message" cols="30" rows="4" class="form-control" placeholder="Course Details"> --></textarea>
                                     </div>
                                   </div>
                                   <div class="form-group">
@@ -109,7 +115,7 @@
     <!--============BEGIN NOTICE SECTION ==============-->
     <section class="notice-section" id="notice">
       <div class="container">
-          <div class="owl-carousel owl-theme col-md-12 col-lg-12 col-xs-12">
+          <div id="notice-carousel" class="owl-carousel owl-theme col-md-12 col-lg-12 col-xs-12">
             {% for notice in notices %}
               <div class="item outer-box"><img src="{{notice.photo.url}}"><a href="{% url 'notice_detail' pk=notice.pk %}"><div class="inner-box"><h4>{{notice.title}}</h4><div>{{notice.sub_title}}</div></div></a></div>
               
@@ -135,16 +141,16 @@
             <h2 class="titile">About Us</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            
           </div>
         </div>
         <div id="news_tab" class="col-md-6">
           <div class="newsfeed_area wow fadeInRight">
             <ul class="nav nav-tabs feed_tabs" id="myTab2">
-              <li class="active"><a href="#" data-toggle="tab">News</a></li>
-              <li><a href="#" data-toggle="tab">Exam Corner</a></li>
-              <li><a href="#" data-toggle="tab">Mock Test</a></li>  
-              <li><a href="#" data-toggle="tab">Videos</a></li>        
+              <li class="active"><a href="#news" data-toggle="tab">News</a></li>
+              <li><a href="#exam" data-toggle="tab">Exam Corner</a></li>
+              <li><a href="#mock" data-toggle="tab">Mock Test</a></li>  
+              <li><a href="#video" data-toggle="tab">Videos</a></li>        
             </ul>
 
             <!-- Tab panes -->
@@ -152,180 +158,99 @@
               <!-- Start news tab content -->
               <div class="tab-pane fade in active" id="news">                
                 <ul class="news_tab">
+                {% for news in newss %}
                   <li>
                     <div class="media">
                       <div class="media-left">
                         <a class="news_img" href="#">
-                          <img class="media-object" src="images/news.jpg" alt="img">
+                          <img class="media-object" src="{{news.photo.url}}" alt="img">
                         </a>
                       </div>
                       <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">27.02.15</span>
+                       <a href="#">{{news.text}}</a>
+                       <span class="feed_date">{{news.published_date}}</span>
                       </div>
                     </div>                    
                   </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a class="news_img" href="#">
-                          <img class="media-object" src="images/news.jpg" alt="img">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">28.02.15</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a class="news_img" href="#">
-                          <img class="media-object" src="images/news.jpg" alt="img">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">28.02.15</span>
-                      </div>
-                    </div>
-                  </li>
+                  {% endfor %}
                 </ul>                
                 <a class="see_all" href="#">See All</a>
               </div>
-              <!-- Start notice tab content -->  
-              <div class="tab-pane fade " id="notice">
-                <div class="single_notice_pane">
+              <!-- Start Exam tab content -->  
+              <div class="tab-pane fade" id="exam">
+                
                   <ul class="news_tab">
+                  {% for exam in exams %}
                     <li>
                       <div class="media">
                         <div class="media-left">
                           <a class="news_img" href="#">
-                            <img class="media-object" src="images/news.jpg" alt="img">
+                            <img class="media-object" src="{{exam.photo.url}}" alt="img">
                           </a>
                         </div>
                         <div class="media-body">
-                         <a href="#">Dummy text of the printing and typesetting industry</a>
-                         <span class="feed_date">27.02.15</span>
+                         <a href="#">{{exam.text}}</a>
+                         <span class="feed_date">{{exam.published_date}}</span>
                         </div>
                       </div>                   
                     </li>
-                    <li>
-                      <div class="media">
-                        <div class="media-left">
-                          <a class="news_img" href="#">
-                            <img class="media-object" src="images/notice.jpg" alt="img">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                         <a href="#">Dummy text of the printing and typesetting industry</a>
-                         <span class="feed_date">28.02.15</span>             
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="media">
-                        <div class="media-left">
-                          <a class="news_img" href="#">
-                            <img class="media-object" src="images/notice.jpg" alt="img">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                         <a href="#">Dummy text of the printing and typesetting industry</a>
-                         <span class="feed_date">28.02.15</span>             
-                        </div>
-                      </div>
-                    </li>                                    
+                    {% endfor %}                                     
                   </ul>
-                  <ul class="news_tab">
-                    <li>
-                      <div class="media">
-                        <div class="media-left">
-                          <a class="news_img" href="#">
-                            <img class="media-object" src="images/notice.jpg" alt="img">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                         <a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text</a>
-                         <span class="feed_date">27.02.15</span>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="media">
-                        <div class="media-left">
-                          <a class="news_img" href="#">
-                            <img class="media-object" src="images/notice.jpg" alt="img">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                         <a href="#">Dummy text of the printing and typesetting industry</a>
-                         <span class="feed_date">28.02.15</span>          
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="media">
-                        <div class="media-left">
-                          <a class="news_img" href="#">
-                            <img class="media-object" src="images/notice.jpg" alt="img">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                         <a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text</a>
-                         <span class="feed_date">28.02.15</span>
-                        </div>
-                      </div>
-                    </li>                                    
-                  </ul>
-                </div>               
+                  <a class="see_all" href="#">See All</a>
+              
               </div>
-              <!-- Start events tab content -->
-              <div class="tab-pane fade " id="events">
+                 <!-- Start Mock tab content -->  
+              <div class="tab-pane fade " id="mock">
+                
+                  <ul class="news_tab">
+                    {% for mock in mocks %}
+                    <li>
+                      <div class="media">
+                        <div class="media-left">
+                          <a class="news_img" href="#">
+                            <img class="media-object" src="{{mock.photo.url}}" alt="img">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                         <a href="#">{{mock.text}}</a>
+                         <span class="feed_date">{{mock.published_date}}/span>
+                        </div>
+                      </div>                   
+                    </li>
+                    {% endfor %}  
+                                                      
+                  </ul>
+                  <a class="see_all" href="#">See All</a>
+                      
+              </div>
+              <!-- Start Video tab content -->
+              <div class="tab-pane fade " id="video">
+            
                 <ul class="news_tab">
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a class="news_img" href="#">
-                          <img class="media-object" src="images/news.jpg" alt="img">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">27.02.15</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a class="news_img" href="#">
-                          <img class="media-object" src="images/news.jpg" alt="img">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">28.02.15</span>                
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media">
-                      <div class="media-left">
-                        <a class="news_img" href="#">
-                          <img class="media-object" src="images/news.jpg" alt="img">
-                        </a>
-                      </div>
-                      <div class="media-body">
-                       <a href="#">Dummy text of the printing and typesetting industry</a>
-                       <span class="feed_date">28.02.15</span>                
-                      </div>
-                    </div>
-                  </li>                  
+                   {% for video in videos %}
+                    <li>
+                      <div class="media">
+                        <div class="media-left">
+                          
+                        </div>
+                        <div class="media-body">
+                         
+                          <div style="position:relative;height:100px;">
+                            <iframe src="{{video.youtube_url}}" style="position:absolute;width:60%;height:auto;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                            </iframe>
+                          </div>
+                         <span class="feed_date">{{video.published_date}}</span>
+                        </div>
+                      </div>                   
+                    </li>
+
+
+                    {% endfor %}
+                                
                 </ul>
                 <a class="see_all" href="#">See All</a>
-              </div>
+            
             </div>
           </div>
         </div>
@@ -333,6 +258,26 @@
       </div>
     </section>
     <!--=========== END ABOUT US SECTION ================--> 
+
+
+
+   <!--============BEGIN SLOGAN SECTION ==============-->
+    <section class="notice-section" id="notice">
+      <div class="container">
+          <div id="slogan-carousel" class="owl-carousel owl-theme col-md-12 col-lg-12 col-xs-12" style="padding:20px">
+            {% for slogan in slogans %}
+              <div style="position:relative;height:150px;background-image:url('{{slogan.background.url}}');" class="item"><img style="position:absolute;top:30%;left:10%;width:80px;height:80px;float: left;" src="{{slogan.icon.url}}"><div style="position:absolute;top:30%;left:25%;font-size: 30px;font-family: 'Overpass';color: #fff;">{{slogan.title}}</div></div>
+              
+             {% endfor %}
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!--=========== END SLOGAN SECTION ================-->
+
+
+
 
     <!--=========== BEGIN WHY US SECTION ================-->
     <section id="whyUs">
