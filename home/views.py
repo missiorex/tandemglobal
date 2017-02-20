@@ -28,9 +28,9 @@ def index(request):
             contact_phone = request.POST.get(
                 'contact_phone'
             , '')
-            form_content = request.POST.get('course_details', '') 
+            form_content = request.POST.get('course_details', '')
 
-            
+
             template = get_template('contact_template.txt')
             context = Context({
                 'contact_name': contact_name,
@@ -48,9 +48,8 @@ def index(request):
                 headers = {'Reply-To': contact_email }
             )
             email.send()
-            return redirect('contact')
+            return redirect('index')
     return render(request, 'home/index.html', {'notices': notices,'slogans': slogans,'newss': newss,'exams': exams,'mocks': mocks,'videos': videos,'form': form_class})
 def notice_detail(request, pk):
     notice = get_object_or_404(Notice, pk=pk)
-    return render(request, 'details/notice_detail.html', {'notice': notice})    
-    
+    return render(request, 'details/notice_detail.html', {'notice': notice})
