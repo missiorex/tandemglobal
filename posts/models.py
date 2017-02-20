@@ -119,3 +119,25 @@ class Video(models.Model):
 
     def __str__(self):
         return self.video_id
+
+
+class Testimonial(models.Model):
+    author = models.ForeignKey('auth.User')
+    testimonial_id = models.CharField(max_length=30)
+    student_title = models.CharField(max_length=200)
+    student_name = models.CharField(max_length=200)
+    course = models.CharField(max_length=200)
+    student_photo = models.ImageField(upload_to='testimonial/student',default='')
+    background = models.ImageField(upload_to='testimonial/bg',default='')
+    text = models.TextField()
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.testimonial_id 
