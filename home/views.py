@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from posts.models import Notice, Slogan , News, Exam, Mock, Video
+from posts.models import Notice, Slogan , News, Exam, Mock, Video, Testimonial
 from django.utils import timezone
 from .forms import ContactForm
 from django.core.mail import EmailMessage
@@ -14,6 +14,7 @@ def index(request):
     exams = Exam.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     mocks = Mock.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     videos = Video.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    testimonials = Testimonial.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     form_class = ContactForm
     if request.method == 'POST':
         form = form_class(data=request.POST)
@@ -49,7 +50,9 @@ def index(request):
             )
             email.send()
             return redirect('index')
-    return render(request, 'home/index.html', {'notices': notices,'slogans': slogans,'newss': newss,'exams': exams,'mocks': mocks,'videos': videos,'form': form_class})
+
+    return render(request, 'home/index.html', {'notices': notices,'slogans': slogans,'newss': newss,'exams': exams,'mocks': mocks,'videos': videos,'testimonials': testimonials,'form': form_class})
+
 def notice_detail(request, pk):
     notice = get_object_or_404(Notice, pk=pk)
     return render(request, 'details/notice_detail.html', {'notice': notice})
