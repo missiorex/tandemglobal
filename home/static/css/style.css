@@ -367,11 +367,22 @@ transition: none;
 color:white;
 
 }
-textarea .form-control{
 
-height:50px;
+
+.single_footer_widget  .form-control{
+
+background-color: #a9a9ab;
+color: #fff;
+border:none;
+  
+border-radius:0;
+/*height:80px;*/
+box-shadow: none;
+transition: none;
+color:white;
 
 }
+
 
 
 
