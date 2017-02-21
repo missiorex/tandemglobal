@@ -369,13 +369,10 @@ color:white;
 }
 textarea .form-control{
 
-height:10px;
+height:50px;
 
 }
-#message{
 
-  height:100px;
-}
 
 
 .mrex-formbtn{
@@ -582,6 +579,7 @@ background-color:   #303030;
   
   padding: 0px 0;
   width: 100%;
+  height:auto;
 }
 /*.aboutus_area {
   display: inline;
@@ -618,7 +616,7 @@ background-color:   #303030;
 
 padding:40px;
 background-color: #fff;
-height:500px;
+height:auto;
 
 
 
@@ -627,7 +625,7 @@ height:500px;
 #news_tab{
 
 padding:40px;
-
+height: 100%;
 
 
 
@@ -2109,7 +2107,7 @@ div[data-dimension] {
  top:30%;
  left:25%;
  font-size: 30px;
- font-family: 'Overpass';
+ font-family: 'Roboto Condensed', sans-serif;
  color: #fff;
 }
 
@@ -2196,6 +2194,9 @@ div[data-dimension] {
   #imgBanner h2 {font-size: 40px;}
   #imgBanner {height: 200px;padding: 80px 0;}
   .gallery_area a {width: 100%;margin-right: 0;margin-left: 0;height: 250px;}
+   #slogan .slogan img{display: none;}
+   #slogan .slogan .slogan-text{top:20%;left:10%;font-size: 25px;}
+  .slider-form{display: none;}
  
 }
 
@@ -2210,6 +2211,8 @@ div[data-dimension] {
   #imgBanner h2 {font-size: 30px;}
   .blog_title {font-size: 20px;line-height: 30px;}
   .gallery_area a {width: 100%;margin-right: 0;margin-left: 0;height: 200px;}
+  #slogan .slogan img{display: none;}
+  .slider-form{display: none;}
 
 }
 
