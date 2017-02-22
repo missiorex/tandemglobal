@@ -7,5 +7,5 @@ class ContactForm(forms.Form):
     contact_email = forms.EmailField(required=True)
     course_details = forms.CharField(
         required=False,
-        widget=forms.Textarea(attrs={'rows': '5'})
+        widget=forms.Textarea(attrs={'rows': '3'})
     )

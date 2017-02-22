@@ -67,14 +67,15 @@ a:focus{
 }
 
 h1,h2,h3,h4,h5,h6{
-	font-family: 'Varela', sans-serif;	
+	font-family: 'Arimo', sans-serif;	
 }
 
 h2 {
   color: #313338;  
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 500;
   line-height: 40px;
+  letter-spacing: 1.5px;
   margin: 0;
   padding-bottom: 10px;  
 }
@@ -109,7 +110,7 @@ img{
 
 .scrollToTop {
   background: url("img/bootom-top-arrow.png") no-repeat scroll 13px 12px #ffffff;
-  border: 3px solid #f0f1f3;
+ /* border: 3px solid #f0f1f3;*/
   border-radius: 5px;
   bottom: 20px;
   display: inline-block;
@@ -357,8 +358,8 @@ img{
 /*  position: absolute;*/
   margin-top: 250px;
   right:5%;
-  width: 300px;
-  padding :20px;
+  width: 340px;
+  padding :12px;
   float: right;
 
 }
@@ -511,7 +512,7 @@ font-variant-caps: all-petite-caps;
 }
 
 .form-group {
-  margin-bottom:5px;
+  margin-bottom:3px;
 }
 
 
@@ -580,7 +581,7 @@ background-color:   #303030;
 
 
   color: #303030;
-  line-height: 15px;
+  line-height: 18px;
   font-size: 20px;
   font-family: 'Overpass';
   text-align: center;
@@ -683,10 +684,11 @@ height: 100%;
 
 .feed_tabs li a {
   font-family: sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   text-transform: uppercase;
-  font-weight: bold;
+ /* font-weight: bold;*/
   border-radius: 0;
+  color: #545454;
 
 }
 .feed_tabs li a:hover{
@@ -817,6 +819,7 @@ height: 100%;
   position: relative;
   text-align: center;
   text-transform: uppercase;
+  color: #fff;
 }
 .whyus_icon{
   border-radius: 150px;
@@ -1293,14 +1296,16 @@ div[data-dimension] {
 .single_footer_widget {
   display: inline;
   float: left;
-  padding: 0 10px;
+  /*padding: 0 10px;*/
   width: 100%;
 }
 .single_footer_widget>h3 {
-  color: #000;
+  color: #545454;
   text-transform: uppercase;
-  margin-bottom: 16px;
-  font-family: 'Roboto', sans-serif;
+  margin-bottom: 8px;
+  font-family: 'Arimo', sans-serif;
+  font-size: 18px;
+  padding: 5px;
 }
 .single_footer_widget>p{
   color: #fff;
@@ -1357,7 +1362,7 @@ color:white;
   float: left;
   display: inline;
   width: 100%;
-  color: #fff;
+  color: #999;
 }
 .footer_bootomLeft>p,.footer_bootomRight>p{margin-bottom: 0px;}
 
@@ -1366,7 +1371,7 @@ color:white;
   display: inline;
   width: 100%;
   text-align: right;
-  color:#fff;
+  color:#999;
 }
 
 .footer_bootomRight a{
