@@ -114,9 +114,9 @@ img{
   bottom: 20px;
   display: inline-block;
   height: 54px;
-  opacity: 0;
+  opacity: 0.3;
   position: fixed;
-  right: 20px;
+  right: 40px;
   text-align: center;
   width: 54px;
   z-index: 100;
@@ -130,6 +130,13 @@ img{
   text-decoration: none;
   outline: none;
 }
+
+.scrollToTop img{
+
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
 
 /*--------------------*/
 /* HOME HEADER */
@@ -289,7 +296,7 @@ img{
   margin-top: 300px;
   width: 50%;
    color:#191917;
-  background-color:#ebb11f;
+  background-color:#ffcc29;
 
 }
 .slider_right_caption{
@@ -308,7 +315,7 @@ img{
   /*background-color: rgba(49, 59, 61, 0.6);
   color: #fff;*/
   color:#191917;
-  background-color:#ebb11f;
+  background-color:#ffcc29;
 
   font-family: "Varela",sans-serif;
   font-size: 15px;
@@ -390,7 +397,7 @@ color:white;
 
 .mrex-formbtn{
 
-  background-color: #ebb11f;
+  background-color: #ffcc29;
   color:#191917;
   border: none;
   float:right;
@@ -404,7 +411,7 @@ color:white;
   line-height: 0.4;
   width: 100px;
   height: 100px;
-  color: #ebb11f;
+  color: #ffcc29;
   float:right;
   margin-top:10px;
   margin-right:10px;
@@ -423,12 +430,12 @@ color:white;
   line-height: 0.4;*/
   width: 120px;
   height: 120px;
-/*  color: #ebb11f;*/
+/*  color: #ffcc29 ;*/
   float:right;
   margin-top:-60px;
   margin-right:-15px;
   overflow:hidden;
-  background-color:#ebb11f;
+  background-color:#ffcc29;
   -moz-border-radius: 60px;
   -webkit-border-radius: 60px;
   border-radius: 60px;
@@ -516,8 +523,12 @@ font-variant-caps: all-petite-caps;
 
 background-color:   #303030;
 
-}
 
+}
+#notice-carousel{
+
+  padding: 20px;
+}
 
 .outer-box {
   width: 287px;
@@ -680,12 +691,12 @@ height: 100%;
 }
 .feed_tabs li a:hover{
   color: #fff; 
-  background-color: #ebb11f; 
+  background-color: #ffcc29; 
 }
 .feed_tabs li.active a:focus{
 
   color: #fff; 
-  background-color: #ebb11f; 
+  background-color: #ffcc29; 
 }
 .news_tab {
   margin-top: 15px;
@@ -1232,6 +1243,7 @@ div[data-dimension] {
   margin-bottom: 25px;
   padding: 13px;
   width: 100%;
+  opacity: 0.7;
   position: relative;
 }
 .stsTestimonial_msgbox:after {
@@ -1255,6 +1267,11 @@ div[data-dimension] {
   float: left;
   display: inline;
   width: 100%;
+}
+
+.stsTestimonial_content h3, .stsTestimonial_content span{
+
+  color: #fff;
 }
 
 /*--------------------*/
@@ -1332,13 +1349,15 @@ color:white;
   float: left;
   display: inline;
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: #303030;
   padding: 20px 0px;
+  margin-top: 10px;
 }
 .footer_bootomLeft{
   float: left;
   display: inline;
   width: 100%;
+  color: #fff;
 }
 .footer_bootomLeft>p,.footer_bootomRight>p{margin-bottom: 0px;}
 
@@ -1347,8 +1366,13 @@ color:white;
   display: inline;
   width: 100%;
   text-align: right;
+  color:#fff;
 }
 
+.footer_bootomRight a{
+
+  color: #de7436;
+}
 /*--------------------*/
 /* COURSE ARCHIVE PAGE */
 /*--------------------*/
