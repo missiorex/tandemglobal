@@ -269,7 +269,7 @@
       <div class="container">
           <div id="slogan-carousel" class="owl-carousel owl-theme col-md-12 col-lg-12 col-xs-12" style="padding:20px">
             {% for slogan in slogans %}
-              <div class="slogan" style="background-image:url('{{slogan.background.url}}');" class="item">
+              <div class="slogan" style="background-image:url('{{slogan.background.url}}');background-repeat: no-repeat;" class="item">
                 <img src="{{slogan.icon.url}}">
                  <div class="slogan-text" >{{slogan.title}}</div>
               </div>
