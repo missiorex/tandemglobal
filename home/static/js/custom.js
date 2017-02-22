@@ -229,8 +229,10 @@ jQuery(function($){
 	  $(window).scroll(function(){
 	    if ($(this).scrollTop() > 300) {
 	      $('.scrollToTop').fadeIn();
+	      $('#menu-area').fadeOut(600);
 	    } else {
 	      $('.scrollToTop').fadeOut();
+	      $('#menu-area').fadeIn(600);
 	    }
 	  });
 	   
