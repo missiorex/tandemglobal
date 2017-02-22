@@ -1374,9 +1374,16 @@ color:white;
   color:#999;
 }
 
-.footer_bootomRight a{
+.footer_bootomRight a, .footer_bootomRight a:hover, .footer_bootomRight a:active{
 
   color: #de7436;
+  text-decoration: none;
+  
+}
+
+.footer_bootomRight a:hover, .footer_bootomRight a:active{
+  color: #f5bb67;
+  text-decoration: none;
 }
 /*--------------------*/
 /* COURSE ARCHIVE PAGE */
