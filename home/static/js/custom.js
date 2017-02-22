@@ -229,10 +229,10 @@ jQuery(function($){
 	  $(window).scroll(function(){
 	    if ($(this).scrollTop() > 300) {
 	      $('.scrollToTop').fadeIn();
-	      $('#menu-area').fadeOut(600);
+	      // $('#menu-area').fadeOut();
 	    } else {
 	      $('.scrollToTop').fadeOut();
-	      $('#menu-area').fadeIn(600);
+	      // $('#menu-area').fadeIn();
 	    }
 	  });
 	   
