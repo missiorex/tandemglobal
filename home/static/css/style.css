@@ -1,3 +1,6 @@
+@font-face{font-family:AurulentSans;src:local('AurulentSans'),url("../fonts/AurulentSans-Regular.otf") format("OpenType")} 
+
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -46,7 +49,7 @@ body,html{
   overflow-x:hidden;
 }
 body {
-  font-family: 'Arimo', sans-serif;
+  font-family: 'AurulentSans', sans-serif;
   overflow-x: hidden !important;
 }
 
@@ -67,7 +70,7 @@ a:focus{
 }
 
 h1,h2,h3,h4,h5,h6{
-	font-family: 'Arimo', sans-serif;	
+	font-family: 'AurulentSans', sans-serif;	
 }
 
 h2 {
@@ -633,7 +636,7 @@ background-color:   #303030;
 }
 .aboutus_area p {
 
-  font-family: 'Arimo', sans-serif;
+  font-family: 'AurulentSans', sans-serif;
 
   line-height: 22px;
 
@@ -1303,7 +1306,7 @@ div[data-dimension] {
   color: #545454;
   text-transform: uppercase;
   margin-bottom: 8px;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'AurulentSans', sans-serif;
   font-size: 18px;
   padding: 5px;
 }
