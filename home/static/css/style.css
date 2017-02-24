@@ -525,13 +525,18 @@ font-variant-caps: all-petite-caps;
 
 .notice-section{
 
-background-color:   #303030;
+  background-color:   #303030;
+  width: 100%;
 
 
 }
 #notice-carousel{
 
   padding: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+
 }
 
 .outer-box {
@@ -2223,6 +2228,7 @@ color:white;
 
 
 @media(max-width:1199px ){
+  .notice-section .container{width:1300px;}
   .navbar-brand {width: 300px;}
   .slider_caption {width: 60%;}
   .slider_caption h2 {font-size: 30px;}
@@ -2261,7 +2267,7 @@ color:white;
 .navbar-nav > li > .dropdown-menu {left: 15px;}	
 .navbar-nav > li > .dropdown-menu:before {border-left: 10px solid transparent;border-right: 10px solid transparent;right: 65%;}
 .navbar-toggle{margin-top: 15px;}
-.navbar-default .navbar-brand {margin-bottom: 8px;margin-top: 8px;}
+.navbar-default .navbar-brand {margin-bottom: 18px;margin-top: 10px;}
 .navbar-nav > li > .dropdown-menu:before {display: none;}
 .slider_caption {width: 90%;}
 .slider_right_caption {left: 5%;}
