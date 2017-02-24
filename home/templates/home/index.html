@@ -115,13 +115,17 @@
     <!--============BEGIN NOTICE SECTION ==============-->
     <section class="notice-section" id="notice">
       <div class="container">
+      <div class="row">
+      
           <div id="notice-carousel" class="owl-carousel owl-theme col-md-12 col-lg-12 col-xs-12">
             {% for notice in notices %}
               <a href="{% url 'notice_detail' pk=notice.pk %}"><div class="item outer-box"><img src="{{notice.photo.url}}"><div class="inner-box"><h4>{{notice.title}}</h4><div>{{notice.sub_title}}</div></div></div></a>
               
              {% endfor %}
           </div>
-        </div>
+         </div>
+     
+      </div>
       </div>
 
     </section>

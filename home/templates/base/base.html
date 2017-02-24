@@ -49,7 +49,7 @@
     <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>   
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>  
     <link href="https://fonts.googleapis.com/css?family=Francois+One|Overpass:900|Arimo" rel="stylesheet">
-    
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -279,22 +279,14 @@
     Author URI : http://www.wpfreeware.com/
     ====================================================-->
     
-<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBmOkCYs77o68X_koUlsmFNW2Tdb6E_Hcc",
-    authDomain: "tandem-d11d3.firebaseapp.com",
-    databaseURL: "https://tandem-d11d3.firebaseio.com",
-    storageBucket: "tandem-d11d3.appspot.com",
-    messagingSenderId: "388579451977"
-  };
-  firebase.initializeApp(config);
+  
 
   $(document).ready(function(){
  
       $('#notice-carousel').owlCarousel({
-        // stagePadding: 30,
+        // stagePadding: 100,
         loop:true,
         margin:10,
         nav:false,
@@ -304,11 +296,11 @@
                 items:1,
             },
             300:{
-                items:1,
+                items:2,
                 
             },
             600:{
-                items:2,
+                items:3,
                 
             },
             1000:{

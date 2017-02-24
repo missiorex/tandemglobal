@@ -184,8 +184,8 @@ jQuery(function($){
 	/* ----------------------------------------------------------- */
 	  window.addEventListener('DOMContentLoaded', function() {
         new QueryLoader2(document.querySelector("body"), {
-            barColor: "#efefef",
-            backgroundColor: "#111",
+            barColor: "#ffcc29",
+            backgroundColor: "#303030",
             percentage: true,
             barHeight: 1,
             minimumTime: 200,
