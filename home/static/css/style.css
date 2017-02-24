@@ -2208,7 +2208,7 @@ color:white;
 #slogan .slogan .slogan-text{
 
  position:absolute;
- top:30%;
+ top:20%;
  left:25%;
  font-size: 30px;
  font-family: 'AurulentSans', sans-serif;
@@ -2228,7 +2228,7 @@ color:white;
 
 
 @media(max-width:1199px ){
-  .notice-section .container{width:1300px;}
+  .notice-section .container{width:1180px;}
   .navbar-brand {width: 300px;}
   .slider_caption {width: 60%;}
   .slider_caption h2 {font-size: 30px;}
