@@ -112,6 +112,20 @@
     <!--=========== END SLIDER SECTION ================-->
 
 
+  <!--=========== BEGIN BRAND STRIP SECTION ================-->
+    <section id="brandstrip">
+      <div class="container">
+        <div id="strip-row" class="row">
+     
+          <div class="col-md-6 col-xs-6 yellow-strip"></div>
+          <div class="col-md-6 col-xs-6 blue-strip"></div>
+        </div>
+      </div>
+    </section>
+
+<!--=========== END BRAND STRIP SECTION ================-->
+
+
     <!--============BEGIN NOTICE SECTION ==============-->
     <section class="notice-section" id="notice">
       <div class="container">
@@ -271,6 +285,7 @@
    <!--============BEGIN SLOGAN SECTION ==============-->
     <section class="notice-section" id="slogan">
       <div class="container">
+        <div class="row">
           <div id="slogan-carousel" class="owl-carousel owl-theme col-md-12 col-lg-12 col-xs-12" style="padding:20px">
             {% for slogan in slogans %}
               <div class="slogan" style="background-image:url('{{slogan.background.url}}');background-repeat: no-repeat;" class="item">
@@ -281,13 +296,37 @@
              {% endfor %}
           </div>
         </div>
+        </div>
       </div>
 
     </section>
     <!--=========== END SLOGAN SECTION ================-->
 
 
+ <!--=========== BEGIN VISION & MISSION SECTION ================-->
+    <section id="vm">
+      <div class="container">
+        <div id="strip-row" class="row">
+     
+          <div class="col-md-6 columns vision">
+            <div ><img class="vm-icon" src="{% static 'images/class-group.png' %}"/></div>
+            <div class="vm-text">
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            
+            </div>
+          </div>
+          <div class="col-md-6 columns mission">
+             <div><img class="vm-icon" src="{% static 'images/class-group.png' %}"/></div>
+            <div class="vm-text">
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+<!--=========== END BRAND STRIP SECTION ================-->
 
    
 

@@ -518,6 +518,29 @@ font-variant-caps: all-petite-caps;
   margin-bottom:3px;
 }
 
+/*--------------------*/
+/* BRAND STRIP SECTION */
+/*--------------------*/
+
+.yellow-strip{
+
+  height: 5px;
+  background-color: #ffcc29;
+  width:50%;
+}
+.blue-strip{
+
+  height: 5px;
+  background-color: #0f63ac;
+  width:50%;
+}
+
+#strip-row{
+  width:120%;
+  margin-left:-10%;
+
+}
+
 
 /*--------------------*/
 /* NOTICE SECTION */
@@ -1222,6 +1245,48 @@ div[data-dimension] {
 .tutors_nav .slick-dots li.slick-active button:before,.tutors_nav .slick-dots li button:before {
   color: #fff; 
 }
+
+
+/*--------------------*/
+/* VISION MISSION SECTION */
+/*--------------------*/
+
+.vision{
+
+  height: 400px;
+  background-color: #ffcc29;
+ 
+}
+.mission{
+
+  height: 400px;
+  background-color: #0f63ac;
+  
+}
+
+.vm-icon{
+
+  margin-left: 35%;
+  padding: 30px;
+  height:30%;
+}
+
+.vm-text{
+
+ padding: 50px;
+ overflow:hidden;
+ height:190px;
+
+}
+/*#vm-row{
+  width:120%;
+  margin-left:-10%;
+
+}*/
+
+
+
+
 
 /*--------------------*/
 /* HOME STUDENTS TESTIMONIAL SECTION */
@@ -2208,7 +2273,7 @@ color:white;
 #slogan .slogan .slogan-text{
 
  position:absolute;
- top:30%;
+ top:20%;
  left:25%;
  font-size: 30px;
  font-family: 'AurulentSans', sans-serif;
@@ -2227,8 +2292,9 @@ color:white;
 =====================///////////////////////*/
 
 
+
 @media(max-width:1199px ){
-  .notice-section .container{width:1300px;}
+ /* .notice-section .container{width:1180px;}*/
   .navbar-brand {width: 300px;}
   .slider_caption {width: 60%;}
   .slider_caption h2 {font-size: 30px;}
