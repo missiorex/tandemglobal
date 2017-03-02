@@ -160,6 +160,22 @@ img{
   width: 100%;
 
 }
+
+
+
+
+/*.navbar-listitem {
+    color: #3b3b3f;
+    padding: 30px 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    float: left;
+    display: inline-block;
+}*/
+
 .navbar-default .navbar-brand {
   color: #fff;
   font-size: 25px;
@@ -167,17 +183,24 @@ img{
   margin-top: 5px; 
   margin-bottom: 5px; 
 
-}
+} 
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
   background-color: transparent;
   color: #fff;
-}
+} 
 .navbar-default {
   background-color: #fff;
   border-color: transparent;
 
-}
+} 
 #navbar{overflow-x: hidden;}
+
+.navbar-default .navbar-nav > li {
+
+  display: inline-block;
+
+
+}
 .navbar-default .navbar-nav > li > a {
   color: #3b3b3f;
   padding: 30px 15px;
@@ -186,27 +209,44 @@ img{
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
-}
+} 
+
+
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
   background-color: transparent;
-}
+} 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   background-color: transparent;
-}
+} 
 .navbar-nav > li > .dropdown-menu {
   background-color: #48575a; 
 }
-.navbar-nav > li > .dropdown-menu:before { 
+
+
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  top:100px;
+  display: none;
+  position: absolute;
   border-bottom: 15px solid #48575a; 
+}
+
+
+.navbar-nav > li > .dropdown-menu:before { 
+ /* border-bottom: 15px solid #48575a; 
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   content: "";
   height: 0;
   position: absolute;
-  right: 25px;
-  top: -15px;
-  width: 0;
-}
+ /* right: 275px;*/
+/*  top: -15px;
+  width: 0;*/
+} 
 .navbar-nav > li > .dropdown-menu li a {
   border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
   color: #fff;
@@ -233,6 +273,98 @@ img{
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
   background-color: transparent;
 }
+
+
+.navbar-nav>li>.dropdown-menu {
+  margin-top: 0px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+
+
+.mega-dropdown {
+  position: static !important;
+  
+}
+
+.mega-dropdown-menu {
+  padding: 20px 0px;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.mega-dropdown-menu:before {
+  /*content: "";
+  border-bottom: 15px solid #fff;
+  border-right: 17px solid transparent;
+  border-left: 17px solid transparent;
+  position: absolute;
+  top: -15px;
+  left: 285px;
+  z-index: 10;*/
+}
+
+.mega-dropdown-menu:after {
+ /* content: "";
+  border-bottom: 17px solid #ccc;
+  border-right: 19px solid transparent;
+  border-left: 19px solid transparent;
+  position: absolute;
+  top: -17px;
+  left: 283px;
+  z-index: 8;*/
+}
+
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
+}
+
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+}
+
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #999;
+  white-space: normal;
+}
+
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+  color: #444;
+  background-color: #f5f5f5;
+}
+
+.mega-dropdown-menu .dropdown-header {
+  color: #428bca;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.mega-dropdown-menu .dropdown-sub-header {
+  color: #428bca;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.mega-dropdown-menu form {
+  margin: 3px 20px;
+}
+
+.mega-dropdown-menu .form-group {
+  margin-bottom: 3px;
+}
+
+
+
 
 
 
@@ -472,7 +604,7 @@ font-variant-caps: all-petite-caps;
 
    width:300px;
    height: 100%;
-   top:100px;
+   top:90px;
    position: relative;
 
 }
@@ -635,7 +767,7 @@ font-variant-caps: all-petite-caps;
   
   padding: 0px 0;
   width: 100%;
-  height:auto;
+  
 }
 /*.aboutus_area {
   display: inline;
@@ -647,20 +779,24 @@ font-variant-caps: all-petite-caps;
 
 #aboutUs .container{
 
-  padding: 0px 0;
- 
+  /*padding: 0px 0;*/
+  padding-left: 80px;
+  /*padding-right: 80px;*/
+  
   width:100%;
-  background-color: rgba(234, 234, 234, 0.6);
+  /*background-color: rgba(234, 234, 234, 0.6);*/
+  
+  height:600px;
 
 }
 
 #aboutUs .row{
-
-  padding: 0px 0;
   
-  margin:0;
+  /*padding: 0px 0;
+  
+ 
   float: left;
-  width:100%;
+  width:100%;*/
 }
 .aboutus_area p {
 
@@ -668,14 +804,17 @@ font-variant-caps: all-petite-caps;
 
   line-height: 22px;
 
+
 }
 
 #about_text{
 
 
-padding:40px;
+padding-top:40px;
+padding-bottom:40px;
+padding-right: 40px;
 background-color: #fff;
-height:auto;
+height:600px;
 
 
 
@@ -683,9 +822,12 @@ height:auto;
 }
 #news_tab{
 
-padding:40px;
-height: 100%;
+height: 600px;
+padding-top:40px;
+padding-bottom:40px;
+padding-right: 40px;
 
+background-color: rgba(234, 234, 234, 0.6);
 
 
 }
@@ -709,7 +851,7 @@ height: 100%;
   float: left;
   display: inline;
   width: 100%;
-  padding-left: 15px;
+  /*padding-left: 15px;*/
 }
 .feed_tabs li{margin-bottom: -2px;}
 
@@ -2303,7 +2445,10 @@ color:white;
   .side_add{display: block;width: 100%;}
   .side_add>img{width: 100%;}
   .gallery_area a {width: 22.5%;}
+ /* .navbar-nav > li > .dropdown-menu:before { right: 360px;} */
 }
+
+
   
 @media(max-width:991px ){
   .navbar-brand {width: 300px;}
@@ -2322,7 +2467,7 @@ color:white;
   .single_sidebar > h2 {font-size: 20px;}
   .news_tab .media-body > a {font-size: 12px;}
   .gallery_area a {width: 30.3%;} 
-
+ /* .navbar-nav > li > .dropdown-menu:before { right: 275px;} */
   
 }
 
@@ -2353,6 +2498,8 @@ color:white;
 .courseArchive_content {margin-bottom: 65px;}
 .gallery_area a {width: 28.5%;}
 .contact_address {margin-top: 50px;text-align: center;}
+.slider-form{display: none;}
+ .arrow-up{'display':none;}
 
 }
 
@@ -2368,6 +2515,7 @@ color:white;
    #slogan .slogan img{display: none;}
    #slogan .slogan .slogan-text{top:20%;left:10%;font-size: 25px;}
   .slider-form{display: none;}
+  .arrow-up{'display':none;}
  
 }
 
