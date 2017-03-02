@@ -242,7 +242,34 @@ jQuery(function($){
 	    $('html, body').animate({scrollTop : 0},800);
 	    return false;
 	  });
-	
+
+
+	 
+	  //To show and hid the arrow up on hovering a mega drop down menu.
+	  $('.dropdown-toggle').hover(function(ev){
+        	var $menuitem = $(ev.target);
+        	var x = $menuitem.position().left + $menuitem.width();
+
+        	if (window.matchMedia('(min-width: 768px)').matches){
+
+	  
+					$('.arrow-up').css({'left':x,'display':'block'});
+	  		}
+        }, function(){
+        $('.arrow-up').css({'display':'none'});
+    });
+
+	  $(document).on('click', '.mega-dropdown', function(e) {
+ 		 e.stopPropagation()
+	  });
+
+
+
 
 	
 });
+
+
+// jQuery(document).on('click', '.mega-dropdown', function(e) {
+//   e.stopPropagation()
+// })
