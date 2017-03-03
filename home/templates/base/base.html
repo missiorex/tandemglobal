@@ -114,8 +114,9 @@
             <ul id="top-menu" class="nav navbar-nav navbar-right main-nav ">
               <li class="active navbar-listitem"><a href="\">Home</a></li>
 
-              <li class="dropdown mega-dropdown navbar-listitem">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses<span class="caret"></span><!-- <span class="glyphicon glyphicon-chevron-down pull-right"> --></span></a>
+              <li class="dropdown mega-dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><div class="dropdown-title"> Courses<span class="caret"></span></div><!-- <span class="glyphicon glyphicon-chevron-down pull-right"> --></span></a>
+                 {% if streams %}
                 <div class="arrow-up"> </div>
                 <ul class="dropdown-menu mega-dropdown-menu row" role="menu" >
 
@@ -123,27 +124,36 @@
                     <ul>
                       <li class="dropdown-header">Top Rated Courses</li>
                       <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="item active">
-                            <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 1"></a>
-                            <h4><small>BCom (Taxation)</small></h4>
-                            <button class="btn btn-primary" type="button">Commerce/Undergraduate</button>
-                            <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Enroll Today</button>
+                        <div class="carousel-inner" style="text-align:center;">
+                          {% for course in courses %}
+
+                            {% if course.featured_course %}
+                              {% if forloop.first %}
+                                <div class="item active" >
+                               {% else %}
+                                <div class="item" >
+                              {% endif %}
+                            <a href="#"><img src="{{course.background.url}}" class="img-responsive" alt="product 1"></a>
+                            <h4>{{course.title}}</h4>
+                           <!--  <button class="btn btn-primary" type="button">Commerce/Undergraduate</button> -->
+                            <button href="#" class="btn-top-course btn-primary" type="button">Details</button>
                           </div>
+                            {% endif %}
+                           {% endfor %}
                           <!-- End Item -->
-                          <div class="item">
+                          <!-- <div class="item">
                             <a href="#"><img src="http://placehold.it/254x150/ef5e55/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 2"></a>
                             <h4><small>MBA/PG Diploma in Human Resource</small></h4>
-                            <button class="btn btn-primary" type="button">Commerce/Post Graduate</button>
+                           
                             <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Enroll Today</button>
-                          </div>
+                          </div> -->
                           <!-- End Item -->
-                          <div class="item">
+                          <!-- <div class="item">
                             <a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 3"></a>
                             <h4><small>Foundation(Entrance Coaching)</small></h4>
-                            <button class="btn btn-primary" type="button">Science/Entrance Coaching</button>
+                            
                             <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Enroll Today</button>
-                          </div>
+                          </div> -->
                           <!-- End Item -->
                         </div>
                         <!-- End Carousel Inner -->
@@ -152,24 +162,38 @@
                       <li class="divider"></li>
                       <!-- <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li> -->
                     </ul>
-                  </li>
+                  </li> 
+                  {% for stream in streams%}
                   <li class="col-sm-3">
                     <ul>
-                      <li class="dropdown-header">Science</li>
-                      <li class="dropdown-sub-header">Entrance Coaching</li>
-                      <li><a href="#">Foundation</a></li>
-                      <li><a href="#">JEE Main</a></li>
+                      <li class="dropdown-header">{{stream.title}}</li>
+                      {% for course_categorie in course_categories %}
+                        
+                          
+                            
+                      
+                      {% for course in courses %}
+                       {% if course.category == course_categorie and course.category.stream == stream %}
+                       {% ifchanged %}
+                         <li class="dropdown-sub-header">{{course.category.title}}</li>
+                       {% endifchanged %}
+                      <li><a href="#">{{course.title}}</a></li>
+                   <!--    <li><a href="#">JEE Main</a></li>
                       <li><a href="#">JEE Advanced</a></li>
                       <li><a href="#">NEET</a></li>
-                      <li><a href="#">KEAM</a></li>
-                     
+                      <li><a href="#">KEAM</a></li> -->
                       <li class="divider"></li>
-                      <li class="dropdown-sub-header">Tuition</li>
+                      {% endif %}
+                      {% endfor %}
+                      
+                      {% endfor %}
+                      <!-- <li class="dropdown-sub-header">Tuition</li>
                       <li><a href="#">Tuition 11/12</a></li>
-                      <li><a href="#">Tuition 8/9/10</a></li>
+                      <li><a href="#">Tuition 8/9/10</a></li> -->
                     </ul>
                   </li>
-                  <li class="col-sm-3">
+                  {% endfor %}
+                 <!--  <li class="col-sm-3">
                     <ul>
                       <li class="dropdown-header">Commerce</li>
                       <li class="dropdown-sub-header">Plus-Two</li>
@@ -201,9 +225,9 @@
                       <li><a href="#">Railway</a></li>
                       <li><a href="#">NDA</a></li>
                     </ul>
-                  </li>
+                  </li> -->
                 </ul>
-
+                 {% endif %}
               </li>
                <li class="active navbar-listitem"><a href="\">Home</a></li>
               <li class="active navbar-listitem"><a href="\">Home</a></li>

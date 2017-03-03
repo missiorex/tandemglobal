@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     'posts',
     'home',
     'widget_tweaks',
+    'django_summernote',
+  
 ]
 
 MIDDLEWARE = [
@@ -133,3 +136,6 @@ EMAIL_HOST_USER = "globaltandem@gmail.com"
 EMAIL_HOST_PASSWORD = 'Tandem@2017'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+GRAPPELLI_ADMIN_TITLE = 'Tandem Global Admin Console'
+GRAPPELLI_SWITCH_USER = True

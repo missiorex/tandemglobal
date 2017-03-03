@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from posts.models import Notice, Slogan , News, Exam, Mock, Video, Testimonial
+from posts.models import Notice, Slogan , News, Exam, Mock, Video, Testimonial,CourseCategory,Stream,Course
 from django.utils import timezone
 from .forms import ContactForm
 from django.core.mail import EmailMessage
@@ -16,6 +16,11 @@ def index(request):
     mocks = Mock.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     videos = Video.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     testimonials = Testimonial.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    course_categories = CourseCategory.objects.all()
+    streams = Stream.objects.all().order_by('order')
+    courses = Course.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+  
+
     form_class = ContactForm
     if request.method == 'POST':
         form = form_class(data=request.POST)
@@ -54,7 +59,7 @@ def index(request):
             email.attach_alternative(htmlcontent, "text/html")
             email.send()
             return redirect('index')
-    return render(request, 'home/index.html', {'notices': notices,'slogans': slogans,'newss': newss,'exams': exams,'mocks': mocks,'videos': videos,'testimonials': testimonials,'form': form_class})
+    return render(request, 'home/index.html', {'notices': notices,'slogans': slogans,'newss': newss,'exams': exams,'mocks': mocks,'videos': videos,'testimonials': testimonials,'form': form_class,'course_categories':course_categories,'streams':streams,'courses':courses})
 def notice_detail(request, pk):
     notice = get_object_or_404(Notice, pk=pk)
     return render(request, 'details/notice_detail.html', {'notice': notice})    
