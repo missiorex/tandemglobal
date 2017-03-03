@@ -33,13 +33,11 @@ def index(request):
             form_content = request.POST.get('course_details', '')
 
 
-<<<<<<< HEAD
-            template = get_template('contact_template.txt')
-=======
-            
+
+
             plaintemplate = get_template('contact_template.txt')
             htmltemplate = get_template('contact_template.html')
->>>>>>> dcb9e93c63bfd7f6816b387fcb78a084c346ba3c
+
             context = Context({
                 'contact_name': contact_name,
                 'contact_email': contact_email,
