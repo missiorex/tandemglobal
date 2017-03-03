@@ -21,12 +21,14 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', admin.site.urls),
     # url(r'', include('posts.urls')),
     url(r'', include('home.urls')),
     url(r'^hello/$', hello),
     url(r'^date/$',date),
     url(r'^date/(\d{1,2})/$',dateafter),
+    url(r'^summernote/', include('django_summernote.urls')),
 
 ]
 

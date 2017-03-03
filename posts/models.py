@@ -141,3 +141,48 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.testimonial_id 
+
+class Stream(models.Model):
+    author = models.ForeignKey('auth.User')
+    title = models.CharField(max_length=30)
+    order = models.PositiveSmallIntegerField(blank=False,default=0)
+
+    def __str__(self):
+        return self.title;
+
+class CourseCategory(models.Model):
+    author = models.ForeignKey('auth.User')
+    title = models.CharField(max_length=30)
+    stream = models.ForeignKey(Stream, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title;
+
+class Course(models.Model):
+    author = models.ForeignKey('auth.User')
+    cousre_id = models.CharField(max_length=30)
+    title = models.CharField(max_length=50)
+    featured_course = models.BooleanField(default=False)
+    overview_text = models.TextField(max_length=3000,blank=True)
+    needfor_text = models.TextField(max_length=3000,blank=True)
+    about_text = models.TextField(max_length=3000,blank=True)
+    methodology_text = models.TextField(max_length=3000,blank=True)
+    objective_text = models.TextField(max_length=3000,blank=True)
+    schedule_text = models.TextField(max_length=3000,blank=True)
+    features_text = models.TextField(max_length=3000,blank=True)
+    strengths_text = models.TextField(max_length=3000,blank=True)
+    background = models.ImageField(upload_to='course/bg',default='course/bg/default_course.jpg',help_text="Please upload an image of dimensions : width = 290px & height = 150px only")
+    
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+    category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.cousre_id
+

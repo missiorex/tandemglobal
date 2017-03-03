@@ -246,9 +246,10 @@ jQuery(function($){
 
 	 
 	  //To show and hid the arrow up on hovering a mega drop down menu.
-	  $('.dropdown-toggle').hover(function(ev){
-        	var $menuitem = $(ev.target);
-        	var x = $menuitem.position().left + $menuitem.width();
+	  $('.dropdown-title').hover(function(ev){
+        	// var $menuitem = $(ev.target);
+        	// var x = $menuitem.position().left + $menuitem.width();
+        	var x =  $('.mega-dropdown').position().left +  $('.mega-dropdown').width()/2;
 
         	if (window.matchMedia('(min-width: 768px)').matches){
 
@@ -259,9 +260,9 @@ jQuery(function($){
         $('.arrow-up').css({'display':'none'});
     });
 
-	  $(document).on('click', '.mega-dropdown', function(e) {
- 		 e.stopPropagation()
-	  });
+	  // $(document).on('click', '.mega-dropdown', function(e) {
+ 		//  e.stopPropagation()
+	  // });
 
 
 
@@ -270,6 +271,6 @@ jQuery(function($){
 });
 
 
-// jQuery(document).on('click', '.mega-dropdown', function(e) {
-//   e.stopPropagation()
-// })
+jQuery(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})
