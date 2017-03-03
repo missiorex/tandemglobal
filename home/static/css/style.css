@@ -191,6 +191,7 @@ img{
 .navbar-default {
   background-color: #fff;
   border-color: transparent;
+  box-shadow: -2px 2px 5px rgba(84, 84, 84, 0.18);
 
 } 
 #navbar{overflow-x: hidden;}
