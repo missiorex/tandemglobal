@@ -176,13 +176,14 @@
                        {% if course.category == course_categorie and course.category.stream == stream %}
                        {% ifchanged %}
                          <li class="dropdown-sub-header">{{course.category.title}}</li>
+                         <li class="divider"></li>
                        {% endifchanged %}
                       <li><a href="#">{{course.title}}</a></li>
                    <!--    <li><a href="#">JEE Main</a></li>
                       <li><a href="#">JEE Advanced</a></li>
                       <li><a href="#">NEET</a></li>
                       <li><a href="#">KEAM</a></li> -->
-                      <li class="divider"></li>
+                     
                       {% endif %}
                       {% endfor %}
                       
