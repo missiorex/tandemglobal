@@ -133,10 +133,10 @@
                                {% else %}
                                 <div class="item" >
                               {% endif %}
-                            <a href="#"><img src="{{course.background.url}}" class="img-responsive" alt="product 1"></a>
+                            <a href="{% url 'course_detail' pk=course.pk %}"><img src="{{course.background.url}}" class="img-responsive" alt="product 1"></a>
                             <h4>{{course.title}}</h4>
                            <!--  <button class="btn btn-primary" type="button">Commerce/Undergraduate</button> -->
-                            <button href="#" class="btn-top-course btn-primary" type="button">Details</button>
+                            <button href="{% url 'course_detail' pk=course.pk %}" class="btn-top-course btn-primary" type="button">Details</button>
                           </div>
                             {% endif %}
                            {% endfor %}
@@ -475,6 +475,35 @@
     });
 
     $('#slogan-carousel').owlCarousel({
+            items : 1,
+            slideSpeed : 2000,
+            nav: false,
+            margin:10,
+            autoplay: true,
+            dots: false,
+            loop: true,
+            animateOut: 'fadeOut',
+            // responsiveRefreshRate : 200,
+            responsive:{
+            0:{
+                items:1,
+            },
+            300:{
+                items:1,
+                
+            },
+            600:{
+                items:1,
+                
+            },
+            1000:{
+                items:1,
+            }
+        }
+
+    });
+
+    $('#course-carousel').owlCarousel({
             items : 1,
             slideSpeed : 2000,
             nav: false,

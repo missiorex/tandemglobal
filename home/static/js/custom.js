@@ -255,7 +255,12 @@ jQuery(function($){
 
 	  
 					$('.arrow-up').css({'left':x,'display':'block'});
+					
 	  		}
+	  		// else{
+
+	  		// 	$('mega-dropdown').css({'display':'none'});
+	  		// }
         }, function(){
         $('.arrow-up').css({'display':'none'});
     });
