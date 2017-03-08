@@ -300,4 +300,34 @@ $(document).ready(function(){
         }
     });
 
+    //Tabpager 
+    $("#tab").tabpager({
+
+			//  maximum visible items
+			items: 2,
+
+			// CSS class for tabbed content
+			contents: 'contents',
+
+			// transition speed
+			time: 300,
+
+			// text for previous button
+			previous: 'Prev',
+
+			// text for next button
+			next: 'Next',
+
+			// initial tab
+			start: 1,
+
+			// top or bottom
+			position: 'bottom',
+
+			// scrollable
+			scroll: true
+	});
+
+
+
 });

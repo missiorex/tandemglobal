@@ -4,7 +4,7 @@
 
  
      <section id="imgBanner">
-         <h2 style="font-size: 40px;">Results</h2>
+         <h2 style="font-size: 40px;">Latest News and Resources</h2>
      </section>
 
      <section id="brandstrip">
@@ -18,89 +18,254 @@
     </section>
      
 
-    <section id="course-content">
+    <section id="tab-content">
 
          <div class="container">
-            <div class="row" style="padding:30px;">
-                  <!-- <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <h1 class="gallery-title">Gallery</h1>
-                  </div> -->
+            <div class="row" >
                   
-                  <div align="center" style="margin-top: 20px;">
-                      <button class="btn btn-default filter-button" data-filter="all">All</button>
-                      {% for result in results %}
-                        {% if result == selected_result %}
-
-                        <a class="btn btn-default filter-button active" data-filter="{{result.pk}}" href="{% url 'result_detail' pk=result.pk %}" > {{result.title}}</a>
-                        {% else %}
-                        <a class="btn btn-default filter-button" data-filter="{{result.pk}}" href="{% url 'result_detail' pk=result.pk %}">{{result.title}}</a>
-                        {% endif %}
-                      {% endfor %}
-                  </div>
-                  <br/>
-
                   
-                    {% for top_scorer in top_scorers %}
-                      {% if top_scorer.result == selected_result %}
-                    
+                  
+<!-- #tab -->
+<ul id="tab">
+      <li>NEWS</li>
+      <li>EXAM CORNER</li>
+      <li>MOCK TEST</li>
+      <li>VIDEO</li>
+    </ul>
+<!-- /#tab --> 
+   </div>
+        <!-- #wrapper -->
+        <div id="wrapper"> 
+              
+              <!-- .contents -->
+             <!--  <div class="contents"> -->
+            <!--   <h1> Hello </h1>
+            <div>contents1-1</div>
+            <div>contents1-2</div>
+            <div>contents1-3</div>
+            <div>contents1-4</div>
+            <div>contents1-5</div>
+            <div>contents1-6</div>
+            <div>contents1-7</div>
+            <div>contents1-8</div>
+            <div>contents1-9</div>
+            <div>contents1-10</div>
+            <div>contents1-11</div> -->
 
-                      <div class="top_scorer col-lg-2 col-md-2 col-sm-2 col-xs-6 filter {{top_scorer.result.pk}}">
-                            <img src="../../{{top_scorer.student_photo.url}}" class="img-responsive">
-                            <h4>{{top_scorer.student_name}}</h4>
-                            <h4>{{top_scorer.student_title}}</h4>
-                            <h4>{{top_scorer.course.title}}</h4>
+
+               <div class="contents">
+                  <!-- <div id="news-tab-row" class="row"> -->
+                    {% for news in newss %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{news.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{news.text}}</p>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              {% if news.youtube_url != "" %}
+                                <div style="position:relative;height:300px;">
+                                    <iframe src="{{news.youtube_url}}" style="position:absolute;width:100%;height:100%;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                                </iframe>
+                               </div>
+                               
+                              {% else %}
+                                <img src="../../{{news.photo.url}}"/>
+                              {% endif %}
+                            </div>
+                          </div>
                         </div>
-                      
-                     {% endif %}
-                   
+                        {% else %}
+                        <div class="row" >
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                  {% if news.youtube_url != "" %}
+                                <div style="position:relative;height:300px;">
+                                    <iframe src="{{news.youtube_url}}" style="position:absolute;width:100%;height:100%;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                                </iframe>
+                               </div>
+                               
+                              {% else %}
+                                <img src="../../{{news.photo.url}}"/>
+                              {% endif %}
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{news.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{news.text}}</p>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
                     {% endfor %}
-          
+              </div>
+             
+ 
+              <div class="contents">
+                  <!-- <div id="news-tab-row" class="row"> -->
+                    {% for exam in exams %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{news.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{exam.text}}</p>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              
+                                <img src="../../{{exam.photo.url}}"/>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="row">
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                 <img src="../../{{exam.photo.url}}"/>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{exam.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{exam.text}}</p>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+              </div>
+         
 
 
-                    <!-- <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter sprinkle">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div>
+               <div class="contents">
+                  <!-- <div id="news-tab-row" class="row"> -->
+                    {% for mock in mocks %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{mock.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{mock.text}}</p>
+                               <a href="{{mock.question_paper_url}}"  class="btn-mock" > Attempt Mock Exam </a>
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              
+                                <img src="../../{{mock.photo.url}}"/>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="row">
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                 <img src="../../{{mock.photo.url}}"/>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{mock.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{mock.text}}</p>
+                               <a href="{{mock.question_paper_url}}"  class="btn-mock"> Attempt Mock Exam </a>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+              </div>
+              <!-- /.contents --> 
+              
 
-                    <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter hdpe">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div>
 
-                    <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter irrigation">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div>
 
-                    <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter spray">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div>
-
-                    <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter irrigation">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div>
-
-                    <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter spray">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div>
-
-                    <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter irrigation">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div>
-
-                    <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter irrigation">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div>
-
-                    <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter hdpe">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div>
-
-                    <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter spray">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div>
-
-                    <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter sprinkle">
-                        <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-                    </div> -->
+              <div class="contents">
+                  <!-- <div id="news-tab-row" class="row"> -->
+                    {% for video in videos %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{video.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{video.text}}</p>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              {% if video.youtube_url != "" %}
+                                <div style="position:relative;height:300px;">
+                                    <iframe src="{{video.youtube_url}}" style="position:absolute;width:100%;height:100%;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                                </iframe>
+                               </div>
+                               
+                              {% else %}
+                                <img src="../../{{video.photo.url}}"/>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="row">
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                  {% if video.youtube_url != "" %}
+                                <div style="position:relative;height:300px;">
+                                    <iframe src="{{video.youtube_url}}" style="position:absolute;width:100%;height:100%;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                                </iframe>
+                               </div>
+                               
+                              {% else %}
+                                <img src="../../{{video.photo.url}}"/>
+                              {% endif %}
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{video.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{video.text}}</p>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+              </div>
+           
+              <!-- /.contents --> 
             </div>
+        <!-- /#wrapper -->
+                  
+           
     </div>
 </section>
 
@@ -118,175 +283,7 @@
 
 
 
-     <!-- <div class="container">
-      <div class="row" style="background-color: #d1d1d1;">
-        <div class="col-lg-3 col-md-3 col-sm-3">
-            
-                <div class="nav-side-menu">
-                        <div class="brand">Results</div>
-                        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-                      
-                            <div class="menu-list">
-                                  {% if streams %}
-                                    
-                                <ul id="menu-content" class="menu-content out collapse in">
-                                 
-                                   {% for stream in streams%}
-
-                                    {% if selected_result.category.stream.title == stream.title %} 
-
-                                        <li  data-toggle="collapse" data-target="#{{stream.title}}" class="active" aria-expanded="true">
-                                          <a href="#">{{stream.title}} <span class="arrow"></span></a>
-                                        </li>
-                                        <ul class="sub-menu collapse in" id="{{stream.title}}" aria-expanded="true">
-                                        {% else %}
-
-                                        <li  data-toggle="collapse" data-target="#{{stream.title}}" class="collapsed">
-                                          <a href="#">{{stream.title}} <span class="arrow"></span></a>
-                                        </li>
-                                        <ul class="sub-menu collapse" id="{{stream.title}}">
-                                    {% endif %}
-                                       
-                                    
-                                    {% for course_categorie in course_categories %}          
-                                      {% for result in results %}
-                                       {% if result.category == course_categorie and result.category.stream == stream %}
-                                        {% ifchanged %}
-                                
-                                            <li class="nav-side-menu-category">{{result.category.title}}</li>{% endifchanged %}
-                                             {% if selected_result == result %} <li class="active"><a href="{% url 'result_detail' pk=result.pk %}">{{result.title}}</a></li>{% else %}
-                                            <li><a href="{% url 'result_detail' pk=result.pk %}">{{result.title}}</a>{% endif %}
-                                            </li>
-                                       
-                                          {% endif %}
-                                          {% endfor %}
-                                            {% endfor %}
-                                        </ul>
-                                        
-
-                                    
-                                     {% endfor %}
-                                </ul>
-                               
-                                {% endif %}
-                         </div>
-                    </div>
-
-
-        </div> -->
-      
-      
-
-       <!-- <div class="container content col-lg-9 col-md-9 col-sm-9" style="background-color:#fff;margin-bottom:10px;">
-
-        <div class="row">
-
-            <div class="col-lg-9">
-                <h1 class="page-header">Thumbnail Gallery</h1>
-            </div>
-        </div>  
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-          </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-          </div>
-          <div class="row">
-           <div class="col-lg-3 col-md-3 col-xs-4 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-4 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-4 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                </a>
-            </div>
-          </div>
-      
-        </div>
-        </div> -->
-       <!--  <div class="content col-lg-9 col-md-9 col-sm-9" style="background-color:#fff;margin-bottom:10px;">
-             {% if selected_course.document %}
-                <a href="../../../{{selected_course.document.file.url}}" class="btn btn-download" role="button">Download</a> 
-              {% endif %}
-            <div>
-            {% if selected_course.published_date %}
-                <div class="date">
-                    Last Updated On: {{ selected_course.published_date }}
-                </div>
-            {% endif %}
-            <h3>{{ selected_course.title }}</h3>
-            <h4>{{ selected_course.category.stream }} > {{ selected_course.category.title }}</h4>
-            
-            
-           
-            <div style="padding:30px;font-family:AurulentSans">{{ selected_course.details_text|safe }}</div>
-          </div>
-          
-        </div> -->
-<!-- 
-        <div class="col-lg-3 col-md-3 col-sm-3" > 
-     
-            <div style="border-style: solid;border-width:1px;border-color: black;background-color: #181c20;color:#fff;margin-right:30px;margin-top: 15px;"><h4 align="center">Related Courses</h4>
-              <div id="course-carousel" class="owl-carousel owl-theme" >
-
-            {% for course in courses %}
-              {% if course.category == selected_course.category and course.category.stream == selected_course.category.stream %}
-              <a href="{% url 'course_detail' pk=course.pk %}">
-                <div class="item outer-box">
-                <img src="../../{{course.background.url}}">
-                    <div class="inner-box"><h5>{{course.title}}</h5>
-                     <div><h6>{{ selected_course.category.stream }} > {{ selected_course.category }}</h6></div>
-                    </div>
-                </div>
-              </a>
-              {% endif %}
-            {% endfor %}
-          </div>
-          </div>
-            
-             <div style="margin-top:20px;margin-right:30px;background-color: #2b76b9; color:#fff; padding: 10px;text-align:center;"><h4>Time Schedule</h4></div>
-             <div style="margin-right:30px;background-color: #fff;padding: 15px;">{{ selected_course.schedule_text|safe  }}</img></div>
-
-
-        </div> 
-      </div>
-      </div> -->
-    </section>
+ 
 
 
 

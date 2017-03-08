@@ -49,7 +49,7 @@ class News(models.Model):
     sub_title = models.CharField(max_length=200)
     text = models.TextField()
     photo = models.ImageField(upload_to='news',default='')
-    youtube_url = models.CharField(max_length=200, default='',help_text="Please enter the youtube url of the video.")
+    youtube_url = models.CharField(max_length=200, default='',help_text="Please enter the youtube url of the video.",blank=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
