@@ -2612,6 +2612,8 @@ color:white;
 .tabs-content img{
 
   margin:30px;
+  height:300px;
+  width:auto;
 }
 
 .reverse-tab-content-row{
