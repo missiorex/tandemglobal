@@ -18,9 +18,9 @@
     </section>
      
 
-    <section id="course-content">
+    <section id="result-content" >
 
-         <div class="container">
+         <div class="container" >
             <div class="row" style="padding:30px;">
                   <!-- <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <h1 class="gallery-title">Gallery</h1>
@@ -28,40 +28,34 @@
                   
                   <div align="center" style="margin-top: 20px;">
                       <button class="btn btn-default filter-button" data-filter="all">All</button>
-                      {% for result in results%}
-                      {% if result == selected_result %}
+                      {% for result in results %}
+                        {% if result == selected_result %}
 
-                        <a class="btn btn-default filter-button active" data-filter="{{result.pk}}" href="{% url 'result_detail' pk=result.pk %}" >{{result.title}}</a>
-                      {% else %}
+                        <a class="btn btn-default filter-button active" data-filter="{{result.pk}}" href="{% url 'result_detail' pk=result.pk %}" > {{result.title}}</a>
+                        {% else %}
                         <a class="btn btn-default filter-button" data-filter="{{result.pk}}" href="{% url 'result_detail' pk=result.pk %}">{{result.title}}</a>
-                      {% endif %}
+                        {% endif %}
                       {% endfor %}
                   </div>
                   <br/>
 
-                   <!-- {% for result in results %} -->
+                  
                     {% for top_scorer in top_scorers %}
-                      <!-- {% if top_scorer.result == selected_result %} -->
-                      
-                      <!-- {% if top_scorer.featured_top_scorer %}
-
-                        <div class="top_scorer_featured col-lg-2 col-md-2 col-sm-2 col-xs-6 filter {{top_scorer.result.pk}}">
-                      {% else %}
-                        <div class="top_scorer col-lg-2 col-md-2 col-sm-2 col-xs-6 filter {{top_scorer.result.pk}}">
-                      {% endif %} -->
+                      {% if top_scorer.result == selected_result %}
+                    
 
                       <div class="top_scorer col-lg-2 col-md-2 col-sm-2 col-xs-6 filter {{top_scorer.result.pk}}">
                             <img src="../../{{top_scorer.student_photo.url}}" class="img-responsive">
                             <h4>{{top_scorer.student_name}}</h4>
-                            <h4>{{top_scorer.student_title}}</h4>
                             <h4>{{top_scorer.course.title}}</h4>
+                            <h4>{{top_scorer.student_title}}</h4>
+                            
                         </div>
                       
-                     <!--  {% endif %} -->
-                      <!--   {% empty %}
-                      <h4> Result is empty</h4> -->
+                     {% endif %}
+                   
                     {% endfor %}
-              <!--     {% endfor %} -->
+          
 
 
                     <!-- <div class="gallery_product col-lg-2 col-md-2 col-sm-2 col-xs-6 filter sprinkle">

@@ -117,8 +117,6 @@ def result_detail(request, pk):
     courses = Course.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     results = Result.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     top_scorers = TopScorer.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-
-
     form_class = ContactForm
     if request.method == 'POST':
         form = form_class(data=request.POST)
@@ -166,7 +164,6 @@ def tab_detail(request):
     exams = Exam.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     mocks = Mock.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     videos = Video.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-
     form_class = ContactForm
     if request.method == 'POST':
         form = form_class(data=request.POST)
@@ -181,8 +178,8 @@ def tab_detail(request):
             contact_phone = request.POST.get(
                 'contact_phone'
             , '')
-            form_content = request.POST.get('course_details', '')
 
+            form_content = request.POST.get('course_details', '')
 
             plaintemplate = get_template('contact_template.txt')
             htmltemplate = get_template('contact_template.html')
@@ -205,4 +202,6 @@ def tab_detail(request):
             email.attach_alternative(htmlcontent, "text/html")
             email.send()
             return redirect('tab_detail')
+
     return render(request, 'details/tabs.html', {'form': form_class,'newss': newss,'exams': exams,'mocks': mocks,'videos': videos})
+

@@ -1,0 +1,300 @@
+{% extends '../base/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+ 
+     <section id="imgBanner">
+         <h2 style="font-size: 40px;">Latest News and Resources</h2>
+     </section>
+
+     <section id="brandstrip">
+      <div class="container">
+        <div id="strip-row" class="row">
+     
+          <div class="col-md-6 col-xs-6 yellow-strip"></div>
+          <div class="col-md-6 col-xs-6 blue-strip"></div>
+        </div>
+      </div>
+    </section>
+     
+
+    <section id="tab-content">
+
+         <div class="container">
+            <div class="row" >
+                  
+                  
+                  
+<!-- #tab -->
+<ul id="tab">
+      <li>NEWS</li>
+      <li>EXAM CORNER</li>
+      <li>MOCK TEST</li>
+      <li>VIDEO</li>
+    </ul>
+<!-- /#tab --> 
+   </div>
+        <!-- #wrapper -->
+        <div id="wrapper"> 
+              
+              <!-- .contents -->
+             <!--  <div class="contents"> -->
+            <!--   <h1> Hello </h1>
+            <div>contents1-1</div>
+            <div>contents1-2</div>
+            <div>contents1-3</div>
+            <div>contents1-4</div>
+            <div>contents1-5</div>
+            <div>contents1-6</div>
+            <div>contents1-7</div>
+            <div>contents1-8</div>
+            <div>contents1-9</div>
+            <div>contents1-10</div>
+            <div>contents1-11</div> -->
+
+
+               <div class="contents">
+                  <!-- <div id="news-tab-row" class="row"> -->
+                    {% for news in newss %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{news.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{news.text}}</p>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              {% if news.youtube_url != "" %}
+                                <div style="position:relative;height:300px;">
+                                    <iframe src="{{news.youtube_url}}" style="position:absolute;width:100%;height:100%;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                                </iframe>
+                               </div>
+                               
+                              {% else %}
+                                <img src="../../{{news.photo.url}}"/>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="row" >
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                  {% if news.youtube_url != "" %}
+                                <div style="position:relative;height:300px;">
+                                    <iframe src="{{news.youtube_url}}" style="position:absolute;width:100%;height:100%;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                                </iframe>
+                               </div>
+                               
+                              {% else %}
+                                <img src="../../{{news.photo.url}}"/>
+                              {% endif %}
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{news.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{news.text}}</p>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+              </div>
+             
+ 
+              <div class="contents">
+                  <!-- <div id="news-tab-row" class="row"> -->
+                    {% for exam in exams %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{news.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{exam.text}}</p>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              
+                                <img src="../../{{exam.photo.url}}"/>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="row">
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                 <img src="../../{{exam.photo.url}}"/>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{exam.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{exam.text}}</p>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+              </div>
+         
+
+
+               <div class="contents">
+                  <!-- <div id="news-tab-row" class="row"> -->
+                    {% for mock in mocks %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{mock.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{mock.text}}</p>
+                               <a href="{{mock.question_paper_url}}"  class="btn-mock" > Attempt Mock Exam </a>
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              
+                                <img src="../../{{mock.photo.url}}"/>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="row">
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                 <img src="../../{{mock.photo.url}}"/>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{mock.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{mock.text}}</p>
+                               <a href="{{mock.question_paper_url}}"  class="btn-mock"> Attempt Mock Exam </a>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+              </div>
+              <!-- /.contents --> 
+              
+
+
+
+              <div class="contents">
+                  <!-- <div id="news-tab-row" class="row"> -->
+                    {% for video in videos %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{video.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{video.text}}</p>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              {% if video.youtube_url != "" %}
+                                <div style="position:relative;height:300px;">
+                                    <iframe src="{{video.youtube_url}}" style="position:absolute;width:100%;height:100%;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                                </iframe>
+                               </div>
+                               
+                              {% else %}
+                                <img src="../../{{video.photo.url}}"/>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="row">
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                  {% if video.youtube_url != "" %}
+                                <div style="position:relative;height:300px;">
+                                    <iframe src="{{video.youtube_url}}" style="position:absolute;width:100%;height:100%;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                                </iframe>
+                               </div>
+                               
+                              {% else %}
+                                <img src="../../{{video.photo.url}}"/>
+                              {% endif %}
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{video.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{video.text}}</p>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+              </div>
+           
+              <!-- /.contents --> 
+            </div>
+        <!-- /#wrapper -->
+                  
+           
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+      
+   
+      
+     
+    
+    <!--=========== END STUDENTS TESTIMONIAL SECTION ================-->  
+
+
+  
+    
+{% endblock %}  

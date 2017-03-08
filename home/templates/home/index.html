@@ -187,14 +187,14 @@
                         </a>
                       </div>
                       <div class="media-body">
-                       {{news.text}}
+                       {{news.text|truncatewords:"40"}}
                        <span class="feed_date">{{news.published_date}}</span>
                       </div>
                     </div>                    
                   </li>
                   {% endfor %}
                 </ul>                
-                <a class="see_all" href="#">See All</a>
+                <a class="see_all" href="{% url 'tab_detail' %}">See All</a>
               </div>
               <!-- Start Exam tab content -->  
               <div class="tab-pane fade" id="exam">
@@ -209,14 +209,14 @@
                           </a>
                         </div>
                         <div class="media-body">
-                         {{exam.text}}
+                         {{exam.text|truncatewords:"40"}}
                          <span class="feed_date">{{exam.published_date}}</span>
                         </div>
                       </div>                   
                     </li>
                     {% endfor %}                                     
                   </ul>
-                  <a class="see_all" href="#">See All</a>
+                 <a class="see_all" href="{% url 'tab_detail' %}">See All</a>
               
               </div>
                  <!-- Start Mock tab content -->  
@@ -232,7 +232,7 @@
                           </a>
                         </div>
                         <div class="media-body">
-                         {{mock.text}}
+                         {{mock.text|truncatewords:"40"}}
                          <span class="feed_date">{{mock.published_date}}/span>
                         </div>
                       </div>                   
@@ -240,7 +240,7 @@
                     {% endfor %}  
                                                       
                   </ul>
-                  <a class="see_all" href="#">See All</a>
+                  <a class="see_all" href="{% url 'tab_detail' %}">See All</a>
                       
               </div>
               <!-- Start Video tab content -->
@@ -269,7 +269,7 @@
                     {% endfor %}
                                 
                 </ul>
-                <a class="see_all" href="#">See All</a>
+               <a class="see_all" href="{% url 'tab_detail' %}">See All</a>
             
             </div>
           </div>
