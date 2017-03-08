@@ -230,9 +230,39 @@
                 </ul>
                  {% endif %}
               </li>
-               <li class="active navbar-listitem"><a href="\">Home</a></li>
-              <li class="active navbar-listitem"><a href="\">Home</a></li>
-              <li class="active navbar-listitem"><a href="\">Home</a></li>
+               <li class="navbar-listitem"><a href="\">Alliances</a></li>
+              {% if results %}
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Results<span class="caret"></span></a>
+                 
+
+                  <ul class="dropdown-menu" role="menu">
+                  {% for result in results %}
+                    <li><a href="{% url 'result_detail' pk=result.pk %}">{{result.title}}</a></li> -->
+                    <!-- <li><a href="#">Link Two</a></li>
+                    <li><a href="#">Link Three</a></li> -->  
+                  
+                    {% endfor %}             
+                  </ul>
+               </li>               
+                {% endif %}
+              {% if newss %}
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">News<span class="caret"></span></a>
+                 
+
+                  <ul class="dropdown-menu" role="menu">
+                  {% for news in newss %}
+                    <li><a href="404.html">{{news.title}}</a></li> -->
+                    <!-- <li><a href="#">Link Two</a></li>
+                    <li><a href="#">Link Three</a></li> -->  
+                  
+                    {% endfor %}             
+                  </ul>
+               </li>               
+                {% endif %}
+               <li class="navbar-listitem"><a href="\">Exam Corner</a></li>
+               
             </ul>
 
           </div>
