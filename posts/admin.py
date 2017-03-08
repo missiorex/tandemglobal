@@ -1,10 +1,11 @@
 from django.contrib import admin
-from .models import Notice,Slogan,Mock,Exam,Video,News,Testimonial,Course,CourseCategory,Stream
+from .models import Notice,Slogan,Mock,Exam,Video,News,Testimonial,Course,CourseCategory,Stream,Result,TopScorer,Document
 from django_summernote.admin import SummernoteModelAdmin
 
 class CourseAdmin(SummernoteModelAdmin):
 	pass	
-
+class ResultAdmin(SummernoteModelAdmin):
+	pass
 
 admin.site.register(Notice)
 admin.site.register(Slogan)
@@ -16,4 +17,6 @@ admin.site.register(Testimonial)
 admin.site.register(Stream)
 admin.site.register(CourseCategory)
 admin.site.register(Course,CourseAdmin)
-
+admin.site.register(Result,ResultAdmin)
+admin.site.register(TopScorer)
+admin.site.register(Document)

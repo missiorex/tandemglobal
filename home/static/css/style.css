@@ -2490,6 +2490,84 @@ color:white;
 
 
 /*======================///////////////
+      start results gallery section
+=====================///////////////////////*/
+
+.gallery-title
+{
+    font-size: 36px;
+    color: #ffcc29;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+.gallery-title:after {
+    content: "";
+    position: absolute;
+    width: 7.5%;
+    left: 46.5%;
+    height: 45px;
+    border-bottom: 1px solid #5e5e5e;
+}
+.filter-button
+{
+    font-size: 18px;
+    border: 1px solid #0f63ac;
+    border-radius: 0px;
+    text-align: center;
+    color:  #0f63ac;
+    margin-bottom: 30px;
+
+}
+.filter-button:hover
+{
+    font-size: 18px;
+    border: 1px solid #0f63ac;
+    border-radius: 0px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #0f63ac;
+
+}
+.filter-button.active
+{
+    background-color: #0f63ac;
+    color: white;
+}
+.port-image
+{
+    width: 100%;
+}
+
+.top_scorer
+{
+    margin-bottom: 30px;
+    border: 1px solid #0f63ac;
+
+}
+.top_scorer_featured
+{
+    margin-bottom: 30px;
+    border: 1px solid #0f63ac;
+    background-color: #0f63ac;
+  
+}
+.top_scorer img{
+
+  left:50%;
+}
+
+
+
+/*======================///////////////
+      end results gallery section
+=====================///////////////////////*/
+
+
+
+
+
+/*======================///////////////
 			start responsive style
 =====================///////////////////////*/
 
@@ -2752,7 +2830,16 @@ color:white;
 
 }
 
+.btn-download{
 
+  border:none;
+  background-color: #ffcc29;
+  color: #000;
+  border-radius: 0;
+  float: right;
+  margin-top:50px;
+  margin-right:100px;
+}
 
 
 @media (max-width: 767px) {
