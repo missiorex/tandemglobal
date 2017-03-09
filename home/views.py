@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from posts.models import Notice, Slogan , News, Exam, Mock, Video, Testimonial,CourseCategory,Stream,Course,Result,TopScorer
+from posts.models import Notice, Slogan , News, Exam, Mock, Video, Testimonial,CourseCategory,Stream,Course,Result,TopScorer,Center,Division,Contact
 from django.utils import timezone
 from .forms import ContactForm
 from django.core.mail import EmailMessage
@@ -205,5 +205,52 @@ def tab_detail(request):
             email.attach_alternative(htmlcontent, "text/html")
             email.send()
             return redirect('tab_detail')
-    return render(request, 'details/tabs.html', {'form': form_class,'newss': newss,'exams': exams,'mocks': mocks,'videos': videos})     
+    return render(request, 'details/tabs.html', {'form': form_class,'newss': newss,'exams': exams,'mocks': mocks,'videos': videos}) 
+
+
+def contact(request):
+    
+    centers = Center.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    divisions = Division.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    contacts = Contact.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    
+    form_class = ContactForm
+    if request.method == 'POST':
+        form = form_class(data=request.POST)
+
+        if form.is_valid():
+            contact_name = request.POST.get(
+                'contact_name'
+            , '')
+            contact_email = request.POST.get(
+                'contact_email'
+            , '')
+            contact_phone = request.POST.get(
+                'contact_phone'
+            , '')
+            form_content = request.POST.get('course_details', '') 
+
+            
+            plaintemplate = get_template('contact_template.txt')
+            htmltemplate = get_template('contact_template.html')
+            context = Context({
+                'contact_name': contact_name,
+                'contact_email': contact_email,
+                'form_content': form_content,
+                'contact_phone': contact_phone,
+            })
+            textcontent = plaintemplate.render(context)
+            htmlcontent = htmltemplate.render(context)
+
+            email = EmailMultiAlternatives(
+                "New contact form submission",
+                textcontent,
+                "Tandem Global" +'',
+                ['prakash@missiorex.com'],
+                headers = {'Reply-To': contact_email }
+            )
+            email.attach_alternative(htmlcontent, "text/html")
+            email.send()
+            return redirect('contact')
+    return render(request, 'details/contact.html', {'form': form_class,'centers': centers,'divisions': divisions,'contacts': contacts})      
     
