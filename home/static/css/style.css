@@ -153,6 +153,76 @@ img{
   background-color: #313b3d;	
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/*.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent;
+}
+.navbar-nav > li > .dropdown-menu {
+  background-color: #48575a; 
+}
+.navbar-nav > li > .dropdown-menu:before { 
+  border-bottom: 15px solid #48575a; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 25px;
+  top: -15px;
+  width: 0;
+}
+.navbar-nav > li > .dropdown-menu li a {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+  color: #fff;
+  display: block;  
+  opacity: 0.8;
+  padding: 10px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.navbar-nav > li > .dropdown-menu > li:last-child a {
+  border-bottom: medium none;
+}
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+  background-color:transparent;  
+  text-decoration: none;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {
+  background-color: transparent;  
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+  background-color: transparent;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*--------.menu_area-------- */
 .menu_area{
   float: left;
@@ -184,24 +254,38 @@ img{
   margin-bottom: 5px; 
 
 } 
+
+
+
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
   background-color: transparent;
   color: #fff;
 } 
+
+
 .navbar-default {
   background-color: #fff;
   border-color: transparent;
   box-shadow: -2px 2px 5px rgba(84, 84, 84, 0.18);
 
 } 
+
 #navbar{overflow-x: hidden;}
 
-.navbar-default .navbar-nav > li {
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  padding: 30px 15px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/*.navbar-default .navbar-nav > li {
 
   display: inline-block;
 
 
-}
+}*/
 .navbar-default .navbar-nav > li > a {
   color: #3b3b3f;
   padding: 30px 15px;
@@ -301,6 +385,8 @@ img{
   border-top-right-radius: 4px;
   background-color: #353535;
   opacity: 0.95;
+  margin-left:10px;
+  padding-left: 6px;
   box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
 
@@ -815,7 +901,7 @@ right:0px;
   
 }
 
-#tab-content{
+#tab-content, #contact-content{
   width: 100%;
   
 }
@@ -827,7 +913,7 @@ right:0px;
   margin:0;
 }*/
 
-#aboutUs .container, #tab-content .container{
+#aboutUs .container, #tab-content .container, #contact-content .container{
 
   /*padding: 0px 0;*/
   padding-left: 80px;
@@ -840,7 +926,7 @@ right:0px;
 
 }
 
-#aboutUs .row, #tab-content .row{
+#aboutUs .row, #tab-content .row, #contact-content .row{
 
   margin-left: -90px;
 
@@ -2699,9 +2785,10 @@ color:white;
 .gallery_area a {width: 28.5%;}
 .contact_address {margin-top: 50px;text-align: center;}
 .slider-form{display: none;}
- .arrow-up{'display':none;}
+ .arrow-up{display:none;}
  #news_tab{margin-left: inherit;}
- .hide{display:none;}
+
+ #course_megamenu{display:none;}
 
 }
 
@@ -2717,9 +2804,9 @@ color:white;
    #slogan .slogan img{display: none;}
    #slogan .slogan .slogan-text{top:20%;left:10%;font-size: 25px;}
   .slider-form{display: none;}
-  .arrow-up{'display':none;}
+  .arrow-up{display:none;}
   #news_tab{margin-left: inherit;}
-    .hide{display:none;}
+     #course_megamenu{display:none;}
 } 
 
 @media(max-width:360px ){
@@ -2736,8 +2823,8 @@ color:white;
   #slogan .slogan img{display: none;}
   .slider-form{display: none;}
   #news_tab{margin-left: inherit;}
-  
-  .hide{display:none;}
+   #course_megamenu{display:none;}
+
 }
 
 @media(max-width:320px ){
@@ -2912,6 +2999,37 @@ color:white;
   float: right;
   padding: 10px;
 }
+
+
+#map {
+  height: 400px;
+  width:100%;
+  position: absolute;
+}
+
+#contact-content .form-group .form-control{
+
+  background-color:#63583c;
+  opacity: 0.7;
+  color:#ffcc29;
+  border:none;
+  border-radius: 0px;
+
+}
+
+#contact-content .form-group .mrex-formbtn{
+
+  background-color:#fff;
+}
+
+#contact-content .form-group .mrex-formbtn:hover{
+
+    background-color:#63583c;
+    color:#ffcc29;
+
+}
+
+#contact-content #jquery-tab-pager-navi { display:none; }
 
 @media (max-width: 767px) {
   .nav-side-menu {

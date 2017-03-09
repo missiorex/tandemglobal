@@ -234,4 +234,63 @@ class Testimonial(models.Model):
         self.save()
 
     def __str__(self):
-        return self.testimonial_id 
+        return self.testimonial_id
+
+class Center(models.Model):
+    author = models.ForeignKey('auth.User')
+    center_id = models.CharField(max_length=30)
+    location = models.CharField(max_length=400)
+    latitude = models.DecimalField(max_digits=19, decimal_places=10,null=True)
+    longitude = models.DecimalField(max_digits=19, decimal_places=10,null=True)
+    address_line1 = models.CharField(max_length=300,blank=True)
+    address_line2 = models.CharField(max_length=300,blank=True)
+    address_line3 = models.CharField(max_length=300,blank=True)
+    address_line4 = models.CharField(max_length=300,blank=True)
+    email = models.EmailField(max_length=254,blank=True)
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.center_id
+
+class Division(models.Model):
+    author = models.ForeignKey('auth.User')
+    division_id = models.CharField(max_length=30)
+    title = models.CharField(max_length=200)
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.division_id
+
+class Contact(models.Model):
+    author = models.ForeignKey('auth.User')
+    contact_id = models.CharField(max_length=30)
+    contact_title = models.CharField(max_length=200)
+    contact_name = models.CharField(max_length=200,blank=True)
+    email = models.EmailField(max_length=254,blank=True)
+    division = models.ForeignKey(Division, on_delete=models.CASCADE)
+    center = models.ForeignKey(Center, on_delete=models.CASCADE)
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.contact_id 

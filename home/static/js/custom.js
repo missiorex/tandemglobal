@@ -255,6 +255,7 @@ jQuery(function($){
 
 	  
 					$('.arrow-up').css({'left':x,'display':'block'});
+					$('#course_megamenu').css({'display':'none'});
 					
 	  		}
 	  		// else{
@@ -263,6 +264,7 @@ jQuery(function($){
 	  		// }
         }, function(){
         $('.arrow-up').css({'display':'none'});
+       
     });
 
 	  // $(document).on('click', '.mega-dropdown', function(e) {
@@ -327,6 +329,15 @@ $(document).ready(function(){
 			// scrollable
 			scroll: true
 	});
+
+
+	if (window.matchMedia('(max-width: 768px)').matches){
+
+	  
+					$('.arrow-up').hide();
+					$('#course_megamenu').hide();
+					
+	  		}
 
 
 

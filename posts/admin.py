@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Notice,Slogan,Mock,Exam,Video,News,Testimonial,Course,CourseCategory,Stream,Result,TopScorer,Document
+from .models import Notice,Slogan,Mock,Exam,Video,News,Testimonial,Course,CourseCategory,Stream,Result,TopScorer,Document,Center,Division,Contact
 from django_summernote.admin import SummernoteModelAdmin
 
 class CourseAdmin(SummernoteModelAdmin):
@@ -20,3 +20,6 @@ admin.site.register(Course,CourseAdmin)
 admin.site.register(Result,ResultAdmin)
 admin.site.register(TopScorer)
 admin.site.register(Document)
+admin.site.register(Center)
+admin.site.register(Division)
+admin.site.register(Contact)

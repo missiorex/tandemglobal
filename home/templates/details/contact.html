@@ -1,0 +1,299 @@
+{% extends '../base/base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+
+ 
+     <section id="imgBanner">
+         <h2 style="font-size: 40px;">Contact Us</h2>
+     </section>
+
+     <section id="brandstrip">
+      <div class="container">
+        <div id="strip-row" class="row">
+     
+          <div class="col-md-6 col-xs-6 yellow-strip"></div>
+          <div class="col-md-6 col-xs-6 blue-strip"></div>
+        </div>
+      </div>
+    </section>
+     
+
+    <section id="contact-content">
+
+         <div class="container">
+            <div class="row" >
+                  
+                  
+                  
+<!-- #tab -->
+<ul id="tab">
+      <li style="background-color:#0f63ac;color:#fff;">Ernakulam</li>
+      <li>Thiruvanathapuram</li>
+      <li>Thripunithura</li>
+      <li>General Enquiry</li>
+    </ul>
+<!-- /#tab --> 
+   </div>
+        <!-- #wrapper -->
+        <div id="wrapper"> 
+              
+              <!-- .contents -->
+             <!--  <div class="contents"> -->
+            <!--   <h1> Hello </h1>
+            <div>contents1-1</div>
+            <div>contents1-2</div>
+            <div>contents1-3</div>
+            <div>contents1-4</div>
+            <div>contents1-5</div>
+            <div>contents1-6</div>
+            <div>contents1-7</div>
+            <div>contents1-8</div>
+            <div>contents1-9</div>
+            <div>contents1-10</div>
+            <div>contents1-11</div> -->
+
+
+               <div class="contents">
+                  <!-- <div id="news-tab-row" class="row"> -->
+                    
+                        <div class="row" style="background-color:#ffcc2a;" >
+                          <div class="col-md-6 columns" style="background-color:#ffcc2a;width:50%;height:400px;">
+                             <form role="form" action="" method="post" style="padding:100px;margin-left:50px;">
+
+                               {% csrf_token %}
+                                  <div class="row form-group">
+                                    <div class="col-md-12">
+                                    {% render_field form.contact_name class+="form-control" placeholder="Your Name"%}
+                                    
+                                      <!-- <input type="text" id="name" class="form-control" placeholder="Your Name"> -->
+                                
+                                    </div>
+                                    
+                                  </div>
+
+                                  <div class="row form-group">
+                                    <div class="col-md-12">
+                                      {% render_field form.contact_phone class+="form-control" placeholder="Your Phone"%}
+                                     <!--  <input type="text" id="phone" class="form-control" placeholder="Your phone number"> -->
+                                    </div>
+                                  </div>
+
+                                  <div class="row form-group">
+                                    <div class="col-md-12">
+                                      {% render_field form.contact_email class+="form-control" placeholder="Your email"%}
+                                      <!-- <input type="text" id="email" class="form-control" placeholder="Your email address"> -->
+                                    </div>
+                                  </div>
+
+                                 
+
+                                  <div class="row form-group">
+                                    <div class="col-md-12">
+                                      {% render_field form.course_details class+="form-control" placeholder="Contact Details" %}
+                                      <!-- <textarea name="message" id="message" cols="30" rows="4" class="form-control" placeholder="Course Details"> --><!-- </textarea> -->
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="submit" value="SUBMIT" class="mrex-formbtn btn-primary">
+                                  </div>
+
+                                </form> 
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div id="map" class="map-content">
+                              
+                            </div>
+                          </div>
+                        </div>
+                       
+              </div>
+             
+ 
+              <!-- <div class="contents">
+                  
+                    {% for exam in exams %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{news.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{exam.text}}</p>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              
+                                <img src="../../{{exam.photo.url}}"/>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="row">
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                 <img src="../../{{exam.photo.url}}"/>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{exam.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{exam.text}}</p>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+              </div> -->
+         
+
+
+               <!-- <div class="contents">
+                 
+                    {% for mock in mocks %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{mock.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{mock.text}}</p>
+                               <a href="{{mock.question_paper_url}}"  class="btn-mock" > Attempt Mock Exam </a>
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              
+                                <img src="../../{{mock.photo.url}}"/>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="row">
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                 <img src="../../{{mock.photo.url}}"/>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{mock.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{mock.text}}</p>
+                               <a href="{{mock.question_paper_url}}"  class="btn-mock"> Attempt Mock Exam </a>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+              </div> -->
+            
+              
+
+
+
+              <!-- <div class="contents">
+                 
+                    {% for video in videos %}
+                       {% if forloop.counter|divisibleby:2  %}
+                        <div class="row reverse-tab-content-row">
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{video.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{video.text}}</p>
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div class="tabs-content">
+                              {% if video.youtube_url != "" %}
+                                <div style="position:relative;height:300px;">
+                                    <iframe src="{{video.youtube_url}}" style="position:absolute;width:100%;height:100%;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                                </iframe>
+                               </div>
+                               
+                              {% else %}
+                                <img src="../../{{video.photo.url}}"/>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                        {% else %}
+                        <div class="row">
+                          <div class="col-md-6 columns">
+                           
+                            <div class="tabs-content">
+                                  {% if video.youtube_url != "" %}
+                                <div style="position:relative;height:300px;">
+                                    <iframe src="{{video.youtube_url}}" style="position:absolute;width:100%;height:100%;left:0;padding:5px;margin: 0"  frameborder="0" allowfullscreen>
+                            
+                                </iframe>
+                               </div>
+                               
+                              {% else %}
+                                <img src="../../{{video.photo.url}}"/>
+                              {% endif %}
+                            
+                            </div>
+                          </div>
+                          <div class="col-md-6 columns">
+                            <div class="tab_news_title">{{video.title}}</div>
+                            <div class="tabs-content">
+                               <p>{{video.text}}</p>
+                            
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+              </div> -->
+           
+          
+            </div>
+        
+                  
+           
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+      
+   
+      
+     
+    
+    <!--=========== END STUDENTS TESTIMONIAL SECTION ================-->  
+
+
+  
+    
+{% endblock %}  

@@ -71,6 +71,50 @@
     <header id="header">
 
       <!-- BEGIN MENU -->
+
+
+<!-- 
+      <div class="menu_area">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  <div class="container">
+            <div class="navbar-header">
+              
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            
+              <a class="navbar-brand" href="index.html">WpF <span>Degree</span></a>              
+                     
+                     
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="course-archive.html">Course</a></li>
+                <li><a href="scholarship.html">Scholarship</a></li>
+                <li><a href="events-archive.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>                
+                <li><a href="blog-archive.html">Blog</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Page<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="404.html">404 Page</a></li>
+                    <li><a href="#">Link Two</a></li>
+                    <li><a href="#">Link Three</a></li>               
+                  </ul>
+                </li>               
+                <li><a href="contact.html">Contact</a></li>
+              </ul>           
+            </div>
+          </div>     
+        </nav>  
+      </div>
+ -->
+
+
+
       <div id="menu-area" class="menu_area">
 
         
@@ -93,17 +137,14 @@
         </div>
         <div class="container">
             <div class="navbar-header">
-              <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+            
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <!-- LOGO -->
-              <!-- TEXT BASED LOGO -->
-              <!-- <a class="navbar-brand" href="index.html"></a>    -->           
-              <!-- IMG BASED LOGO  -->
+              
                <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>             
                      
             </div>
@@ -115,10 +156,10 @@
               <li class="active navbar-listitem"><a href="\">Home</a></li>
 
               <li class="dropdown mega-dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><div class="dropdown-title"> Courses<span class="caret"></span></div><!-- <span class="glyphicon glyphicon-chevron-down pull-right"> --></span></a>
+                <a href="{% url 'course_detail' pk=1 %}" class="dropdown-toggle" data-toggle="dropdown"><div class="dropdown-title">Courses<span class="caret"></span></div></span></a>
                  {% if streams %}
                 <div class="arrow-up"> </div>
-                <ul class="dropdown-menu mega-dropdown-menu row" role="menu" >
+                <ul id="course_megamenu" class="dropdown-menu mega-dropdown-menu row" role="menu" >
 
                   <li class="col-sm-3">
                     <ul>
@@ -133,34 +174,28 @@
                                {% else %}
                                 <div class="item" >
                               {% endif %}
-                            <a href="{% url 'course_detail' pk=course.pk %}"><img src="{{course.background.url}}" class="img-responsive" alt="product 1"></a>
+                              {% url 'index' as home_url %}
+                        
+                            <a href="{% url 'course_detail' pk=course.pk %}">
+                              {% if request.get_full_path == home_url %}
+                                <img src="{{course.background.url}}" class="img-responsive" alt="Top Rated Course : {{course.title}}"> 
+                              {% else %}
+                                <img src="../../{{course.background.url}}" class="img-responsive" alt="Top Rated Course : {{course.title}}">
+                              {% endif %}
+                            </a>
                             <h4>{{course.title}}</h4>
-                           <!--  <button class="btn btn-primary" type="button">Commerce/Undergraduate</button> -->
+                          
                             <button href="{% url 'course_detail' pk=course.pk %}" class="btn-top-course btn-primary" type="button">Details</button>
                           </div>
                             {% endif %}
                            {% endfor %}
-                          <!-- End Item -->
-                          <!-- <div class="item">
-                            <a href="#"><img src="http://placehold.it/254x150/ef5e55/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 2"></a>
-                            <h4><small>MBA/PG Diploma in Human Resource</small></h4>
-                           
-                            <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Enroll Today</button>
-                          </div> -->
-                          <!-- End Item -->
-                          <!-- <div class="item">
-                            <a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 3"></a>
-                            <h4><small>Foundation(Entrance Coaching)</small></h4>
-                            
-                            <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Enroll Today</button>
-                          </div> -->
-                          <!-- End Item -->
+                        
                         </div>
-                        <!-- End Carousel Inner -->
+                        ]
                       </div>
-                      <!-- /.carousel -->
+                   ]
                       <li class="divider"></li>
-                      <!-- <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li> -->
+                  
                     </ul>
                   </li> 
                   {% for stream in streams%}
@@ -168,65 +203,24 @@
                     <ul>
                       <li class="dropdown-header">{{stream.title}}</li>
                       {% for course_categorie in course_categories %}
-                        
-                          
-                            
-                      
                       {% for course in courses %}
                        {% if course.category == course_categorie and course.category.stream == stream %}
                        {% ifchanged %}
                          <li class="dropdown-sub-header">{{course.category.title}}</li>
                          <li class="divider"></li>
                        {% endifchanged %}
-                      <li><a href="#">{{course.title}}</a></li>
-                   <!--    <li><a href="#">JEE Main</a></li>
-                      <li><a href="#">JEE Advanced</a></li>
-                      <li><a href="#">NEET</a></li>
-                      <li><a href="#">KEAM</a></li> -->
+                      <li><a href="{% url 'course_detail' pk=course.pk %}">{{course.title}}</a></li>
+                 
                      
                       {% endif %}
                       {% endfor %}
                       
                       {% endfor %}
-                      <!-- <li class="dropdown-sub-header">Tuition</li>
-                      <li><a href="#">Tuition 11/12</a></li>
-                      <li><a href="#">Tuition 8/9/10</a></li> -->
+                     
                     </ul>
                   </li>
                   {% endfor %}
-                 <!--  <li class="col-sm-3">
-                    <ul>
-                      <li class="dropdown-header">Commerce</li>
-                      <li class="dropdown-sub-header">Plus-Two</li>
-                      <li><a href="#">Plus One/Plus Two </a></li>
-                      <li><a href="#">NIOS +1/+2</a></li>
-                      
-                     
-                      <li class="divider"></li>
-                      <li class="dropdown-sub-header">Under-Graduate</li>
-                      <li><a href="#">BA(English Literature)</a></li>
-                      <li><a href="#">BCOM Taxation</a></li>
-
-                      <li class="divider"></li>
-                      <li class="dropdown-sub-header">Post-Graduate</li>
-                      <li><a href="#">MCOM</a></li>
-                      <li><a href="#">MBA/PG Diploma in Human Resource</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-sm-3">
-                    <ul>
-                      <li class="dropdown-header">Competitive</li>
-                      <li class="dropdown-sub-header">PSC Coaching</li>
-                      <li><a href="#">PSC-1</a></li>
-                      <li><a href="#">PSC-2</a></li>
-                     
-                     
-                      <li class="divider"></li>
-                      <li class="dropdown-sub-header">Other Competitive</li>
-                      <li><a href="#">Railway</a></li>
-                      <li><a href="#">NDA</a></li>
-                    </ul>
-                  </li> -->
+                 
                 </ul>
                  {% endif %}
               </li>
@@ -238,85 +232,23 @@
 
                   <ul class="dropdown-menu" role="menu">
                   {% for result in results %}
-                    <li><a href="{% url 'result_detail' pk=result.pk %}">{{result.title}}</a></li> -->
-                    <!-- <li><a href="#">Link Two</a></li>
-                    <li><a href="#">Link Three</a></li> -->  
+                    <li><a href="{% url 'result_detail' pk=result.pk %}">{{result.title}}</a></li> 
+                    
                   
                     {% endfor %}             
                   </ul>
                </li>               
                 {% endif %}
-              {% if newss %}
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">News<span class="caret"></span></a>
-                 
-
-                  <ul class="dropdown-menu" role="menu">
-                  {% for news in newss %}
-                    <li><a href="404.html">{{news.title}}</a></li> -->
-                    <!-- <li><a href="#">Link Two</a></li>
-                    <li><a href="#">Link Three</a></li> -->  
-                  
-                    {% endfor %}             
-                  </ul>
-               </li>               
-                {% endif %}
-               <li class="navbar-listitem"><a href="\">Exam Corner</a></li>
+              
+             
+               <li class="navbar-listitem"><a href="\">About Us</a></li>
+               <li class="navbar-listitem"><a href="{% url 'contact' %}">Contact Us</a></li>
                
             </ul>
 
           </div>
 
 
-
-
-
-
-            <!-- <div id="navbar" class="navbar-collapse collapse">
-
-
-
-
-
-
-
-
-
-
-
-              <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-
-                <li class="active"><a href="\">Home</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">News</a></li>
-
-
-
-                
-
-
-
-
-
-                <li><a href="#">Results</a></li>
-                <li><a href="#">About Us</a></li>                
-                <li><a href="#">Contact</a></li>
-                 {% if mocks %}
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Page<span class="caret"></span></a>
-                 
-
-                  <ul class="dropdown-menu" role="menu">
-                  {% for notice in notices %}
-                    <li><a href="404.html">{{notice.title}}</a></li> -->
-                    <!-- <li><a href="#">Link Two</a></li>
-                    <li><a href="#">Link Three</a></li> -->  
-                 <!--  {% endfor %}             
-                  </ul>
-                </li>               
-                {% endif %}
-              </ul>           
-            </div> --><!--/.nav-collapse -->
           </div>     
         </nav>  
       </div>
@@ -473,7 +405,11 @@
     Template Design By WpFreeware Team.
     Author URI : http://www.wpfreeware.com/
     ====================================================-->
-    
+  
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgRhk_fVgkw8Y_YhtZwWPIdzbddij4V4o&callback=initMap">
+</script>
 
 <script>
   
@@ -563,6 +499,66 @@
 
     });
 });
+
+
+
+// The following example creates complex markers to indicate beaches near
+// Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
+// to the base of the flagpole.
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: {lat: 9.2, lng: 76.4}
+  });
+
+  setMarkers(map);
+}
+
+// Data for the markers consisting of a name, a LatLng and a zIndex for the
+// order in which these markers should display on top of each other.
+var beaches = [
+  ['Ernakulam', 9.9839301, 76.2829846, 5],
+  ['Thripunithura', 9.9454067, 76.3506589, 4],
+  ['Thiruvananthapuram', 8.4909704, 76.9474192, 6]
+];
+
+function setMarkers(map) {
+  // Adds markers to the map.
+
+  // Marker sizes are expressed as a Size of X,Y where the origin of the image
+  // (0,0) is located in the top left of the image.
+
+  // Origins, anchor positions and coordinates of the marker increase in the X
+  // direction to the right and in the Y direction down.
+  var image = {
+    url: "{% static 'images/map.png' %}",
+    // This marker is 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(20, 32),
+    // The origin for this image is (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // The anchor for this image is the base of the flagpole at (0, 32).
+    anchor: new google.maps.Point(0, 32)
+  };
+  // Shapes define the clickable region of the icon. The type defines an HTML
+  // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+  // The final coordinate closes the poly by connecting to the first coordinate.
+  var shape = {
+    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: 'poly'
+  };
+  for (var i = 0; i < beaches.length; i++) {
+    var beach = beaches[i];
+    var marker = new google.maps.Marker({
+      position: {lat: beach[1], lng: beach[2]},
+      map: map,
+      icon: image,
+      shape: shape,
+      title: beach[0],
+      zIndex: beach[3]
+    });
+  }
+}
 </script>
 
 
