@@ -260,9 +260,9 @@
    {% endblock %}
     
     <!--=========== BEGIN FOOTER SECTION ================-->
-    <footer id="footer" style="background-color: #f2f2f2;>
+    <footer id="footer">
       <!-- Start footer top area -->
-      <div class="footer_top">
+      <div class="footer_top" style="background-color:#f2f2f2">
         <div class="container">
           <div class="row">
             <div class="col-ld-3  col-md-3 col-sm-3">
@@ -509,7 +509,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgRhk_fVgkw8Y_YhtZwWPIdzb
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
-    center: {lat: 9.2, lng: 76.4}
+    center: {lat: 9.2, lng: 76.4},
+    scrollwheel:  false
   });
 
   setMarkers(map);
@@ -517,7 +518,7 @@ function initMap() {
 
 // Data for the markers consisting of a name, a LatLng and a zIndex for the
 // order in which these markers should display on top of each other.
-var beaches = [
+var centers = [
   ['Ernakulam', 9.9839301, 76.2829846, 5],
   ['Thripunithura', 9.9454067, 76.3506589, 4],
   ['Thiruvananthapuram', 8.4909704, 76.9474192, 6]
@@ -547,15 +548,15 @@ function setMarkers(map) {
     coords: [1, 1, 1, 20, 18, 20, 18, 1],
     type: 'poly'
   };
-  for (var i = 0; i < beaches.length; i++) {
-    var beach = beaches[i];
+  for (var i = 0; i < centers.length; i++) {
+    var center = centers[i];
     var marker = new google.maps.Marker({
-      position: {lat: beach[1], lng: beach[2]},
+      position: {lat: center[1], lng: center[2]},
       map: map,
       icon: image,
       shape: shape,
-      title: beach[0],
-      zIndex: beach[3]
+      title: center[0],
+      zIndex: [3]
     });
   }
 }

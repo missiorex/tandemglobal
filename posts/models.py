@@ -278,9 +278,10 @@ class Division(models.Model):
 class Contact(models.Model):
     author = models.ForeignKey('auth.User')
     contact_id = models.CharField(max_length=30)
-    contact_title = models.CharField(max_length=200)
-    contact_name = models.CharField(max_length=200,blank=True)
+    title = models.CharField(max_length=200,blank=True)
+    name = models.CharField(max_length=200,blank=True)
     email = models.EmailField(max_length=254,blank=True)
+    phone = models.CharField(max_length=30,blank=True)
     division = models.ForeignKey(Division, on_delete=models.CASCADE)
     center = models.ForeignKey(Center, on_delete=models.CASCADE)
     created_date = models.DateTimeField(
