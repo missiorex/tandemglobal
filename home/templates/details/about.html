@@ -1,0 +1,126 @@
+{% extends '../base/base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+
+ 
+     <section id="imgBanner">
+         <h2 style="font-size: 40px;">About Us</h2>
+     </section>
+
+     <section id="brandstrip">
+      <div class="container">
+        <div id="strip-row" class="row">
+           <div class="col-md-6 col-xs-6 yellow-strip"></div>
+           <div class="col-md-6 col-xs-6 blue-strip"></div>
+          
+         
+        </div>
+      </div>
+    </section>
+     
+
+    <section id="about-content">
+
+         <div class="container">
+           
+
+
+              <div class="row" style="background-color:#f2f2f2;" >
+                          <div id="about_text" class="col-md-6 columns">
+                              <div class="wow fadeInLeft">
+                                <h2 class="titile">About Us</h2>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                
+
+                                
+                              </div>
+                            </div>
+                          <div class="col-md-6 columns">
+                            
+                            <img class="about-tandem img-responsive" style="padding:10%;height:350px;margin-left:60px;" src="{% static 'images/about-tandem.jpg' %}"/>
+                              
+                            </div>
+                          </div>
+         </div>              
+        
+
+
+
+</section>
+
+  <section id="whytandem-content">
+
+         <div class="container">
+           
+
+
+              <div class="row" style="background-color:#ffcc29;" >
+                          <div id="why-graphic-container" class="col-md-6 columns">
+                              
+                               
+                                <div id="why-graphic"><span id="tandem-qn-text"><h1>Why</h1><h2>Tandem</h2></span><span id="tandem-question">?</span></div>
+                                
+
+                                
+                          </div>
+                          
+                          <div class="col-md-6 columns">
+                              
+                            <div id="why-slogan-container">
+                              <ul>
+                                {% for slogan in slogans %}
+                                <li>{{slogan.title}}</li>
+                                {% endfor %}
+
+                              </ul>
+                            </div>
+                              
+                          </div>
+              </div>
+         </div>              
+        
+
+
+
+</section>
+
+
+<section id="company-content">
+
+         <div class="container">
+           
+
+
+              <div class="row" style="background-color:#fff;" >
+                          <div id="company-container" class="col-md-6 columns">
+                              
+                               
+                                <div id="company-logo"><img src="{% static 'images/eduexcel-logo.jpg' %}"></div>
+                                
+
+                                
+                          </div>
+                          
+                          <div class="col-md-6 columns">
+                              
+                            <div id="company-text">
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                            </div>
+                              
+                          </div>
+              </div>
+</div>              
+        
+
+
+
+</section>
+
+
+
+
+  
+    
+{% endblock %}  
