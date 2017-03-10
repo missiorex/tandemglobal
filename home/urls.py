@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^details/$', views.tab_detail, name='tab_detail'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^about/$', views.about, name='about'),
+    url(r'^partner/$', views.partner, name='partner'),
 ]
