@@ -893,7 +893,7 @@ right:0px;
 /* HOME ABOUT US */
 /*--------------------*/
 
-#aboutUs{
+#aboutUs #about-content #whytandem-content #tab-content #contact-content #course-content #company-content{
 
   
   padding-left:100px;
@@ -901,41 +901,20 @@ right:0px;
   
 }
 
-#tab-content, #contact-content{
-  width: 100%;
-  
-}
-/*.aboutus_area {
-  display: inline;
-  float: left;
-  padding-right: 0px;
-  width: 100%;
-  margin:0;
-}*/
 
-#aboutUs .container, #tab-content .container, #contact-content .container{
 
-  /*padding: 0px 0;*/
-  padding-left: 80px;
-  /*padding-right: 80px;*/
+#aboutUs .container, #tab-content .container, #contact-content .container, #about-content .container,#whytandem-content .container ,#company-content .container{
+
+
   
   width:100%;
-  /*background-color: rgba(234, 234, 234, 0.6);*/
-  
- /* height:600px;*/
+ 
 
 }
 
 #aboutUs .row, #tab-content .row, #contact-content .row{
 
-  margin-left: -100px;
-  margin-right:-30px;
-  
-  /*padding: 0px 0;
-
  
-  float: left;
-  width:100%;*/
 }
 
 #course-content .container .row{
@@ -973,10 +952,11 @@ height:100%;
 #news_tab{
 
 height: 100%;
+overflow: hidden;
 padding-top:40px;
 padding-bottom:40px;
 padding-right: 40px;
-
+position: relative;
 
 background-color: rgba(234, 234, 234, 0.6);
 
@@ -2833,7 +2813,90 @@ color:white;
 }
 
 
+/* About Us page */
+#why-graphic-container{
 
+  padding: 10%;
+
+}
+#why-graphic{
+
+  font-size: 50px;
+  background-color: #0f63ac;
+  color: #fff;
+  /*padding: 50px;*/
+  text-align: center;
+  line-height: 50px;
+  height: 200px;
+  position: relative;
+}
+
+#why-graphic #tandem-qn-text{
+
+  top:20%;
+  left:10%;
+
+  position: absolute;
+}
+
+#why-graphic #tandem-qn-text h1{
+
+  /*top:20%;
+  left:10%;
+
+  position: absolute;*/
+}
+
+#why-graphic span h2{
+
+  font-weight: 800;
+  font-size: 60px;
+  color:#fff;
+}
+
+#why-graphic #tandem-question{
+
+  position:absolute;
+  
+  font-size:170px;
+  margin-top:20%;
+  right:5%;
+  color:#ffcc29;
+  bottom:25%;
+
+}
+
+#why-slogan-container{
+
+  padding:5%;
+  color:#0f63ac;
+  font-size: 16px;
+  line-height: 25px;
+  
+} 
+
+#why-slogan-container ul{
+  list-style-type: square;
+
+}
+
+
+#company-container{
+
+    padding:8%;
+
+
+}
+#company-logo{
+
+  margin-left:30px;
+
+}
+#company-text{
+
+ padding: 10%
+}
+/****************/
 
 
 
@@ -3003,8 +3066,10 @@ color:white;
 
 #map {
   height: 400px;
-  width:100%;
+  width:130%;
+  overflow: hidden;
   position: relative;
+  margin-left:-30px;
 }
 
 #contact-content .form-group .form-control{

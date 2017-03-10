@@ -241,7 +241,7 @@
                 {% endif %}
               
              
-               <li class="navbar-listitem"><a href="\">About Us</a></li>
+               <li class="navbar-listitem"><a href="{% url 'about' %}">About Us</a></li>
                <li class="navbar-listitem"><a href="{% url 'contact' %}">Contact Us</a></li>
                
             </ul>
@@ -509,7 +509,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgRhk_fVgkw8Y_YhtZwWPIdzb
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
-    center: {lat: 9.2, lng: 76.4},
+    center: {lat: 9.2, lng: 77.5},
     scrollwheel:  false
   });
 
