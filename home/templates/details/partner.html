@@ -1,0 +1,170 @@
+{% extends '../base/base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+
+ 
+     <section id="imgBanner">
+         <h2 style="font-size: 40px;">Partner With Us</h2>
+     </section>
+
+     <section id="brandstrip">
+      <div class="container">
+        <div id="strip-row" class="row">
+           <div class="col-md-6 col-xs-6 yellow-strip"></div>
+           <div class="col-md-6 col-xs-6 blue-strip"></div>
+          
+         
+        </div>
+      </div>
+    </section>
+     
+
+    <section id="partner-content">
+
+         <div class="container">
+           
+
+
+              <div class="row" style="background-color:#f2f2f2;" >
+                          <div id="about_text" class="col-md-6 columns">
+                              <div class="wow fadeInLeft">
+                                <h2 class="titile">Partner With Us</h2>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                
+
+                                
+                              </div>
+                            </div>
+                          <div class="col-md-6 columns">
+                            
+                            <div style="padding:5%;height:350px;">
+                              
+                              <form role="form" action="" method="post" style="padding:5%;margin-left:50px;">
+                                 <h2 style="text-align:center;text-transform: uppercase;font-size:15px;"> Franchisee Enquiry Form</h2>
+                               {% csrf_token %}
+                                  <div class="row form-group">
+                                    <div class="col-md-12">
+                                    {% render_field form.contact_name class+="form-control" placeholder="Your Name"%}
+                                    
+                                      <!-- <input type="text" id="name" class="form-control" placeholder="Your Name"> -->
+                                
+                                    </div>
+                                    
+                                  </div>
+
+                                  <div class="row form-group">
+                                    <div class="col-md-12">
+                                      {% render_field form.contact_phone class+="form-control" placeholder="Your Phone"%}
+                                     <!--  <input type="text" id="phone" class="form-control" placeholder="Your phone number"> -->
+                                    </div>
+                                  </div>
+
+                                  <div class="row form-group">
+                                    <div class="col-md-12">
+                                      {% render_field form.contact_email class+="form-control" placeholder="Your email"%}
+                                      <!-- <input type="text" id="email" class="form-control" placeholder="Your email address"> -->
+                                    </div>
+                                  </div>
+
+                                 
+
+                                  <div class="row form-group">
+                                    <div class="col-md-12">
+                                      {% render_field form.course_details class+="form-control" placeholder="Details" %}
+                                      <!-- <textarea name="message" id="message" cols="30" rows="4" class="form-control" placeholder="Course Details"> --><!-- </textarea> -->
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="submit" value="SUBMIT" class="mrex-formbtn btn-primary">
+                                  </div>
+
+                                </form> 
+
+                            </div>
+                            
+                              
+                            </div>
+                          </div>
+         </div>              
+        
+
+
+
+</section>
+
+  <section id="partner-benefits">
+
+         <div class="container">
+           
+
+
+              <div class="row" style="background-color:#0f63ac;" >
+                          <div id="why-graphic-container" class="col-md-6 columns">
+                              
+                               
+                                <div id="partner-graphic"><span id="partner-qn-text"><h1>Benefits of</h1><h2>Tandem</h2><h1 style="margin-top:5px;">Franchisee</h1></span></div>
+                                
+
+                                
+                          </div>
+                          
+                          <div class="col-md-6 columns">
+                              
+                            <div id="partner-slogan-container">
+                              <ul>
+                                {% for slogan in slogans %}
+                                <li>{{slogan.title}}</li>
+                                {% endfor %}
+
+                              </ul>
+                            </div>
+                              
+                          </div>
+              </div>
+         </div>              
+        
+
+
+
+</section>
+
+
+<section id="company-content">
+
+         <div class="container">
+           
+
+
+              <div class="row" style="background-color:#fff;" >
+                          <div id="company-container" class="col-md-6 columns">
+                              
+                               
+                                <div id="company-logo"><img src="{% static 'images/eduexcel-logo.jpg' %}"></div>
+                                
+
+                                
+                          </div>
+                          
+                          <div class="col-md-6 columns">
+                              
+                            <div id="company-text">
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                            </div>
+                              
+                          </div>
+              </div>
+</div>              
+        
+
+
+
+</section>
+
+
+
+
+  
+    
+{% endblock %}  
