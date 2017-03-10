@@ -246,26 +246,26 @@ jQuery(function($){
 
 	 
 	  //To show and hid the arrow up on hovering a mega drop down menu.
-	  $('.dropdown-title').hover(function(ev){
-        	// var $menuitem = $(ev.target);
-        	// var x = $menuitem.position().left + $menuitem.width();
-        	var x =  $('.mega-dropdown').position().left +  $('.mega-dropdown').width()/2;
+	  // $('.dropdown-title').hover(function(ev){
+   //      	// var $menuitem = $(ev.target);
+   //      	// var x = $menuitem.position().left + $menuitem.width();
+   //      	var x =  $('.mega-dropdown').position().left +  $('.mega-dropdown').width()/2;
 
-        	if (window.matchMedia('(min-width: 768px)').matches){
+   //      	if (window.matchMedia('(min-width: 768px)').matches){
 
 	  
-					$('.arrow-up').css({'left':x,'display':'block'});
-					$('#course_megamenu').css({'display':'none'});
+			// 		$('.arrow-up').css({'left':x,'display':'block'});
+			// 		$('#course_megamenu').css({'display':'none'});
 					
-	  		}
-	  		// else{
+	  // 		}
+	  // 		// else{
 
-	  		// 	$('mega-dropdown').css({'display':'none'});
-	  		// }
-        }, function(){
-        $('.arrow-up').css({'display':'none'});
+	  // 		// 	$('mega-dropdown').css({'display':'none'});
+	  // 		// }
+   //      }, function(){
+   //      $('.arrow-up').css({'display':'none'});
        
-    });
+    // });
 
 	  // $(document).on('click', '.mega-dropdown', function(e) {
  		//  e.stopPropagation()
@@ -334,8 +334,8 @@ $(document).ready(function(){
 	if (window.matchMedia('(max-width: 768px)').matches){
 
 	  
-					$('.arrow-up').hide();
-					$('#course_megamenu').hide();
+					// $('.arrow-up').hide();
+					// $('#course_megamenu').hide();
 					
 	  		}
 
