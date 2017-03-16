@@ -1,6 +1,9 @@
 from django.contrib import admin
+from solo.admin import SingletonModelAdmin
 from .models import Notice,Slogan,Mock,Exam,Video,News,Testimonial,Course,CourseCategory,Stream,Result,TopScorer,Document,Center,Division,Contact
 from django_summernote.admin import SummernoteModelAdmin
+from .models import SiteConfiguration
+
 
 class CourseAdmin(SummernoteModelAdmin):
 	pass	
@@ -23,3 +26,4 @@ admin.site.register(Document)
 admin.site.register(Center)
 admin.site.register(Division)
 admin.site.register(Contact)
+admin.site.register(SiteConfiguration, SingletonModelAdmin)
