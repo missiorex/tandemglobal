@@ -321,7 +321,7 @@ class SiteConfiguration(SingletonModel):
     youtube_channel_url = models.CharField(max_length=255,blank=True, default='#')
     mission_text = models.TextField(max_length=3000,blank=True)
     vision_text = models.TextField(max_length=3000,blank=True)
-    aboutus_text = models.TextField(max_length=3000,blank=True)
+    aboutus_text = models.TextField(max_length=8000,blank=True)
     partner_text = models.TextField(max_length=3000,blank=True)
     company_info = models.TextField(max_length=3000,blank=True)
 
