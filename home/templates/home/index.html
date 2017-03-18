@@ -1,7 +1,10 @@
 {% extends 'base/base.html' %}
 {% load staticfiles %}
 {% load widget_tweaks %}
+{% load solo_tags %}
 {% block content %}
+
+{% get_solo 'posts.SiteConfiguration' as site_config %}
 
     <!--=========== BEGIN SLIDER SECTION ================-->
     <section id="slider">
@@ -19,14 +22,14 @@
                          <div id ="years-circle-outer">
                           <div id ="years-circle">
                               </br>
-                              <span class="years"> 23</span>
+                              <span class="years">{{site_config.slider_years}}</span>
                              
-                              <span class="sub-text">TRUSTED YEARS</span>
+                              <span class="sub-text">{{site_config.slider_years_caption}}</span>
                               <!-- <span style="font-size:14px; display: inline-block; margin:10px 10px 0 0;padding:5px 10px">Years</span> -->
                           
                           </div>
                           </div>
-                          <div class="caption-text"><span><h3>Most</h3><h2>Trusted</h2></span> <span> <h4> Education Brand of Kerala</h4> </span></div>
+                          <div class="caption-text"><span><h3>{{site_config.slider_title_line1 }}</h3><h2>{{site_config.slider_title_line2}}</h2></span> <span> <h4> {{site_config.slider_subtitle}}</h4> </span></div>
                         
                           <!-- <a class="slider_btn" href="#">Know More</a> -->
                         </div>
@@ -133,7 +136,7 @@
       
           <div id="notice-carousel" class="owl-carousel owl-theme col-md-12 col-lg-12 col-xs-12">
             {% for notice in notices %}
-              <a href="{% url 'notice_detail' pk=notice.pk %}"><div class="item outer-box"><img src="{{notice.photo.url}}"><div class="inner-box"><h4>{{notice.title}}</h4><div>{{notice.sub_title}}</div></div></div></a>
+              <a href="{% url 'notice' pk=notice.pk %}"><div class="item outer-box"><img src="{{notice.photo.url}}"><div class="inner-box"><h4>{{notice.title}}</h4><div>{{notice.sub_title}}</div></div></div></a>
               
              {% endfor %}
           </div>
@@ -157,8 +160,10 @@
         <div id="about_text" class="col-md-6 columns">
           <div class="wow fadeInLeft">
             <h2 class="titile">About Us</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+           <!--  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p> -->
+
+            {{site_config.aboutus_text|linebreaks|truncatewords:130}} <a href="/about/" style="color:#0f63ac;text-decoration:none">More About Us</a>
             
 
             
@@ -182,13 +187,15 @@
                   <li>
                     <div class="media">
                       <div class="media-left">
-                        <a class="news_img" href="#">
+                        <a class="news_img" href="{% url 'tab_detail' %}">
                           <img class="media-object" src="{{news.photo.url}}" alt="img">
                         </a>
                       </div>
                       <div class="media-body">
-                       {{news.text|truncatewords:"40"}}
-                       <span class="feed_date">{{news.published_date}}</span>
+                        <a class="news_text" href="{% url 'tab_detail' %}">
+                         {{news.text|truncatewords:"40"}}
+                         <span class="feed_date">{{news.published_date}}</span>
+                       </a>
                       </div>
                     </div>                    
                   </li>
@@ -204,13 +211,15 @@
                     <li>
                       <div class="media">
                         <div class="media-left">
-                          <a class="news_img" href="#">
+                          <a class="news_img" href="{% url 'tab_detail' %}">
                             <img class="media-object" src="{{exam.photo.url}}" alt="img">
                           </a>
                         </div>
                         <div class="media-body">
+                        <a class="news_text" href="{% url 'tab_detail' %}">
                          {{exam.text|truncatewords:"40"}}
                          <span class="feed_date">{{exam.published_date}}</span>
+                         </a>
                         </div>
                       </div>                   
                     </li>
@@ -227,13 +236,15 @@
                     <li>
                       <div class="media">
                         <div class="media-left">
-                          <a class="news_img" href="#">
+                          <a class="news_img" href="{% url 'tab_detail' %}">
                             <img class="media-object" src="{{mock.photo.url}}" alt="img">
                           </a>
                         </div>
                         <div class="media-body">
+                        <a class="news_text" href="{% url 'tab_detail' %}">
                          {{mock.text|truncatewords:"40"}}
                          <span class="feed_date">{{mock.published_date}}/span>
+                         </a>
                         </div>
                       </div>                   
                     </li>
@@ -311,14 +322,15 @@
           <div class="col-md-6 columns vision">
             <div ><img class="vm-icon" src="{% static 'images/vision.png' %}"/></div>
             <div class="vm-text">
-               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+               <h2>OUR VISION</h2>
+               {{site_config.vision_text|linebreaks|truncatewords:55}}
             
             </div>
           </div>
           <div class="col-md-6 columns mission">
              <div><img class="vm-icon" src="{% static 'images/mission.png' %}"/></div>
-            <div class="vm-text">
-               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <div class="vm-text"><h2 style="color:#fff">OUR MISSION</h2>
+               {{site_config.mission_text|linebreaks|truncatewords:55}}
             
             </div>
           </div>

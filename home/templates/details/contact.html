@@ -23,12 +23,23 @@
 
          <div class="container">
            
+            <div class="row" >
 
+                    <ul id="tab">
+                        {% for center in centers %}
+                          <li>{{center.location}}</li>
+                        {% endfor %}
+                         
+                    </ul>
+                        
+
+
+              </div>
 
               <div class="row" style="background-color:#f2f2f2;" >
                           <div class="col-md-6 columns" style="background-color:#f2f2f2;height:400px;">
 
-                             <form role="form" action="" method="post" style="padding:10%;margin-left:50px;">
+                             <form role="form" action="" method="post" style="padding:10%;">
                                  <h2 style="text-align:center;margin-right:15%;text-transform: uppercase;"> Connect With Us</h2>
                                {% csrf_token %}
                                   <div class="row form-group">
@@ -78,18 +89,7 @@
                   </div>
 
 
-            <div class="row" >
-
-                    <ul id="tab">
-                        {% for center in centers %}
-                          <li>{{center.location}}</li>
-                        {% endfor %}
-                         
-                    </ul>
-                        
-
-
-              </div>
+            
         <!-- #wrapper -->
         <div id="wrapper"> 
               

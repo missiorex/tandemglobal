@@ -1,7 +1,10 @@
 {% extends '../base/base.html' %}
 {% load staticfiles %}
 {% load widget_tweaks %}
+{% load solo_tags %}
 {% block content %}
+
+{% get_solo 'posts.SiteConfiguration' as site_config %}
 
  
      <section id="imgBanner">
@@ -30,8 +33,7 @@
                           <div id="about_text" class="col-md-6 columns">
                               <div class="wow fadeInLeft">
                                 <h2 class="titile">Partner With Us</h2>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                {{site_config.partner_text|linebreaks|truncatewords:120}}
                                 
 
                                 
@@ -41,7 +43,7 @@
                             
                             <div style="padding:5%;height:350px;">
                               
-                              <form role="form" action="" method="post" style="padding:5%;margin-left:50px;">
+                              <form role="form" action="" method="post" style="padding:5%;">
                                  <h2 style="text-align:center;text-transform: uppercase;font-size:15px;"> Franchisee Enquiry Form</h2>
                                {% csrf_token %}
                                   <div class="row form-group">
@@ -150,7 +152,7 @@
                           <div class="col-md-6 columns">
                               
                             <div id="company-text">
-                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                                 {{site_config.company_info|linebreaks|truncatewords:80}}
                             </div>
                               
                           </div>

@@ -1,6 +1,15 @@
 from django.db import models
 from django.utils import timezone
+from django.core.cache import cache
+from solo.models import SingletonModel
 
+
+class Document(models.Model):
+    author = models.ForeignKey('auth.User')
+    title = models.CharField(max_length=30)
+    file = models.FileField(upload_to='documents',default='',help_text="Upload pdf / any text documents like brochures, syllabus etc.")
+    def __str__(self):
+        return self.title;
 
 class Notice(models.Model):
     author = models.ForeignKey('auth.User')
@@ -8,7 +17,9 @@ class Notice(models.Model):
     title = models.CharField(max_length=200)
     sub_title = models.CharField(max_length=200)
     text = models.TextField()
-    photo = models.ImageField(upload_to='notice',default='http://placehold.it/350x150')
+    youtube_url = models.CharField(max_length=200, default='',blank=True,null=True)
+    photo = models.ImageField(upload_to='notice',default='')
+    document = models.ForeignKey(Document, on_delete=models.CASCADE,blank=True,null=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -141,12 +152,7 @@ class CourseCategory(models.Model):
     def __str__(self):
         return self.title;
 
-class Document(models.Model):
-    author = models.ForeignKey('auth.User')
-    title = models.CharField(max_length=30)
-    file = models.FileField(upload_to='documents',default='',help_text="Upload pdf / any text documents like brochures, syllabus etc.")
-    def __str__(self):
-        return self.title;
+
 
 class Course(models.Model):
     author = models.ForeignKey('auth.User')
@@ -294,4 +300,35 @@ class Contact(models.Model):
         self.save()
 
     def __str__(self):
+
         return self.contact_id
+
+
+
+class SiteConfiguration(SingletonModel):
+    support_email = models.EmailField(max_length=254,blank=True,default='support@tandemglobal.com')
+    phone = models.CharField(max_length=30,blank=True,default='+91 484-3040175')
+    address = models.CharField(max_length=300,blank=True,default='2ND FLOOR, STR COMPLEX,\n VEEKSHANAM ROAD, \n OPP. INTERNATIONAL HOTEL, \n ERNAKULAM 682035.')
+    slider_title_line1 = models.CharField(max_length=4,default='MOST')
+    slider_title_line2 = models.CharField(max_length=7,default='TRUSTED')
+    slider_subtitle = models.CharField(max_length=27,default="EDUCATION BRAND OF KERALA")
+    slider_years = models.CharField(max_length=2,default='23')
+    slider_years_caption = models.CharField(max_length=14,default='Trusted Years')
+    slider_background = models.ImageField(upload_to='slider',default='slider/slider1.jpg')
+    twitter_url = models.CharField(max_length=255,blank=True, default='#')
+    facebook_url = models.CharField(max_length=255,blank=True, default='#')
+    google_url = models.CharField(max_length=255,blank=True, default='#')
+    linkedin_url = models.CharField(max_length=255,blank=True, default='#')
+    youtube_channel_url = models.CharField(max_length=255,blank=True, default='#')
+    mission_text = models.TextField(max_length=3000,blank=True)
+    vision_text = models.TextField(max_length=3000,blank=True)
+    aboutus_text = models.TextField(max_length=3000,blank=True)
+    partner_text = models.TextField(max_length=3000,blank=True)
+    company_info = models.TextField(max_length=3000,blank=True)
+
+    def __unicode__(self):
+        return u"Site Configuration"
+
+    class Meta:
+        verbose_name = "Site Configuration"
+

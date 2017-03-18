@@ -4,24 +4,27 @@
 
  
      <section id="imgBanner">
-         <h2 style="font-size: 40px;">Course Details</h2>
+         <h2 style="font-size: 40px;">Courses</h2>
      </section>
 
      <section id="brandstrip">
       <div class="container">
         <div id="strip-row" class="row">
-     
-          <div class="col-md-6 col-xs-6 yellow-strip"></div>
-          <div class="col-md-6 col-xs-6 blue-strip"></div>
+           <div class="col-md-6 col-xs-6 yellow-strip"></div>
+           <div class="col-md-6 col-xs-6 blue-strip"></div>
+          
+         
         </div>
       </div>
     </section>
      
 
+    
+
     <section id="course-content">
      <div class="container">
-      <div class="row" style="background-color: #d1d1d1;">
-        <div class="col-lg-3 col-md-3 col-sm-3">
+      <div class="row">
+        <div class="col-md-3 columns">
             
                 <div class="nav-side-menu">
                         <div class="brand">Courses</div>
@@ -110,7 +113,7 @@
 
         </div>
       
-        <div class="content col-lg-6 col-md-6 col-sm-6" style="background-color:#fff;margin-bottom:10px;">
+        <div id="course_details" class="col-md-6 columns">
              {% if selected_course.document %}
                 <a href="../../../{{selected_course.document.file.url}}" class="btn btn-download" role="button">Download</a> 
               {% endif %}
@@ -130,7 +133,7 @@
           
         </div>
 
-        <div class="col-lg-3 col-md-3 col-sm-3" > 
+        <div class="col-md-3 columns" > 
         <!-- End Our courses content -->
             <div style="border-style: solid;border-width:1px;border-color: black;background-color: #181c20;color:#fff;margin-right:30px;margin-top: 15px;"><h4 align="center">Related Courses</h4>
               <div id="course-carousel" class="owl-carousel owl-theme" >

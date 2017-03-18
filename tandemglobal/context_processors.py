@@ -1,0 +1,9 @@
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+
+from .models import SiteSettings
+
+
+def settings(request):
+    return {'settings': SiteSettings.load()}

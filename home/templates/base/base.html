@@ -1,5 +1,7 @@
 {% load staticfiles %}
 {% load widget_tweaks %}
+{% load solo_tags %}
+{% get_solo 'posts.SiteConfiguration' as site_config %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -125,11 +127,11 @@
           <div class="container">
             <div class="row">
               <div class="col-xs-12 text-right">
-                <p class="phone-number"><i class="icon-old-phone"></i> +91 484-3040175</p>
+                <p class="phone-number"><i class="icon-old-phone"></i> {{ site_config.phone }}</p>
                 <ul id="mrex-social">
-                  <li><a href="#"><i class="icon-twitter"></i></a></li>
-                  <li><a href="#"><i class="icon-facebook"></i></a></li>
-                  <li><a href="#"><i class="icon-google"></i></a></li>
+                  <li><a href="{{site_config.twitter_url}}"><i class="icon-twitter"></i></a></li>
+                  <li><a href="{{site_config.facebook_url}}"><i class="icon-facebook"></i></a></li>
+                  <li><a href="{{site_config.google_url}}"><i class="icon-google"></i></a></li>
                 </ul> 
               </div>
             </div>
@@ -196,9 +198,11 @@
                                 <img src="../../{{course.background.url}}" class="img-responsive" alt="Top Rated Course : {{course.title}}">
                               {% endif %}
                             </a>
-                            <h4>{{course.title}}</h4>
-                          
-                            <button href="{% url 'course_detail' pk=course.pk %}" class="btn-top-course btn-primary" type="button">Details</button>
+                           
+                            <a class="btn-top-course btn-primary" href="{% url 'course_detail' pk=course.pk %}">{{course.title}} >></a>
+                            
+                            
+                            <!-- <button href="{% url 'course_detail' pk=course.pk %}" class="btn-top-course btn-primary" type="button">Details</button> -->
                           </div>
                             {% endif %}
                            {% endfor %}
@@ -271,7 +275,17 @@
 
    {% block content %}
    {% endblock %}
-    
+  
+     <section id="brandstrip">
+      <div class="container">
+        <div id="strip-row" class="row">
+     
+          <div class="col-md-12" style="background-repeat:repeat-x;background-image:url('{% static 'images/btm-strip-img.png' %}');height: 10px;" ></div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- <div class="container"><div class="row" style="background-image:{% static 'images/btm-strip-img.png' %};background-repeat: repeat-x;"></div></div> -->
     <!--=========== BEGIN FOOTER SECTION ================-->
     <footer id="footer">
       <!-- Start footer top area -->
@@ -339,8 +353,8 @@
               <div class="single_footer_widget">
                 <h3>Contact Info</h3>
                 <ul class="footer_widget_nav">
-                  <li>2nd FLOOR, STR COMPLEX, </br> VEEKSHANAM ROAD,</br> Opp. INTERNATIONAL HOTEL, </br> ERNAKULAM 682035.</li>
-                  <li></br>GENERAL ENQUIRY :  0484-3040175 </li>
+                  <li>{{ site_config.address|linebreaks }}<!-- 2nd FLOOR, STR COMPLEX, </br> VEEKSHANAM ROAD,</br> Opp. INTERNATIONAL HOTEL, </br> ERNAKULAM 682035. --></li>
+                  <li></br>GENERAL ENQUIRY :  {{ site_config.phone }} </li>
 
                 </ul>
               </div>
@@ -349,11 +363,11 @@
               <div class="single_footer_widget">
                 <h3>Social Links</h3>
                 <ul class="footer_social">
-                  <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip" href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip"  href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Google+" class="soc_tooltip"  href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Linkedin" class="soc_tooltip"  href="#"><i class="fa fa-linkedin"></i></a></li>
-                  <li><a data-toggle="tooltip" data-placement="top" title="Youtube" class="soc_tooltip"  href="#"><i class="fa fa-youtube"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip" href="{{site_config.facebook_url}}"><i class="fa fa-facebook"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip"  href="{{site_config.twitter_url}}"><i class="fa fa-twitter"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Google+" class="soc_tooltip"  href="{{site_config.google_url}}"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Linkedin" class="soc_tooltip"  href="{{site_config.linkedin_url}}"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a data-toggle="tooltip" data-placement="top" title="Youtube" class="soc_tooltip"  href="{{site_config.youtube_channel_url}}"><i class="fa fa-youtube"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -487,7 +501,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgRhk_fVgkw8Y_YhtZwWPIdzb
             items : 1,
             slideSpeed : 2000,
             nav: false,
-            margin:10,
+            
             autoplay: true,
             dots: false,
             loop: true,
@@ -501,8 +515,14 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgRhk_fVgkw8Y_YhtZwWPIdzb
                 items:1,
                 
             },
-            600:{
-                items:1,
+            480:{
+                items:2,
+                stagePadding: 50,
+                margin:5,
+                
+            },
+            768:{
+                items:2,
                 
             },
             1000:{
@@ -522,7 +542,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgRhk_fVgkw8Y_YhtZwWPIdzb
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
-    center: {lat: 9.2, lng: 77.5},
+    center: {lat: 9.2, lng: 77.2},
     scrollwheel:  false
   });
 
