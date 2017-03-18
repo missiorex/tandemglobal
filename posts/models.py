@@ -159,7 +159,7 @@ class Course(models.Model):
     cousre_id = models.CharField(max_length=30)
     title = models.CharField(max_length=50)
     featured_course = models.BooleanField(default=False)
-    details_text = models.TextField(max_length=30000,blank=True)
+    details_text = models.TextField(max_length=100000,blank=True)
     schedule_text = models.TextField(max_length=3000,blank=True)
     background = models.ImageField(upload_to='course/bg',default='course/bg/default_course.jpg',help_text="Please upload an image of dimensions : width = 290px & height = 150px only")
     document = models.ForeignKey(Document, on_delete=models.CASCADE,blank=True,null=True)

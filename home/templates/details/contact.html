@@ -23,7 +23,7 @@
 
          <div class="container">
            
-            <div class="row" >
+             <div class="row" >
 
                     <ul id="tab">
                         {% for center in centers %}
@@ -35,11 +35,60 @@
 
 
               </div>
+              <!-- #wrapper -->
+            <div id="wrapper"> 
+              
+            
+               {% for center in centers %}
+
+               <div class="contents">
+                  <!-- <div id="news-tab-row" class="row"> -->
+                    
+                    <div class="row" style="background-color:#fff;" >
+                            <!-- <div class="col-md-2 columns" >
+                              <h2 style="text-align:center;padding:5%;margin-top:20%;">{{center.location}}</h2>
+                            </div> -->
+                            <div class="col-md-3 columns" style="text-align:center;padding:5%;" >
+                              <h4 style="text-align:center">{{center.address_line1}}</h4>
+                              <h4 style="text-align:center">{{center.address_line2}}</h4>
+                              <h4 style="text-align:center">{{center.address_line3}}</h4>
+                              <h4 style="text-align:center">{{center.address_line4}}</h4>
+                              <h4 style="text-align:center">{{center.email}}</h4>
+                            </div>
+                            <div class="col-md-3 columns" style="text-align: center;text-transform:uppercase;padding:5%">
+
+                                  {% for division in divisions %}
+                                    {% for contact in contacts %}
+                                      {% if contact.center == center and contact.division == division %}
+                                         {% ifchanged %}
+                                          <b>{{division.title}} Division</b>
+                                         {% endifchanged %}
+                                        <h5>{{contact.name}} {% if contact.title %} ({{contact.title}}) {% endif %} {% if contact.phone %} : {{contact.phone}} {% endif %}</h5>
+                                      {% endif %}  
+                                    {% endfor %}
+                                  {% endfor %}   
+                            </div>
+                           <div class="col-md-6 columns">
+                            
+                            <div id="map" class="map-content">
+                              
+                            </div>
+                          </div>
+                          </div>
+                       
+               </div>
+               {% endfor %}
+             
+ 
+            
+           
+          
+            </div>
 
               <div class="row" style="background-color:#f2f2f2;" >
-                          <div class="col-md-6 columns" style="background-color:#f2f2f2;height:400px;">
+                          <div class="col-md-12 columns" style="background-color:#f2f2f2;height:400px;">
 
-                             <form role="form" action="" method="post" style="padding:10%;">
+                             <form role="form" action="" method="post" style="padding:10%;margin-left:50px;">
                                  <h2 style="text-align:center;margin-right:15%;text-transform: uppercase;"> Connect With Us</h2>
                                {% csrf_token %}
                                   <div class="row form-group">
@@ -80,65 +129,12 @@
 
                                 </form> 
                           </div>
-                          <div class="col-md-6 columns">
-                            
-                            <div id="map" class="map-content">
-                              
-                            </div>
-                          </div>
+                          
                   </div>
 
 
-            
-        <!-- #wrapper -->
-        <div id="wrapper"> 
-              
-            
-               {% for center in centers %}
-
-               <div class="contents">
-                  <!-- <div id="news-tab-row" class="row"> -->
-                    
-                        
-
-
-
-
-                          <div class="row" style="background-color:#fff;" >
-                            <div class="col-md-4 columns" >
-                              <h2 style="text-align:center;padding:5%;margin-top:20%;">{{center.location}}</h2>
-                            </div>
-                            <div class="col-md-4 columns" style="text-align:center;padding:5%;" >
-                              <h4 style="text-align:center">{{center.address_line1}}</h4>
-                              <h4 style="text-align:center">{{center.address_line2}}</h4>
-                              <h4 style="text-align:center">{{center.address_line3}}</h4>
-                              <h4 style="text-align:center">{{center.address_line4}}</h4>
-                              <h4 style="text-align:center">{{center.email}}</h4>
-                            </div>
-                            <div class="col-md-4 columns" style="text-align: center;text-transform:uppercase;padding:5%">
-
-                                  {% for division in divisions %}
-                                    {% for contact in contacts %}
-                                      {% if contact.center == center and contact.division == division %}
-                                         {% ifchanged %}
-                                          <b>{{division.title}} Division</b>
-                                         {% endifchanged %}
-                                        <h5>{{contact.name}} {% if contact.title %} ({{contact.title}}) {% endif %} {% if contact.phone %} : {{contact.phone}} {% endif %}</h5>
-                                      {% endif %}  
-                                    {% endfor %}
-                                  {% endfor %}   
-                            </div>
-                           
-                          </div>
-                       
-               </div>
-               {% endfor %}
-             
- 
-            
            
-          
-            </div>
+        
         
                   
            
