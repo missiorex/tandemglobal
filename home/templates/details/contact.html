@@ -59,10 +59,12 @@
                                <div style="text-align:left;text-transform:uppercase;">
 
                                   {% for division in divisions %}
-                                   <hr style="  border-top: 1px solid #8c8b8b;text-align: center;">
+
+                                  
                                     {% for contact in contacts %}
                                       {% if contact.center == center and contact.division == division %}
                                          {% ifchanged %}
+                                          <hr style="  border-top: 1px solid #8c8b8b;text-align: center;">
                                           <span style="font-weight: 900">{{division.title}} Division</span>
                                          {% endifchanged %}
                                          </br><span style="font-weight: 400;font-size:12px;">{{contact.name}} {% if contact.title %} ({{contact.title}}) {% endif %} {% if contact.phone %} : {{contact.phone}}</span> {% endif %}
