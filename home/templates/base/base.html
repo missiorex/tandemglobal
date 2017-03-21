@@ -292,10 +292,10 @@
       <div class="footer_top" style="background-color:#f2f2f2">
         <div class="container">
           <div class="row">
-            <div class="col-ld-3  col-md-3 col-sm-3">
+            <div class="col-ld-4  col-md-4 col-sm-4">
               <div class="single_footer_widget">
-              <img src="{% static 'images/eduexcel-logo.jpg' %}" style="padding-top:20px;padding-bottom:10px;width:180px;text-align: center;">
-              <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make</div>
+              <img src="{% static 'images/eduexcel-logo.png' %}" style="padding-top:20px;padding-bottom:10px;width:180px;text-align: center;">
+              <div style="text-align:left;" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make</div>
                <!--  <h3>Quick Contact</h3>
                 <form role="form" action="" method="post">
 
@@ -339,23 +339,23 @@
                                 </form>  -->
               </div>
             </div>
-            <div class="col-ld-3  col-md-3 col-sm-3">
+            <div class="col-ld-2  col-md-2 col-sm-2">
               <div class="single_footer_widget">
-                <h3>Quick Links</h3>
-                <ul class="footer_widget_nav">
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Results</a></li>
-                  <li><a href="#">News</a></li>
+                <h3 style="text-align: left;">Quick Links</h3>
+                <ul style="text-align:left;"  class="footer_widget_nav">
+                  <li style="text-align:justify-all;"><a href="/contact/">Contact</a></li>
+                  <li><a href="/about/">About Us</a></li>
+                  <li><a href="/course/3/">Courses</a></li>
+                  <li><a href="/result/3/">Results</a></li>
+                  <li><a href="/details/">News</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-ld-3  col-md-3 col-sm-3">
               <div class="single_footer_widget">
-                <h3>Contact Info</h3>
-                <ul class="footer_widget_nav">
-                  <li>{{ site_config.address|linebreaks }}<!-- 2nd FLOOR, STR COMPLEX, </br> VEEKSHANAM ROAD,</br> Opp. INTERNATIONAL HOTEL, </br> ERNAKULAM 682035. --></li>
+                <h3 style="text-align:left;">Contact Info</h3>
+                <ul style="text-align:left;" class="footer_widget_nav">
+                  <li >{{ site_config.address|linebreaks }}<!-- 2nd FLOOR, STR COMPLEX, </br> VEEKSHANAM ROAD,</br> Opp. INTERNATIONAL HOTEL, </br> ERNAKULAM 682035. --></li>
                   <li></br>GENERAL ENQUIRY :  {{ site_config.phone }} </li>
 
                 </ul>
@@ -363,8 +363,8 @@
             </div>
             <div class="col-ld-3  col-md-3 col-sm-3">
               <div class="single_footer_widget">
-                <h3>Social Links</h3>
-                <ul class="footer_social">
+                <h3 style="text-align: left;">Social Links</h3>
+                <ul style="text-align:left;"  class="footer_social">
                   <li><a data-toggle="tooltip" data-placement="top" title="Facebook" class="soc_tooltip" href="{{site_config.facebook_url}}"><i class="fa fa-facebook"></i></a></li>
                   <li><a data-toggle="tooltip" data-placement="top" title="Twitter" class="soc_tooltip"  href="{{site_config.twitter_url}}"><i class="fa fa-twitter"></i></a></li>
                   <li><a data-toggle="tooltip" data-placement="top" title="Google+" class="soc_tooltip"  href="{{site_config.google_url}}"><i class="fa fa-google-plus"></i></a></li>

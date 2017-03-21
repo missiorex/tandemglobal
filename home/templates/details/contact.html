@@ -4,7 +4,7 @@
 {% block content %}
 
  
-     <section id="imgBanner">
+     <section id="imgBanner" style="background-image: url('{% static 'images/pg-banner.jpg' %}');background-size:cover;">
          <h2 style="font-size: 40px;">Contact Us</h2>
      </section>
 
@@ -46,7 +46,7 @@
                              {% for center in centers %}
 
                            <div class="contents">
-                             <div class="col-md-6 columns" style="padding:2%;color:#585858;" >
+                             <div class="col-md-6 columns" style="padding:5%;color:#585858;" >
 
                                <div style="text-align:left;text-transform:uppercase;font-size:14px;" >
                                 {{center.address_line1}}</br>
@@ -95,8 +95,8 @@
           
             </div>
 
-            <div  class="row" style="background-color:#494949;padding:10px;"><h2 style="text-align:center;text-transform: uppercase;color:#fff;"> Connect With Us</h2> </div>
-              <div  class="row" style="background-color:#494949;padding:30px;" >
+            <div  class="row" style="background-color:#494949;padding-top:40px;"><h2 style="text-align:center;text-transform: uppercase;color:#fff;"> Connect With Us</h2> </div>
+              <div  class="row" style="background-color:#494949;padding-top:30px;padding-bottom:50px" >
                          
                          <form role="form" action="" method="post" >
                           
