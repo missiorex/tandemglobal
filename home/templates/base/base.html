@@ -294,7 +294,9 @@
           <div class="row">
             <div class="col-ld-3  col-md-3 col-sm-3">
               <div class="single_footer_widget">
-                <h3>Quick Contact</h3>
+              <img src="{% static 'images/eduexcel-logo.jpg' %}" style="padding-top:20px;padding-bottom:10px;width:180px;text-align: center;">
+              <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make</div>
+               <!--  <h3>Quick Contact</h3>
                 <form role="form" action="" method="post">
 
                                {% csrf_token %}
@@ -302,7 +304,7 @@
                                     <div class="col-md-12">
                                     {% render_field form.contact_name class+="form-control" placeholder="Your Name"%}
                                     
-                                      <!-- <input type="text" id="name" class="form-control" placeholder="Your Name"> -->
+                                   
                                 
                                     </div>
                                     
@@ -311,14 +313,14 @@
                                   <div class="row form-group">
                                     <div class="col-md-12">
                                       {% render_field form.contact_phone class+="form-control" placeholder="Your Phone"%}
-                                     <!--  <input type="text" id="phone" class="form-control" placeholder="Your phone number"> -->
+                                    
                                     </div>
                                   </div>
 
                                   <div class="row form-group">
                                     <div class="col-md-12">
                                       {% render_field form.contact_email class+="form-control" placeholder="Your email"%}
-                                      <!-- <input type="text" id="email" class="form-control" placeholder="Your email address"> -->
+                                     
                                     </div>
                                   </div>
 
@@ -327,14 +329,14 @@
                                   <div class="row form-group">
                                     <div class="col-md-12">
                                       {% render_field form.course_details class+="form-control" placeholder="Course Details" %}
-                                      <!-- <textarea name="message" id="message" cols="30" rows="4" class="form-control" placeholder="Course Details"> --><!-- </textarea> -->
+                                   
                                     </div>
                                   </div>
                                   <div class="form-group">
                                     <input type="submit" value="SUBMIT" class="mrex-formbtn btn-primary">
                                   </div>
 
-                                </form> 
+                                </form>  -->
               </div>
             </div>
             <div class="col-ld-3  col-md-3 col-sm-3">
@@ -437,6 +439,7 @@
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgRhk_fVgkw8Y_YhtZwWPIdzbddij4V4o&callback=initMap">
 </script>
+ 
 
 <script>
   
@@ -535,64 +538,96 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgRhk_fVgkw8Y_YhtZwWPIdzb
 
 
 
-// The following example creates complex markers to indicate beaches near
-// Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
-// to the base of the flagpole.
+  
 
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
-    center: {lat: 9.2, lng: 77.2},
-    scrollwheel:  false
-  });
+      function initMap() {
 
-  setMarkers(map);
-}
+        // Create a new StyledMapType object, passing it an array of styles,
+        // and the name to be displayed on the map type control.
+        var styledMapType = new google.maps.StyledMapType(
+            [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}],
+            {name: 'Styled Map'});
 
-// Data for the markers consisting of a name, a LatLng and a zIndex for the
-// order in which these markers should display on top of each other.
-var centers = [
-  ['Ernakulam', 9.9839301, 76.2829846, 5],
-  ['Thripunithura', 9.9454067, 76.3506589, 4],
-  ['Thiruvananthapuram', 8.4909704, 76.9474192, 6]
-];
 
-function setMarkers(map) {
-  // Adds markers to the map.
 
-  // Marker sizes are expressed as a Size of X,Y where the origin of the image
-  // (0,0) is located in the top left of the image.
 
-  // Origins, anchor positions and coordinates of the marker increase in the X
-  // direction to the right and in the Y direction down.
-  var image = {
-    url: "{% static 'images/map.png' %}",
-    // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(20, 32),
-    // The origin for this image is (0, 0).
-    origin: new google.maps.Point(0, 0),
-    // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 32)
-  };
-  // Shapes define the clickable region of the icon. The type defines an HTML
-  // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-  // The final coordinate closes the poly by connecting to the first coordinate.
-  var shape = {
-    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    type: 'poly'
-  };
-  for (var i = 0; i < centers.length; i++) {
-    var center = centers[i];
-    var marker = new google.maps.Marker({
-      position: {lat: center[1], lng: center[2]},
-      map: map,
-      icon: image,
-      shape: shape,
-      title: center[0],
-      zIndex: [3]
-    });
-  }
-}
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: {lat: 9.2, lng: 77.2},
+          scrollwheel:  false,
+          mapTypeControlOptions: {
+            mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
+                    'styled_map']
+          }
+        });
+
+        map.mapTypes.set('styled_map', styledMapType);
+        map.setMapTypeId('styled_map');
+
+
+       
+
+        setMarkers(map);
+      }
+
+      // Data for the markers consisting of a name, a LatLng and a zIndex for the
+      // order in which these markers should display on top of each other.
+     
+
+       var centers = [
+        {% for center in centers %}
+        {% if forloop.last %}
+        ['{{center.location}}', {{center.latitude}}, {{center.longitude}}, 5]
+        {% else %}
+        ['{{center.location}}', {{center.latitude}}, {{center.longitude}}, 5],
+        {% endif %}
+        {% endfor %}
+       ];
+     
+
+
+
+      function setMarkers(map) {
+        // Adds markers to the map.
+
+        // Marker sizes are expressed as a Size of X,Y where the origin of the image
+        // (0,0) is located in the top left of the image.
+
+        // Origins, anchor positions and coordinates of the marker increase in the X
+        // direction to the right and in the Y direction down.
+        var image = {
+          url: "{% static 'images/map.png' %}",
+          // This marker is 20 pixels wide by 32 pixels high.
+          size: new google.maps.Size(20, 32),
+          // The origin for this image is (0, 0).
+          origin: new google.maps.Point(0, 0),
+          // The anchor for this image is the base of the flagpole at (0, 32).
+          anchor: new google.maps.Point(0, 32)
+        };
+        // Shapes define the clickable region of the icon. The type defines an HTML
+        // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+        // The final coordinate closes the poly by connecting to the first coordinate.
+        var shape = {
+          coords: [1, 1, 1, 20, 18, 20, 18, 1],
+          type: 'poly'
+        };
+        for (var i = 0; i < centers.length; i++) {
+          var center = centers[i];
+          var marker = new google.maps.Marker({
+            position: {lat: center[1], lng: center[2]},
+            map: map,
+            icon: image,
+            shape: shape,
+            title: center[0],
+            zIndex: [3]
+          });
+        }
+      }
+
+
+
+
 </script>
 
 
