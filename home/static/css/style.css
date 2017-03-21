@@ -793,7 +793,10 @@ font-variant-caps: all-petite-caps;
 
 .form-group {
   margin-bottom:3px;
+  margin-left: 3px;
 }
+
+
 
 /*--------------------*/
 /* BRAND STRIP SECTION */
@@ -3036,7 +3039,7 @@ color:white;
 }
 
 
-#map {
+#map, .map-content{
   height: 400px;
   width:130%;
   overflow: hidden;
@@ -3044,25 +3047,58 @@ color:white;
   margin-left:-30px;
 }
 
-#contact-content .form-group .form-control, #partner-content .form-group .form-control{
+ #partner-content .form-group .form-control{
 
   background-color:#63583c;
   opacity: 0.7;
   color:#ffcc29;
   border:none;
   border-radius: 0px;
+  margin-left:1px;
 
 }
 
+#contact-content .form-group .form-control{
+
+  background-color:#c1c1c1;
+  opacity: 0.7;
+  color:#000;
+  border:none;
+  border-radius: 0px;
+ float: right;
+  width:300px;
+  
+}
+
+#contact-content .right-form{
+
+  background-color:#c1c1c1;
+  opacity: 0.7;
+  color:#000;
+  border:none;
+  border-radius: 0px;
+ float: left;
+  width:300px;
+  
+}
 #contact-content .form-group .mrex-formbtn{
 
-  background-color:#fff;
+  background-color:#ffcc29;
+  width:300px;
+ /* margin-top:1px;
+  margin-left: 1px;*/
+  padding:6px;
+
+ 
+
 }
+
+
 
 #contact-content .form-group .mrex-formbtn:hover{
 
-    background-color:#63583c;
-    color:#ffcc29;
+    background-color:#2b76b9;
+    color:#fff;
 
 }
 
@@ -3111,9 +3147,7 @@ color:white;
 /*======================///////////////
       start responsive style
 =====================///////////////////////*/
-@media(min-width:1200px ){
- #course-content .container .row{ margin-left:-90px;right:-100px;}
-}
+
 
 
 @media(max-width:1199px ){
@@ -3129,8 +3163,20 @@ color:white;
   #course-content .container .row{ margin-left:-120px;margin-right:-16.5%;}
  .nav-side-menu{padding-left:60px;}
   #course_details{padding-left:50px;}
+ #contact-content .form-group{float:right;}
+  /*#contact-content .form-group .form-control {float:none;}*/
+ #contact-content .right-form{float:left;text-align:center;}
+ #contact-content .form-group .mrex-formbtn{float:none;margin: 0 auto;}
+
 }
 
+@media(min-width:1182px ){
+ #course-content .container .row{ margin-left:-90px;right:-100px;}
+ #contact-content .form-group{} 
+ #contact-content .right-form{text-align:center;float:none;}
+ #contact-content .form-group .mrex-formbtn{float:none;margin: 0 auto;}
+
+}
 
   
 @media(max-width:991px ){
@@ -3155,7 +3201,12 @@ color:white;
   #course-content .container .row{ margin-left:-100px;margin-right:-100px;}
   .nav-side-menu{padding-left:50px;}
   #course_details{padding-left:100px;}
-  
+
+   #contact-content .form-group{float:right;}
+  /*#contact-content .form-group .form-control {float:none;}*/
+ #contact-content .right-form{float:left;text-align:center;}
+ #contact-content .form-group .mrex-formbtn{float:none;margin: 0 auto;}
+
 }
 
 
@@ -3198,8 +3249,12 @@ color:white;
  .nav-side-menu{padding-left:30px;}
  #course_details{padding-left:120px;}
 
-}
+ #contact-content .form-group {float:none;margin: 0 auto;}
+  #contact-content .form-group .form-control {float:none;margin: 0 auto;}
+ #contact-content .right-form{float:none;text-align:center;margin: 0 auto;}
+ 
 
+}
 @media(max-width:480px ){ 
   .slider_right_caption {top: 15%;}
   .slider_caption h2 {font-size: 20px;line-height: 30px;}
@@ -3222,6 +3277,10 @@ color:white;
   #course-content .container .row{ margin-left:-80px;margin-right:-100px;}
    .nav-side-menu{padding-left:30px;}
  #course_details{padding-left:120px;}
+  #contact-content .form-group {float:none;margin: 0 auto;}
+  #contact-content .form-group .form-control {float:none;margin: 0 auto;}
+ #contact-content .right-form{float:none;text-align:center;margin: 0 auto;}
+
 } 
 
 @media(max-width:360px ){
@@ -3246,12 +3305,19 @@ color:white;
  #course-content .container .row{ margin-left:-80px;margin-right:-100px;}
   .nav-side-menu{padding-left:30px;}
  #course_details{padding-left:120px;}
+ #contact-content .form-group {float:none;margin: 0 auto;}
+  #contact-content .form-group .form-control {float:none;margin: 0 auto;}
+ #contact-content .right-form{float:none;text-align:center;margin: 0 auto;}
+ 
 
 }
 
 @media(max-width:320px ){
 
   #course-content .container .row{ margin-left:-24%;margin-right:-100px;}
+   #contact-content .form-group {float:none;margin: 0 auto;}
+  #contact-content .form-group .form-control {float:none;margin: 0 auto;}
+ #contact-content .right-form{float:none;text-align:center;margin: 0 auto;}
 }
 
 /*body {
