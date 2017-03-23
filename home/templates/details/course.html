@@ -8,8 +8,8 @@
      </section>
 
      <section id="brandstrip">
-      <div class="container">
-        <div id="strip-row" class="row">
+      <div class="container-fluid">
+        <div id="strip-row" class="row-fluid">
            <div class="col-md-6 col-xs-6 yellow-strip"></div>
            <div class="col-md-6 col-xs-6 blue-strip"></div>
           
@@ -22,9 +22,9 @@
 
 
     <section id="course-content">
-     <div class="container">
-      <div class="row">
-        <div class="col-md-3 columns">
+     <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="col-sm-4 col-md-3 columns">
             
                 <div class="nav-side-menu">
                         <div class="brand">Courses</div>
@@ -113,7 +113,7 @@
 
         </div>
       
-        <div id="course_details" class="col-md-6 columns">
+        <div id="course_details" class="col-sm-8 col-md-9 columns">
              {% if selected_course.document %}
                 <a href="../../../{{selected_course.document.file.url}}" class="btn btn-download" role="button">Download</a> 
               {% endif %}
@@ -127,14 +127,65 @@
             <h4>{{ selected_course.category.stream }} > {{ selected_course.category.title }}</h4>
             
             
+
+            
+                        <div class="panel-group wrap" id="bs-collapse">
+                        {% for coursedetail in coursedetails %}
+                          <div class="panel">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#" href="#{{coursedetail.cousre_details_id}}">
+                              {{coursedetail.title}}
+                            </a>
+                          </h4>
+                            </div>
+                            <div id="{{coursedetail.cousre_details_id}}" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                {{coursedetail.details_text|linebreaks}}
+                              </div>
+                            </div>
+
+                          </div>
+                          {% endfor %}
+                          <!-- end of panel -->
+
+
+                        </div>
+                        <!-- end of #bs-collapse  -->
+
+
+
            
-            <div style="padding:30px;font-family:AurulentSans">{{ selected_course.details_text|safe }}</div>
+            <!-- <div style="padding:30px;font-family:AurulentSans">{{ selected_course.details_text|safe }}  -->
+                
+            <!-- <div id="accordion" role="tablist" aria-multiselectable="true" style="padding:30px;font-family:AurulentSans">
+                {% for coursedetail in coursedetails %}
+                  <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                      <h5 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="{{coursedetail.course_details_id}}" aria-expanded="true" aria-controls="collapseOne">
+                          {{coursedetail.title}}
+                        </a>
+                      </h5>
+                    </div>
+
+                    <div id="{{coursedetail.course_details_id}}" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="card-block">
+                        {{coursedetail.details_text}}
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+            </div> -->
+
+
+            </div>
           </div>
           
-        </div>
+        
 
-        <div class="col-md-3 columns" > 
-        <!-- End Our courses content -->
+        <!-- <div class="col-md-3 columns" > 
+     
             <div style="border-style: solid;border-width:1px;border-color: black;background-color: #181c20;color:#fff;margin-right:30px;margin-top: 15px;"><h4 align="center">Related Courses</h4>
               <div id="course-carousel" class="owl-carousel owl-theme" >
 
@@ -152,12 +203,12 @@
             {% endfor %}
           </div>
           </div>
-            <!--  <div><img src="../../{{selected_course.background.url}}"></img></div> -->
+            
              <div style="margin-top:20px;margin-right:30px;background-color: #2b76b9; color:#fff; padding: 10px;text-align:center;"><h4>Time Schedule</h4></div>
              <div style="margin-right:30px;background-color: #fff;padding: 15px;">{{ selected_course.schedule_text|safe  }}</img></div>
  
 
-         </div>
+         </div> -->
       </div>
       </div>
     </section>
