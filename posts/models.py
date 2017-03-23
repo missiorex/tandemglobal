@@ -181,6 +181,7 @@ class CourseDetail(models.Model):
     title = models.CharField(max_length=50)
     details_text = models.TextField(max_length=100000,blank=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    order = models.PositiveSmallIntegerField(blank=False,default=0)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
