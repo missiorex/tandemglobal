@@ -117,8 +117,8 @@
 
   <!--=========== BEGIN BRAND STRIP SECTION ================-->
     <section id="brandstrip">
-      <div class="container">
-        <div id="strip-row" class="row">
+      <div class="container-fluid">
+        <div id="strip-row" class="row-fluid">
      
           <div class="col-md-6 col-xs-6 yellow-strip"></div>
           <div class="col-md-6 col-xs-6 blue-strip"></div>
@@ -163,7 +163,7 @@
            <!--  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p> -->
 
-            {{site_config.aboutus_text|linebreaks|truncatewords:130}} <a href="/about/" style="color:#0f63ac;text-decoration:none">More About Us</a>
+            {{site_config.aboutus_text|linebreaks|truncatewords:130}} <a href="/about/" style="color:#0f63ac;text-decoration:none"> More</a>
             
 
             
@@ -316,21 +316,21 @@
 
  <!--=========== BEGIN VISION & MISSION SECTION ================-->
     <section id="vm">
-      <div class="container">
-        <div id="strip-row" class="row">
+      <div class="container-fluid">
+        <div id="strip-row" class="row-fluid">
      
           <div class="col-md-6 columns vision">
             <div ><img class="vm-icon" src="{% static 'images/vision.png' %}"/></div>
             <div class="vm-text">
-               <h2>OUR VISION</h2>
-               {{site_config.vision_text|linebreaks|truncatewords:55}}
+               <h2>Message from the Board of Directors</h2>
+               {{site_config.boards_message|linebreaks|truncatewords:55}}<a href="/methodology/" style="color:#0f63ac;text-decoration:none">More</a>
             
             </div>
           </div>
           <div class="col-md-6 columns mission">
              <div><img class="vm-icon" src="{% static 'images/mission.png' %}"/></div>
-            <div class="vm-text"><h2 style="color:#fff">OUR MISSION</h2>
-               {{site_config.mission_text|linebreaks|truncatewords:55}}
+            <div class="vm-text"><h2 style="color:#fff">Our Training Methodology</h2>
+               {{site_config.training_methodology|linebreaks|truncatewords:55}}<a href="/methodology/" style="color:#fff;text-decoration:none">More</a>
             
             </div>
           </div>
