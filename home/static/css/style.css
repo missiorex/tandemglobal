@@ -966,15 +966,12 @@ right:0px;
 
 #about_text{
 
-
 padding-top:40px;
 padding-bottom:40px;
 padding-right: 40px;
 background-color: #fff;
-height:100%;
-
-
-
+max-height:400px;
+overflow-y: scroll;
 
 }
 #news_tab{
@@ -2963,7 +2960,8 @@ color:white;
   line-height: 28px;
   border-bottom: 1px solid #23282e;
   margin-left: 0px;
-  font-size:14px;
+  font-size:17px;
+  padding:2px;
 }
 .nav-side-menu ul .sub-menu li:hover,
 .nav-side-menu li .sub-menu li:hover {
@@ -2984,6 +2982,9 @@ color:white;
 }
 .nav-side-menu li {
   padding-left: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 22px;
   border-left: 3px solid #2e353d;
   border-bottom: 1px solid #23282e;
 }
@@ -3013,7 +3014,12 @@ color:white;
   
   font-weight: 600;
   color : #2b76b9;
-  font-size: 15px;
+  font-size: 14px;
+
+}
+.nav-side-menu-category a::before{
+
+  font-size: 30px;
 
 }
 
@@ -3024,8 +3030,11 @@ color:white;
   color: #000;
   border-radius: 0;
   float: right;
+  padding-top: 10px;
   margin-top:38px;
   margin-right:0px;
+  height:40px;
+  width: 120px;
 }
 
 
