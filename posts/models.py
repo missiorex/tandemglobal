@@ -23,7 +23,7 @@ class Notice(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True, default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -44,7 +44,7 @@ class Slogan(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True,default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -64,7 +64,7 @@ class News(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True,default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -84,7 +84,7 @@ class Exam(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True,default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -104,7 +104,7 @@ class Mock(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True,default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -124,7 +124,7 @@ class Video(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True,default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -158,14 +158,14 @@ class Course(models.Model):
     cousre_id = models.CharField(max_length=30)
     title = models.CharField(max_length=50)
     featured_course = models.BooleanField(default=False)
-    details_text = models.TextField(max_length=100000,blank=True)
-    schedule_text = models.TextField(max_length=3000,blank=True)
+    # details_text = models.TextField(max_length=100000,blank=True)
+    # schedule_text = models.TextField(max_length=3000,blank=True)
     background = models.ImageField(upload_to='course/bg',default='course/bg/default_course.jpg',help_text="Please upload an image of dimensions : width = 290px & height = 150px only")
     document = models.ForeignKey(Document, on_delete=models.CASCADE,blank=True,null=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True,default=timezone.now)
     category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE)
 
     def publish(self):
@@ -185,7 +185,7 @@ class CourseDetail(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True,default=timezone.now)
-    
+
 
     def publish(self):
         self.published_date = timezone.now()
@@ -207,7 +207,7 @@ class Result(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True, default=timezone.now)
     category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE)
 
     def publish(self):
@@ -230,7 +230,7 @@ class TopScorer(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True, default=timezone.now)
 
 
     def publish(self):
@@ -252,7 +252,7 @@ class Testimonial(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True, default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -275,7 +275,7 @@ class Center(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True, default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -291,7 +291,7 @@ class Division(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True, default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -312,7 +312,7 @@ class Contact(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True, null=True, default=timezone.now)
 
     def publish(self):
         self.published_date = timezone.now()
