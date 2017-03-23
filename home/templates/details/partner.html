@@ -139,35 +139,37 @@
            
 
 
-              <div class="row" style="background-color:#fff;" >
-                          <div id="company-container" class="col-md-6 columns">
+              <div class="row" style="background-color:#fff;">
+                        <div id="company-container" class="col-md-6 col-md-push-6">
                               
 
                                
                                 <div id="company-logo"><!-- <img src="{% static 'images/eduexcel-logo.jpg' %}"> -->
 
-                                {% if request.get_full_path == home_url %}
-                                  <img src="{{site_config.company_logo.url}}" style="padding-top:20px;padding-bottom:10px;width:180px;text-align: center;">
-                                  {% else %}
-                                  <object data="../{{site_config.company_logo.url}}" type="image/png" style="padding-top:20px;padding-bottom:10px;width:180px;text-align: center;">
-                                     <img src="../../{{site_config.company_logo.url}}" style="padding-top:20px;padding-bottom:10px;width:180px;text-align: center;" />
-                                  </object>
-                                {% endif %}
+                                  {% if request.get_full_path == home_url %}
+                                    <img src="{{site_config.company_logo.url}}" style="padding-top:20px;padding-bottom:10px;width:280px;text-align:center;">
+                                    {% else %}
+                                    <object data="../{{site_config.company_logo.url}}" type="image/png" style="padding-top:20px;padding-bottom:10px;width:280px;text-align: center;">
+                                       <img src="../../{{site_config.company_logo.url}}" style="padding-top:20px;padding-bottom:10px;width:280px;text-align: center;" />
+                                    </object>
+                                  {% endif %}
 
 
                                 </div>
-                                
+                             
+                         
+                        </div>
 
-                                
-                          </div>
-                          
-                          <div class="col-md-6 columns">
+                          <div class="col-md-6 col-md-pull-6">
                               
-                            <div id="company-text">
-                                 {{site_config.company_info|linebreaks|truncatewords:80}}
+                            <div id="company-text"> {{site_config.company_info|linebreaks|truncatewords:80}}
+                            
                             </div>
                               
                           </div>
+                        
+                          
+                        
               </div>
 </div>              
         

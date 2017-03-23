@@ -8,12 +8,12 @@
 
  
      <section id="imgBanner">
-         <h2 style="font-size: 40px;">About Us</h2>
+         <h2 style="font-size: 40px;">Message From The Board</h2>
      </section>
 
      <section id="brandstrip">
-      <div class="container">
-        <div id="strip-row" class="row">
+      <div class="container-fluid">
+        <div id="strip-row" class="row-fluid">
            <div class="col-md-6 col-xs-6 yellow-strip"></div>
            <div class="col-md-6 col-xs-6 blue-strip"></div>
           
@@ -32,8 +32,8 @@
               <div class="row" style="background-color:#f2f2f2;" >
                           <div id="about_text" class="col-md-6 columns">
                               <div class="wow fadeInLeft">
-                                <h2 class="titile">About Us</h2>
-                               {{site_config.aboutus_text|linebreaks}}
+                                <h2 class="titile">Message From The Board</h2>
+                               {{site_config.boards_message|linebreaks}}
                                 
 
                                 
@@ -41,7 +41,7 @@
                             </div>
                           <div class="col-md-6 columns">
                             
-                            <img class="about-tandem img-responsive" style="padding:10%;height:350px;margin-left:60px;" src="{% static 'images/about-tandem.jpg' %}"/>
+                        <img class="about-tandem img-responsive" style="padding:5%;height:400px;margin-left:60px;" src="../{{ site_config.boards_photo.url }}"/>
                               
                             </div>
                           </div>
@@ -59,10 +59,10 @@
 
 
               <div class="row" style="background-color:#ffcc29;" >
-                          <div id="why-graphic-container" class="col-md-6 columns">
+                          <div class="col-md-6 columns">
                               
                                
-                                <div id="why-graphic"><span id="tandem-qn-text"><h1>Why</h1><h2>Tandem</h2></span><span id="tandem-question">?</span></div>
+            <img class="about-tandem img-responsive" style="padding:5%;height:400px;margin-left:60px;" src="../{{ site_config.methodology_image.url }}"/>
                                 
 
                                 
@@ -71,12 +71,12 @@
                           <div class="col-md-6 columns">
                               
                             <div id="why-slogan-container">
-                              <ul>
-                                {% for slogan in slogans %}
-                                <li>{{slogan.title}}</li>
-                                {% endfor %}
+                                <h2 class="titile">Our Training Methodology</h2>
+                               {{site_config.training_methodology|linebreaks}}
+                                
 
-                              </ul>
+                                
+                              </div>
                             </div>
                               
                           </div>
@@ -87,12 +87,6 @@
 
 
 </section>
-
-
-
-
-
-
 
 
 
