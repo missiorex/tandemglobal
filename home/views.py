@@ -115,7 +115,7 @@ def course_detail(request, pk):
     course_categories = CourseCategory.objects.all()
     streams = Stream.objects.all().order_by('order')
     courses = Course.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    coursedetails = CourseDetail.objects.filter(course__title=selected_course.title)
+    coursedetails = CourseDetail.objects.filter(course__title=selected_course.title).order_by('order')
     results = Result.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[:5]
     form_class = ContactForm
     if request.method == 'POST':
