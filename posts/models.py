@@ -153,7 +153,6 @@ class CourseCategory(models.Model):
         return self.title;
 
 
-
 class Course(models.Model):
     author = models.ForeignKey('auth.User')
     cousre_id = models.CharField(max_length=30)
@@ -175,6 +174,26 @@ class Course(models.Model):
 
     def __str__(self):
         return self.cousre_id
+
+class CourseDetail(models.Model):
+    author = models.ForeignKey('auth.User')
+    cousre_details_id = models.CharField(max_length=30)
+    title = models.CharField(max_length=50)
+    details_text = models.TextField(max_length=100000,blank=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    published_date = models.DateTimeField(
+            blank=True, null=True,default=timezone.now)
+    
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.cousre_details_id
+
 
 class Result(models.Model):
     author = models.ForeignKey('auth.User')
@@ -325,6 +344,8 @@ class SiteConfiguration(SingletonModel):
     aboutus_text = models.TextField(max_length=8000,blank=True)
     partner_text = models.TextField(max_length=3000,blank=True)
     company_info = models.TextField(max_length=3000,blank=True)
+    company_info_footer = models.TextField(max_length=3000,blank=True)
+    company_logo = models.ImageField(upload_to='logo',default='logo/eduexcel-logo.png')
 
     def __unicode__(self):
         return u"Site Configuration"

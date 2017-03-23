@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from posts.models import Notice, Slogan , News, Exam, Mock, Video, Testimonial,CourseCategory,Stream,Course,Result,TopScorer,Center,Division,Contact
+from posts.models import Notice, Slogan , News, Exam, Mock, Video, Testimonial,CourseCategory,Stream,Course,Result,TopScorer,Center,Division,Contact,CourseDetail
 from django.utils import timezone
 from .forms import ContactForm
 from django.core.mail import EmailMessage
@@ -115,6 +115,7 @@ def course_detail(request, pk):
     course_categories = CourseCategory.objects.all()
     streams = Stream.objects.all().order_by('order')
     courses = Course.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    coursedetails = CourseDetail.objects.filter(course__title=selected_course.title)
     results = Result.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[:5]
     form_class = ContactForm
     if request.method == 'POST':
@@ -155,7 +156,7 @@ def course_detail(request, pk):
             email.send()
             return redirect('course_detail')
 
-    return render(request, 'details/course.html', {'selected_course': selected_course,'form': form_class,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results})
+    return render(request, 'details/course.html', {'selected_course': selected_course,'form': form_class,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results,'coursedetails':coursedetails})
 
 
 def result_detail(request, pk):
@@ -406,5 +407,7 @@ def partner(request):
             email.attach_alternative(htmlcontent, "text/html")
             email.send()
             return redirect('partner')
+
     return render(request, 'details/partner.html', {'form': form_class,'slogans': slogans,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results})
+
 
