@@ -115,16 +115,16 @@
       
         <div id="course_details" class="col-sm-8 col-md-9 columns">
              {% if selected_course.document %}
-                <a href="../../../{{selected_course.document.file.url}}" class="btn btn-download" role="button">Download</a> 
+                <a href="../../../{{selected_course.document.file.url}}" class="btn btn-download" role="button" >Download</a> 
               {% endif %}
             <div>
-            {% if selected_course.published_date %}
+          <!--   {% if selected_course.published_date %}
                 <div class="date">
                     Last Updated On: {{ selected_course.published_date }}
                 </div>
-            {% endif %}
+            {% endif %} -->
             <h3>{{ selected_course.title }}</h3>
-            <h4>{{ selected_course.category.stream }} > {{ selected_course.category.title }}</h4>
+            <h4 style="color:#0f63ac;font-size:15px;">{{ selected_course.category.stream }} > {{ selected_course.category.title }}</h4>
             
             
 

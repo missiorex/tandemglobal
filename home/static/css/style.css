@@ -956,8 +956,9 @@ right:0px;
 
   background-color:#fff;
  /* margin-bottom:10px;*/
-/*  padding:20px 100px;*/
-  height:600px;
+  padding:20px;
+  padding-left: 30px;
+  max-height:600px;
   overflow-y: scroll;
   margin-right: -20px;
 
@@ -3023,8 +3024,8 @@ color:white;
   color: #000;
   border-radius: 0;
   float: right;
-  margin-top:50px;
-  margin-right:100px;
+  margin-top:38px;
+  margin-right:0px;
 }
 
 
@@ -3107,8 +3108,9 @@ color:white;
 
 
 .wrap {
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+ /* box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;*/
+ 
 }
 
 /*#course-content div[class*='col-'] {
@@ -3116,6 +3118,12 @@ color:white;
  margin-left: -100px;
 
 }*/
+.panel-group{
+
+  margin-top: 30px;
+
+ }
+
 
 .panel {
   border-width: 0 0 1px 0;
@@ -3130,7 +3138,7 @@ color:white;
 }
 
 .panel-group > .panel:first-child .panel-heading {
-  border-radius: 4px 4px 0 0;
+  /*border-radius: 4px 4px 0 0;*/
 }
 
 .panel-group .panel {
@@ -3140,35 +3148,46 @@ color:white;
 .panel-group .panel + .panel {
   margin-top: 0;
 }
-
 .panel-heading {
-  background-color: #5b5f65;
-  border-radius: 0;
-  border: none;
-  color: #fff;
+    /* padding: 10px 15px; */
+    /* border-bottom: 1px solid transparent; */
+    /* border-top-left-radius: 3px; */
+    /* border-top-right-radius: 3px; */
+}
+.panel-heading {
+  background-color: #e1e1e1;
+ /* border-radius: 0;*/
+  border: 1px solid transparent;
+  color: #e1e1e1;
   padding: 0;
+   
+     border-bottom: 0px solid transparent; 
+     border-top-left-radius: 0px; 
+     border-top-right-radius: 0px; 
 }
 
 .panel-title a {
   display: block;
-  color: #fff;
+  color: #23282e;
   padding: 15px;
   position: relative;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .panel-body {
   background: #fff;
+  padding: 8px;
 }
 
 .panel:last-child .panel-body {
-  border-radius: 0 0 4px 4px;
+/*  border-radius: 0 0 4px 4px;*/
 }
 
 .panel:last-child .panel-heading {
-  border-radius: 0 0 4px 4px;
-  transition: border-radius 0.3s linear 0.2s;
+  /*border-radius: 0 0 4px 4px;*/
+ /* transition: border-radius 0.3s linear 0.2s;*/
 }
 
 .panel:last-child .panel-heading.active {
@@ -3177,7 +3196,7 @@ color:white;
 }
 /* #bs-collapse icon scale option */
 
-.panel-heading a:before {
+/*.panel-heading a:before {
   content: '\e146';
   position: absolute;
   font-family: 'Material Icons';
@@ -3227,7 +3246,7 @@ color:white;
   transform: rotate(0deg);
   transition: all 0.5s;
 }
-
+*/
 
 
 /*@media (max-width: 767px) {
