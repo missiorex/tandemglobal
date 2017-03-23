@@ -34,23 +34,19 @@
                                   {% if streams %}
                                     
                                 <ul id="menu-content" class="menu-content out collapse in">
-                                  <!--   <li>
-                                      <a href="#">
-                                      <i class="fa fa-dashboard fa-lg"></i> Dashboard
-                                      </a>
-                                    </li> -->
+                             
                                    {% for stream in streams%}
 
                                     {% if selected_course.category.stream.title == stream.title %} 
 
                                         <li  data-toggle="collapse" data-target="#{{stream.title}}" class="active" aria-expanded="true">
-                                          <a href="#"><!-- <i class="fa fa-gift fa-lg"> </i> -->{{stream.title}} <span class="arrow"></span></a>
+                                          <a href="#">{{stream.title}} <span class="arrow"></span></a>
                                         </li>
                                         <ul class="sub-menu collapse in" id="{{stream.title}}" aria-expanded="true">
                                         {% else %}
 
                                         <li  data-toggle="collapse" data-target="#{{stream.title}}" class="collapsed">
-                                          <a href="#"><!-- <i class="fa fa-gift fa-lg"> </i> -->{{stream.title}} <span class="arrow"></span></a>
+                                          <a href="#">{{stream.title}} <span class="arrow"></span></a>
                                         </li>
                                         <ul class="sub-menu collapse" id="{{stream.title}}">
                                     {% endif %}
@@ -65,44 +61,14 @@
                                              {% if selected_course == course %} <li class="active"><a href="{% url 'course_detail' pk=course.pk %}">{{course.title}}</a></li>{% else %}
                                             <li><a href="{% url 'course_detail' pk=course.pk %}">{{course.title}}</a>{% endif %}
                                             </li>
-                                        <!-- <li><a href="#">{{course.title}}</a></li> -->
+                                        
                                           {% endif %}
                                           {% endfor %}
                                             {% endfor %}
                                         </ul>
                                         
 
-                                    <!-- <li data-toggle="collapse" data-target="#service" class="collapsed">
-                                      <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
-                                    </li>  
-                                    <ul class="sub-menu collapse" id="service">
-                                      <li>New Service 1</li>
-                                      <li>New Service 2</li>
-                                      <li>New Service 3</li>
-                                    </ul>
-
-
-                                    <li data-toggle="collapse" data-target="#new" class="collapsed">
-                                      <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
-                                    </li>
-                                    <ul class="sub-menu collapse" id="new">
-                                      <li>New New 1</li>
-                                      <li>New New 2</li>
-                                      <li>New New 3</li>
-                                    </ul>
-
-
-                                     <li>
-                                      <a href="#">
-                                      <i class="fa fa-user fa-lg"></i> Profile
-                                      </a>
-                                      </li>
-
-                                     <li>
-                                      <a href="#">
-                                      <i class="fa fa-users fa-lg"></i> Users
-                                      </a>
-                                    </li> -->
+                                   
                                      {% endfor %}
                                 </ul>
                                
@@ -118,11 +84,7 @@
                 <a href="../../../{{selected_course.document.file.url}}" class="btn btn-download" role="button" >Download</a> 
               {% endif %}
             <div>
-          <!--   {% if selected_course.published_date %}
-                <div class="date">
-                    Last Updated On: {{ selected_course.published_date }}
-                </div>
-            {% endif %} -->
+         
             <h3>{{ selected_course.title }}</h3>
             <h4 style="color:#0f63ac;font-size:15px;">{{ selected_course.category.stream }} > {{ selected_course.category.title }}</h4>
             
@@ -152,77 +114,17 @@
 
                         </div>
                         <!-- end of #bs-collapse  -->
-
-
-
-           
-            <!-- <div style="padding:30px;font-family:AurulentSans">{{ selected_course.details_text|safe }}  -->
-                
-            <!-- <div id="accordion" role="tablist" aria-multiselectable="true" style="padding:30px;font-family:AurulentSans">
-                {% for coursedetail in coursedetails %}
-                  <div class="card">
-                    <div class="card-header" role="tab" id="headingOne">
-                      <h5 class="mb-0">
-                        <a data-toggle="collapse" data-parent="#accordion" href="{{coursedetail.course_details_id}}" aria-expanded="true" aria-controls="collapseOne">
-                          {{coursedetail.title}}
-                        </a>
-                      </h5>
-                    </div>
-
-                    <div id="{{coursedetail.course_details_id}}" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                      <div class="card-block">
-                        {{coursedetail.details_text}}
-                      </div>
-                    </div>
-                  </div>
-                  {% endfor %}
-            </div> -->
-
-
+        
             </div>
           </div>
           
-        
 
-        <!-- <div class="col-md-3 columns" > 
-     
-            <div style="border-style: solid;border-width:1px;border-color: black;background-color: #181c20;color:#fff;margin-right:30px;margin-top: 15px;"><h4 align="center">Related Courses</h4>
-              <div id="course-carousel" class="owl-carousel owl-theme" >
-
-            {% for course in courses %}
-              {% if course.category == selected_course.category and course.category.stream == selected_course.category.stream %}
-              <a href="{% url 'course_detail' pk=course.pk %}">
-                <div class="item outer-box">
-                <img src="../../{{course.background.url}}">
-                    <div class="inner-box"><h5>{{course.title}}</h5>
-                     <div><h6>{{ selected_course.category.stream }} > {{ selected_course.category }}</h6></div>
-                    </div>
-                </div>
-              </a>
-              {% endif %}
-            {% endfor %}
-          </div>
-          </div>
-            
-             <div style="margin-top:20px;margin-right:30px;background-color: #2b76b9; color:#fff; padding: 10px;text-align:center;"><h4>Time Schedule</h4></div>
-             <div style="margin-right:30px;background-color: #fff;padding: 15px;">{{ selected_course.schedule_text|safe  }}</img></div>
- 
-
-         </div> -->
+       
       </div>
       </div>
     </section>
 
 
 
-      
-   
-      
-     
-    
-    <!--=========== END STUDENTS TESTIMONIAL SECTION ================-->  
-
-
-  
     
 {% endblock %}  
