@@ -18,7 +18,7 @@ class Notice(models.Model):
     sub_title = models.CharField(max_length=200)
     text = models.TextField()
     youtube_url = models.CharField(max_length=200, default='',blank=True,null=True)
-    photo = models.ImageField(upload_to='notice',default='')
+    photo = models.ImageField(upload_to='notice',default='',help_text="Please upload an image of dimensions : width = 300px & height = 200px only")
     document = models.ForeignKey(Document, on_delete=models.CASCADE,blank=True,null=True)
     created_date = models.DateTimeField(
             default=timezone.now)
@@ -40,7 +40,7 @@ class Slogan(models.Model):
     sub_title = models.CharField(max_length=200)
     text = models.TextField()
     icon = models.ImageField(upload_to='slogan/icon',default='slogan/icon/teacher-teaching-with-a-stick.png',blank=True,help_text="Add an icon of dimensions 80px*80px")
-    background = models.ImageField(upload_to='slogan/bg',default='')
+    background = models.ImageField(upload_to='slogan/bg',default='slogan/bg/slogan_bg.jpg',blank=True,help_text="No need of separate background for each slogan. If adding, add a background of 1314*137px")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -333,7 +333,7 @@ class SiteConfiguration(SingletonModel):
     slider_subtitle = models.CharField(max_length=27,default="EDUCATION BRAND OF KERALA")
     slider_years = models.CharField(max_length=2,default='23')
     slider_years_caption = models.CharField(max_length=14,default='Trusted Years')
-    slider_background = models.ImageField(upload_to='slider',default='slider/slider1.jpg')
+    slider_background = models.ImageField(upload_to='slider',default='slider/slider1.jpg',help_text="Please upload an image of dimensions : width = 1370 px & height = 550px only")
     twitter_url = models.CharField(max_length=255,blank=True, default='#')
     facebook_url = models.CharField(max_length=255,blank=True, default='#')
     google_url = models.CharField(max_length=255,blank=True, default='#')
@@ -344,6 +344,7 @@ class SiteConfiguration(SingletonModel):
     boards_photo = models.ImageField(upload_to='methodology',default='methodology/board.jpg',blank=True)
     methodology_image = models.ImageField(upload_to='methodology',default='methodology/method.jpg',blank=True)
     aboutus_text = models.TextField(max_length=8000,blank=True)
+    about_tandem_image = models.ImageField(upload_to='about',default='about/about_tandem.jpg',help_text="Please upload an image of dimensions : width = 500 px & height = 300px only",blank=True)
     partner_text = models.TextField(max_length=3000,blank=True)
     company_info = models.TextField(max_length=3000,blank=True)
     company_info_footer = models.TextField(max_length=3000,blank=True)

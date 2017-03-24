@@ -41,7 +41,11 @@
                             </div>
                           <div class="col-md-6 columns">
                             
-                            <img class="about-tandem img-responsive" style="padding:10%;height:350px;margin-left:60px;" src="{% static 'images/about-tandem.jpg' %}"/>
+                            <!-- <img class="about-tandem img-responsive" style="padding:5%;height:350px;margin-left:60px;" src="{% static 'images/about-tandem.jpg' %}"/> -->
+                            <object data="../{{ site_config.about_tandem_image.url }}" type="image/png" style="padding:5%;height:300px;margin-left:60px;">
+                             
+                                 <img class="about-tandem img-responsive" style="padding:5%;height:300px;margin-left:60px;" src="{% static 'images/about-tandem.jpg' %}"/>
+                            </object>
                               
                             </div>
                           </div>
@@ -58,17 +62,17 @@
            
 
 
-              <div class="row" style="background-color:#ffcc29;" >
-                          <div id="why-graphic-container" class="col-md-6 columns">
+              <div class="row" style="background-color:#0f63ac;" >
+                          <div id="why-graphic-container" class="col-md-6 col-sm-6 columns">
                               
                                
-                                <div id="why-graphic"><span id="tandem-qn-text"><h1>Why</h1><h2>Tandem</h2></span><span id="tandem-question">?</span></div>
-                                
+                              <!--   <div id="why-graphic"><span id="tandem-qn-text"><h1>Why</h1><h2>Tandem</h2></span><span id="tandem-question">?</span></div> -->
+                                <img class="about-tandem img-responsive" style="padding:5%;height:191px;margin-left:60px;" src="{% static 'images\why-tandem.jpg' %}"/>
 
                                 
                           </div>
                           
-                          <div class="col-md-6 columns">
+                          <div class="col-md-6 col-sm-6 columns">
                               
                             <div id="why-slogan-container">
                               <ul>

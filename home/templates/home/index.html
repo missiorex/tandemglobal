@@ -15,7 +15,7 @@
             <div id="slides">
               <ul class="slides-container">                          
                 <li>
-                  <img src="{% static 'images/slider/slider1.jpg' %}" alt="img">
+                  <img style="height:550px;width:auto;" src="{% static 'images/slider/slider1.jpg' %}" alt="img">
                   <div class="container">
                     <div class="row">
                       <div id="mrex-slider" class="col-lg-6 col-md-6 slider_caption">
@@ -217,7 +217,7 @@
                         </div>
                         <div class="media-body">
                         <a class="news_text" href="{% url 'tab_detail' %}">
-                         {{exam.text|truncatewords:"40"}}
+                         {{exam.details_text|truncatewords:"40"}}
                          <span class="feed_date">{{exam.published_date}}</span>
                          </a>
                         </div>
