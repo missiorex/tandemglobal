@@ -54,7 +54,7 @@ def index(request):
                 "New contact form submission",
                 textcontent,
                 "Tandem Global" +'',
-                ['prakash@missiorex.com'],
+                ['greeshma.sajan@eduexcelindia.com'],
                 headers = {'Reply-To': contact_email }
             )
             email.attach_alternative(htmlcontent, "text/html")
@@ -151,7 +151,7 @@ def contact(request):
                 "New contact form submission",
                 textcontent,
                 "Tandem Global" +'',
-                ['prakash@missiorex.com'],
+                ['greeshma.sajan@eduexcelindia.com'],
                 headers = {'Reply-To': contact_email }
             )
             email.attach_alternative(htmlcontent, "text/html")
@@ -213,7 +213,7 @@ def partner(request):
                 "New contact form submission",
                 textcontent,
                 "Tandem Global" +'',
-                ['prakash@missiorex.com'],
+                ['greeshma.sajan@eduexcelindia.com'],
                 headers = {'Reply-To': contact_email }
             )
             email.attach_alternative(htmlcontent, "text/html")
