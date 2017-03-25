@@ -40,7 +40,7 @@ class Slogan(models.Model):
     sub_title = models.CharField(max_length=200)
     text = models.TextField()
     icon = models.ImageField(upload_to='slogan/icon',default='slogan/icon/teacher-teaching-with-a-stick.png',blank=True,help_text="Add an icon of dimensions 80px*80px")
-    background = models.ImageField(upload_to='slogan/bg',default='slogan/bg/slogan_bg.jpg',blank=True,help_text="No need of separate background for each slogan. If adding, add a background of 1314*137px")
+    
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
