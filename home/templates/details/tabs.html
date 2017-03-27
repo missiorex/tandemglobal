@@ -8,8 +8,8 @@
      </section>
 
      <section id="brandstrip">
-      <div class="container">
-        <div id="strip-row" class="row">
+      <div class="container-fluid">
+        <div id="strip-row" class="row-fluid">
      
           <div class="col-md-6 col-xs-6 yellow-strip"></div>
           <div class="col-md-6 col-xs-6 blue-strip"></div>
@@ -118,7 +118,7 @@
                        {% if forloop.counter|divisibleby:2  %}
                         <div class="row reverse-tab-content-row">
                           <div class="col-md-6 columns">
-                            <div class="tab_news_title">{{news.title}}</div>
+                            <div class="tab_news_title">{{exam.title}}</div>
                             <div class="tabs-content">
                                <p>{{exam.details_text}}</p>
                             

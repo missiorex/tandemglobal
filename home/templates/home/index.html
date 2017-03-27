@@ -117,7 +117,7 @@
     <section id="popup-tandem">
       
         <!-- Modal -->
-        <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -126,19 +126,31 @@
               </div>
               <div class="modal-body">
                <div class="row">
-                  <div class="col-md-12" style="height:264px;background-size:cover;background-image: url('{{site_config.popup_image.url}}')"></div>
-                  
+                  <div class="col-md-12" style="height:264px;margin-top:-20px;background-size:cover;background-image: url('{{site_config.popup_image.url}}')"></div>
+                  <div class="col-md-6 col-xs-6 yellow-strip"></div>
+                  <div class="col-md-6 col-xs-6 blue-strip" ></div>
                 </div>
                 <div class="row">
-                  <div class="col-md-12"><h4 class="modal-title" id="myModalLabel">{{site_config.popup_title}}</h4> 
-            {{site_config.popup_text|linebreaks|truncatewords:130}} </div>
+                  <div class="col-md-12" style="padding:20px;"><h2 class="modal-title" id="myModalLabel">{{site_config.popup_title}}</h2> 
+                    {{site_config.popup_text|linebreaks|truncatewords:130}} </div>
                   
                 </div>
+               <!--  <div class="row" style="padding-left:50px;">
+                  <button style="float:right;" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div> -->
+                <!-- <div id="strip-row" class="modal-footer row-fluid ">
+     
+                        <div class="col-md-6 col-xs-6 yellow-strip"></div>
+                        <div class="col-md-6 col-xs-6 blue-strip"></div>
+                  </div> -->
               </div>
-              <div class="modal-footer">
+                
+
+              <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-              
-              </div>
+               
+              </div> -->
+
             </div>
           </div>
         </div>
