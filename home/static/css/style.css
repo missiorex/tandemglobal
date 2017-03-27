@@ -111,6 +111,12 @@ img{
 
 /*scrol to top*/
 
+
+.modal-content{
+
+  border-radius: 0px;
+}
+
 .scrollToTop {
   background: url("img/bootom-top-arrow.png") no-repeat scroll 13px 12px #ffffff;
  /* border: 3px solid #f0f1f3;*/
@@ -753,7 +759,11 @@ font-variant-caps: all-petite-caps;
 
 }
 
+.modal-dialog
+{
 
+  width:400px;
+}
 
 /*--------------------*/
 /* NOTICE SECTION */
@@ -1528,7 +1538,7 @@ div[data-dimension] {
 }
 .mission .vm-text{
 
- padding: 20px 100px 20px 30px;
+ padding: 20px 140px 20px 30px;
  overflow:hidden;
  height:190px;
 

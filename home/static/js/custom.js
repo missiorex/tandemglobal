@@ -284,6 +284,9 @@ jQuery(document).on('click', '.mega-dropdown', function(e) {
 
 $(document).ready(function(){
 
+
+	$('#myModal').modal('show');
+
     $(".filter-button").click(function(){
         var value = $(this).attr('data-filter');
         
