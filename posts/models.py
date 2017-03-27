@@ -349,6 +349,10 @@ class SiteConfiguration(SingletonModel):
     company_info = models.TextField(max_length=3000,blank=True)
     company_info_footer = models.TextField(max_length=3000,blank=True)
     company_logo = models.ImageField(upload_to='logo',default='logo/eduexcel-logo.png')
+    popup_enabled = models.BooleanField("Enable Popup in Home Page", default=False)
+    popup_title = models.CharField(max_length=255,blank=True, default='Attention')
+    popup_text = models.CharField(max_length=3000,blank=True, default='')
+    popup_image = models.ImageField(upload_to='home',default='home/popup.jpg',help_text="Please upload an image of dimensions : width = 400 px & height = 264px only")
 
     def __unicode__(self):
         return u"Site Configuration"
