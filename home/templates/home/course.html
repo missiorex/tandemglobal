@@ -1,0 +1,108 @@
+{% extends '../base/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+ 
+     <section id="imgBanner">
+         <h2 style="font-size: 40px;">Courses</h2>
+     </section>
+
+     <section id="brandstrip">
+      <div class="container-fluid">
+        <div id="strip-row" class="row-fluid">
+           <div class="col-md-6 col-xs-6 yellow-strip"></div>
+           <div class="col-md-6 col-xs-6 blue-strip"></div>
+          
+         
+        </div>
+      </div>
+    </section>
+     
+
+
+
+    <section id="course-content">
+     <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="col-sm-4 col-md-3 columns">
+            
+                <div class="nav-side-menu">
+                        <div class="brand">Courses</div>
+                        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                      
+                            <div class="menu-list">
+                                  {% if streams %}
+                                    
+                                <ul id="menu-content" class="menu-content out collapse in">
+                             
+                                   {% for stream in streams%}
+
+                                    
+
+                                        <li  data-toggle="collapse" data-target="#{{stream.title}}" class="collapsed">
+                                          <a href="#">{{stream.title}} <span class="arrow"></span></a>
+                                        </li>
+                                        <ul class="sub-menu collapse" id="{{stream.title}}">
+                                  
+                                       
+                                    
+                                    {% for course_categorie in course_categories %}          
+                                      {% for course in courses %}
+                                       {% if course.category == course_categorie and course.category.stream == stream %}
+                                        {% ifchanged %}
+                                
+                                            <li class="nav-side-menu-category">{{course.category.title}}</li>{% endifchanged %}
+                                             
+                                            <li><a href="{% url 'course_detail' pk=course.pk %}">{{course.title}}</a>{% endif %}
+                                            </li>
+                                        
+                                         
+                                          {% endfor %}
+                                            {% endfor %}
+                                        </ul>
+                                        
+
+                                   
+                                     {% endfor %}
+                                </ul>
+                               
+                                {% endif %}
+                         </div>
+                    </div>
+
+
+        </div>
+      
+        <div id="course_details" class="col-sm-8 col-md-9 columns">
+
+           
+                  
+                    {% for course in courses %}
+                      
+                    
+
+                      <a href="{% url 'course_detail' pk=course.pk %}"> <div class="top_scorer col-lg-2 col-md-2 col-sm-2 col-xs-6 ">
+                            <img style="width:200px;" src="../../{{course.background.url}}" class="img-responsive">
+                            <h4>{{course.title}}</h4>
+                            <h4>{{course.category.title}}</h4>
+                            <h4>{{course.stream.title}}</h4>
+                            
+                        </div>
+                      </a>
+                    
+                   
+                    {% endfor %}
+          
+             
+         </div>
+          
+
+       
+      </div>
+      </div>
+    </section>
+
+
+
+    
+{% endblock %}  

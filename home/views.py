@@ -70,6 +70,15 @@ def notice(request, pk):
     notices = Notice.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     
     return render(request, 'details/notice.html', {'selected_notice': selected_notice,'notices': notices,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results}) 
+def course(request):
+    
+    course_categories = CourseCategory.objects.all()
+    streams = Stream.objects.all().order_by('order')
+    courses = Course.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    
+    results = Result.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[:5]
+    
+    return render(request, 'home/course.html', {'course_categories':course_categories,'streams':streams,'courses':courses,'results':results}) 
 
 def course_detail(request, pk):
     selected_course = get_object_or_404(Course, pk=pk)
@@ -79,7 +88,20 @@ def course_detail(request, pk):
     coursedetails = CourseDetail.objects.filter(course__title=selected_course.title).order_by('order')
     results = Result.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[:5]
     
-    return render(request, 'details/course.html', {'selected_course': selected_course,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results,'coursedetails':coursedetails}) 
+    return render(request, 'details/course_details.html', {'selected_course': selected_course,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results,'coursedetails':coursedetails}) 
+
+def result(request):
+    
+    course_categories = CourseCategory.objects.all()
+    streams = Stream.objects.all().order_by('order')
+    courses = Course.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    results = Result.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    top_scorers = TopScorer.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+	
+    
+    
+    return render(request, 'home/result.html', {'course_categories':course_categories,'streams':streams,'courses':courses,'results':results,'top_scorers':top_scorers})
+
 
 def result_detail(request, pk):
     selected_result = get_object_or_404(Result, pk=pk)
@@ -91,7 +113,7 @@ def result_detail(request, pk):
 	
     
     
-    return render(request, 'details/result.html', {'selected_result': selected_result,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results,'top_scorers':top_scorers})
+    return render(request, 'details/result_details.html', {'selected_result': selected_result,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results,'top_scorers':top_scorers})
 
 
 def tab_detail(request):
