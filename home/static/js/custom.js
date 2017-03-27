@@ -287,11 +287,11 @@ $(document).ready(function(){
 
 	
 
-
-	 if(localStorage.getItem('popState') != 'shown'){
-        // $("#popup").delay(2000).fadeIn();
+	// Popup shown only once per user session
+	 if(sessionStorage.getItem('popState') != 'shown'){
+        
         $('#myModal').modal('show');
-        localStorage.setItem('popState','shown')
+        sessionStorage.setItem('popState','shown')
      }
 
     $(".filter-button").click(function(){
