@@ -69,7 +69,7 @@ def notice(request, pk):
     courses = Course.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     results = Result.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     notices = Notice.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-return render(request, 'details/notice.html', {'selected_notice': selected_notice,'notices': notices,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results})
+    return render(request, 'details/notice.html', {'selected_notice': selected_notice,'notices': notices,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results})
 
 def course(request):
 
