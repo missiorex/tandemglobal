@@ -742,13 +742,13 @@ font-variant-caps: all-petite-caps;
 
 .yellow-strip{
 
-  height: 5px;
+  height: 10px;
   background-color: #ffcc29;
   width:50%;
 }
 .blue-strip{
 
-  height: 5px;
+  height: 10px;
   background-color: #0f63ac;
   width:50%;
 }

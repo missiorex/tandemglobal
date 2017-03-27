@@ -285,7 +285,14 @@ jQuery(document).on('click', '.mega-dropdown', function(e) {
 $(document).ready(function(){
 
 
-	$('#myModal').modal('show');
+	
+
+
+	 if(localStorage.getItem('popState') != 'shown'){
+        // $("#popup").delay(2000).fadeIn();
+        $('#myModal').modal('show');
+        localStorage.setItem('popState','shown')
+     }
 
     $(".filter-button").click(function(){
         var value = $(this).attr('data-filter');
