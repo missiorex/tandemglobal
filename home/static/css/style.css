@@ -87,28 +87,114 @@ img{
 }
 
 /* Preloader */
+
 #preloader {
-  position: fixed;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background-color:#000; /* change if the mask should have another color then white */
-  z-index:99999; /* makes sure it stays on top */
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+     background: #303030 ; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    z-index:3999; /* makes sure it stays on top */
 }
 
 #status {
-  width:200px;
-  height:200px;
-  position:absolute;
-  left:50%; /* centers the loading animation horizontally one the screen */
-  top:50%; /* centers the loading animation vertically one the screen */
-  background-image:url(img/status.GIF); /* path to your loading animation */
-  background-repeat:no-repeat;
-  background-position:center;
-  margin:-100px 0 0 -100px; /* is width and height divided by two */
+    width:300px;
+    height:50px;
+    position:fixed;
+    left:50%; /* centers the loading animation horizontally one the screen */
+    top:50%; /* centers the loading animation vertically one the screen */
+    margin:-25px 0 0 -150px; /* is width and height divided by two */
 }
 
+.spinner {
+  margin: 0px auto;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  font-size: 10px;
+  text-align: center;
+
+}
+
+.spinner > div {
+  background-color:#ffcc29;
+  height: 100%;
+  width: 20px;
+  display: inline-block;
+  color:#0f63ac;
+  font-weight: 900;
+  font-size:16px;
+  padding-top:15px;
+  
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect0 {
+  -webkit-animation-delay: -1.3s;
+  animation-delay: -1.3s;
+
+}
+.spinner .rect1 {
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+.spinner .rect6 {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+
+}
+.spinner .rect7 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+ 
+}
+
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+
+/* Preloader End */
 /*scrol to top*/
 
 
@@ -1743,8 +1829,8 @@ color:white;
 /* COURSE ARCHIVE PAGE */
 /*--------------------*/
 
-#imgBanner {
-  background-image: url("../images/course_banner.jpg");
+#resultsBanner,#contactBanner, #aboutBanner,#imgBanner,#partnerBanner {
+  
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: inline;
@@ -1755,13 +1841,36 @@ color:white;
   text-align: center;
   width: 100%;
 }
-#imgBanner h2 {
+#resultsBanner h2,#contactBanner h2,#aboutBanner h2, #partnerBanner h2,#imgBanner h2 {
   color: #fff;
   font-size: 72px;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
 } 
+
+#imgBanner {
+  background-image: url("../images/course_banner.jpg");
+
+}
+#partnerBanner{
+   background-image: url("../images/partner_banner.jpg");
+}
+#aboutBanner{
+
+  background-image: url("../images/about_banner.jpg");
+
+}
+#contactBanner{
+
+  background-image: url("../images/contact_banner.jpg");
+
+}
+#resultsBanner{
+
+  background-image: url("../images/results_banner.jpg");
+
+}
 /*--------------------*/
 /* BLOG PAGE */
 /*--------------------*/

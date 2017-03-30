@@ -49,16 +49,16 @@ jQuery(function($){
 	/* ----------------------------------------------------------- */
 	/*  3. NEWS SLIDER
 	/* ----------------------------------------------------------- */
-	$('.single_notice_pane').slick({     
-      slide: 'ul'
+	// $('.single_notice_pane').slick({     
+ //      slide: 'ul'
       
-    });
-    $('[href="#notice"]').on('shown.bs.tab', function (e) {
-    $('.single_notice_pane').resize();
-	});
-	 $('[href="#news"]').on('shown.bs.tab', function (e) {
-    $('.single_notice_pane').resize();
-	});   
+ //    });
+ //    $('[href="#notice"]').on('shown.bs.tab', function (e) {
+ //    $('.single_notice_pane').resize();
+	// });
+	//  $('[href="#news"]').on('shown.bs.tab', function (e) {
+ //    $('.single_notice_pane').resize();
+	// });   
     
 
 
@@ -182,16 +182,23 @@ jQuery(function($){
 	/* ----------------------------------------------------------- */
 	/*  9. PRELOADER 
 	/* ----------------------------------------------------------- */
-	  window.addEventListener('DOMContentLoaded', function() {
-        new QueryLoader2(document.querySelector("body"), {
-            barColor: "#ffcc29",
-            backgroundColor: "#303030",
-            percentage: true,
-            barHeight: 1,
-            minimumTime: 200,
-            fadeOutTime: 1000
-        });
-    });
+	  // window.addEventListener('DOMContentLoaded', function() {
+   //      new QueryLoader2(document.querySelector("body"), {
+   //          barColor: "#ffcc29",
+   //          backgroundColor: "#303030",
+   //          percentage: true,
+   //          barHeight: 1,
+   //          minimumTime: 200,
+   //          fadeOutTime: 1000
+   //      });
+
+   //  });
+
+
+	$(window).load(function() { // makes sure the whole site is loaded
+			    $("#status").fadeOut(); // will first fade out the loading animation
+			    $("#preloader").delay(500).fadeOut("slow"); // will fade out the white DIV that covers the website.
+     })
 
 
     /* ----------------------------------------------------------- */
@@ -350,14 +357,7 @@ $(document).ready(function(){
 	});
 
 
-	if (window.matchMedia('(max-width: 768px)').matches){
-
-	  
-					// $('.arrow-up').hide();
-					// $('#course_megamenu').hide();
-					
-	  		}
-
+	
 
 
 });

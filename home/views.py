@@ -133,7 +133,7 @@ def tab_detail(request):
 
 def contact(request):
     
-    centers = Center.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    centers = Center.objects.filter(published_date__lte=timezone.now()).order_by('order')
     divisions = Division.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     contacts = Contact.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     course_categories = CourseCategory.objects.all()
@@ -182,7 +182,12 @@ def contact(request):
     return render(request, 'details/contact.html', {'form': form_class,'centers': centers,'divisions': divisions,'contacts': contacts,'course_categories':course_categories,'streams':streams,'courses':courses,'results':results})  
 
 def methodology(request):
-    return render(request, 'details/methodology.html', {})
+    course_categories = CourseCategory.objects.all()
+    streams = Stream.objects.all().order_by('order')
+    courses = Course.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    results = Result.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+	
+    return render(request, 'details/methodology.html', {'course_categories':course_categories,'streams':streams,'courses':courses,'results':results})
 
 def about(request):
     
