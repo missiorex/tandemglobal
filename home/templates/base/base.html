@@ -406,6 +406,21 @@
       </div>
       <!-- End footer bottom area -->
     </footer>
+
+    <div id="preloader">
+      <div id="status">
+         <div class="spinner">
+          <div class="rect0">_</div>
+          <div class="rect1">T</div>
+          <div class="rect2">A</div>
+          <div class="rect3">N</div>
+          <div class="rect4">D</div>
+          <div class="rect5">E</div>
+          <div class="rect6">M</div>
+          <div class="rect7">_</div>
+        </div>
+      </div>
+    </div>
     <!--=========== END FOOTER SECTION ================--> 
 
   
@@ -416,7 +431,7 @@
     <!-- initialize jQuery Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Preloader js file -->
-    <script src="{% static 'js/queryloader2.min.js' %}" type="text/javascript"></script>
+<!--     <script src="{% static 'js/queryloader2.min.js' %}" type="text/javascript"></script> -->
     <!-- For smooth animatin  -->
     <script src="{% static 'js/wow.min.js' %}"></script>  
     <!-- Bootstrap js -->
@@ -558,8 +573,8 @@
 
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: {lat: 9.2, lng: 77.2},
+          zoom: 7,
+          center: {lat: 10.5, lng: 77.3},
           scrollwheel:  false,
           mapTypeControlOptions: {
             mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',

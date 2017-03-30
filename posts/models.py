@@ -273,6 +273,7 @@ class Center(models.Model):
     address_line3 = models.CharField(max_length=300,blank=True)
     address_line4 = models.CharField(max_length=300,blank=True)
     email = models.EmailField(max_length=254,blank=True)
+    order = models.PositiveSmallIntegerField(blank=False,default=0)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
