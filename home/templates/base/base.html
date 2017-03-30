@@ -173,10 +173,11 @@
               <li class="dropdown mega-dropdown">
                 <a href="{% url 'course_detail' pk=1 %}" class="dropdown-toggle" data-toggle="dropdown"><div class="dropdown-title">Courses<span class="caret"></span></div></span></a>
                  {% if streams %}
-                <!-- <div class="arrow-up"> </div> -->
+               
                 <ul id="course_megamenu" class="dropdown-menu mega-dropdown-menu row" role="menu" >
 
-                  <li class="col-sm-3">
+                <!-- Top Rated Courses - Disabled Uncomment to enable -->
+                  <!-- <li class="col-sm-3">
                     <ul>
                       <li class="dropdown-header">Top Rated Courses</li>
                       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -201,8 +202,7 @@
                            
                             <a class="btn-top-course btn-primary" href="{% url 'course_detail' pk=course.pk %}">{{course.title}} >></a>
                             
-                            
-                            <!-- <button href="{% url 'course_detail' pk=course.pk %}" class="btn-top-course btn-primary" type="button">Details</button> -->
+                         
                           </div>
                             {% endif %}
                            {% endfor %}
@@ -214,7 +214,7 @@
                       <li class="divider"></li>
                   
                     </ul>
-                  </li> 
+                  </li>  -->
                   {% for stream in streams%}
                   <li class="col-sm-3">
                     <ul>
