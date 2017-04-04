@@ -2689,7 +2689,7 @@ color:white;
 
 #why-slogan-container{
 
-  padding:5%;
+  padding: 15% 5% 5% 5%;
   color:#000;
   font-size: 16px;
   line-height: 25px;
@@ -2758,9 +2758,10 @@ color:white;
 #partner-benefits #partner-slogan-container{
 
   color:#fff;
-  padding:5%;
+  padding: 15% 5% 5% 5%;
   font-size: 16px;
   line-height: 25px;
+
 }
 #partner-slogan-container ul{
   list-style-type: square;
