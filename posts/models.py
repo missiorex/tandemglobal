@@ -40,7 +40,7 @@ class Slogan(models.Model):
     sub_title = models.CharField(max_length=200)
     text = models.TextField()
     icon = models.ImageField(upload_to='slogan/icon',default='slogan/icon/teacher-teaching-with-a-stick.png',blank=True,help_text="Add an icon of dimensions 80px*80px")
-    
+
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -328,13 +328,13 @@ class Contact(models.Model):
 
 class SiteConfiguration(SingletonModel):
     support_email = models.EmailField(max_length=254,blank=True,default='support@tandemglobal.com')
-    phone = models.CharField(max_length=30,blank=True,default='+91 484-3040175')
-    address = models.CharField(max_length=300,blank=True,default='2ND FLOOR, STR COMPLEX,\n VEEKSHANAM ROAD, \n OPP. INTERNATIONAL HOTEL, \n ERNAKULAM 682035.')
+    phone = models.CharField(max_length=30,blank=True,default="+91 484-3040175")
+    address = models.CharField(max_length=300,blank=True,default="2ND FLOOR, STR COMPLEX,\n VEEKSHANAM ROAD, \n OPP. INTERNATIONAL HOTEL, \n ERNAKULAM 682035.")
     slider_title_line1 = models.CharField(max_length=4,default='MOST')
     slider_title_line2 = models.CharField(max_length=7,default='TRUSTED')
     slider_subtitle = models.CharField(max_length=27,default="EDUCATION BRAND OF KERALA")
     slider_years = models.CharField(max_length=2,default='23')
-    slider_years_caption = models.CharField(max_length=14,default='Trusted Years')
+    slider_years_caption = models.CharField(max_length=20,default="Trusted Years")
     slider_background = models.ImageField(upload_to='slider',default='slider/slider1.jpg',help_text="Please upload an image of dimensions : width = 1370 px & height = 550px only")
     twitter_url = models.CharField(max_length=255,blank=True, default='#')
     facebook_url = models.CharField(max_length=255,blank=True, default='#')
