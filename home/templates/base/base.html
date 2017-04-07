@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <title>Tandem Global</title>
@@ -18,9 +18,9 @@
     <link rel="shortcut icon" type="image/icon" href="{% static 'images/fav-icon.png' %}"/>
 
     <!-- CSS
-    ================================================== -->      
+    ================================================== -->
         <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">  
+    <link  async defer rel="stylesheet" href="{% static 'css/icomoon.css' %}">
     <!-- Bootstrap css file-->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Font awesome css file-->
@@ -28,28 +28,28 @@
     <!-- Superslide css file-->
     <link rel="stylesheet" href="{% static 'css/superslides.css' %}">
     <!-- Slick slider css file -->
-    <link href="{% static 'css/slick.css' %}" rel="stylesheet"> 
+    <link href="{% static 'css/slick.css' %}" rel="stylesheet">
     <!-- Circle counter cdn css file -->
    <!--  <link rel='stylesheet prefetch' href='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/css/jquery.circliful.css'>   -->
     <!-- smooth animate css file -->
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    
+
     <link rel="stylesheet" href="{% static 'css/jquery.tabpager.css' %}">　　
     <!-- preloader -->
     <!-- <link rel="stylesheet" href="{% static 'css/queryLoader.css' %}" type="text/css" /> -->
     <!-- gallery slider css -->
-    <link type="text/css" media="all" rel="stylesheet" href="{% static 'css/jquery.tosrus.all.css' %}" />    
+    <link type="text/css" media="all" rel="stylesheet" href="{% static 'css/jquery.tosrus.all.css' %}" />
     <!-- Default Theme css file -->
     <link id="switcher" href="{% static 'css/themes/yellow-theme.css' %}" rel="stylesheet">
-    
+
 
     <!--Owl Carousel -->
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
-   
+
     <!-- Google fonts -->
-    <!-- <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>   
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>  --> 
+    <!-- <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>  -->
     <link href="https://fonts.googleapis.com/css?family=Francois+One|Overpass:900" rel="stylesheet">
    <!--  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- Main structure css file -->
@@ -60,13 +60,13 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  
+
   </head>
-  <body>    
+  <body>
 
     <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"><img src="{% static 'images/bootom-top-arrow.png' %}"></a>
-   
+
     <!-- END SCROLL TOP BUTTON -->
 
     <!--=========== BEGIN HEADER SECTION ================-->
@@ -75,21 +75,21 @@
       <!-- BEGIN MENU -->
 
 
-<!-- 
+<!--
       <div class="menu_area">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  <div class="container">
             <div class="navbar-header">
-              
+
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-            
-              <a class="navbar-brand" href="index.html">WpF <span>Degree</span></a>              
-                     
-                     
+
+              <a class="navbar-brand" href="index.html">WpF <span>Degree</span></a>
+
+
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
@@ -97,21 +97,21 @@
                 <li><a href="course-archive.html">Course</a></li>
                 <li><a href="scholarship.html">Scholarship</a></li>
                 <li><a href="events-archive.html">Events</a></li>
-                <li><a href="gallery.html">Gallery</a></li>                
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="blog-archive.html">Blog</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Page<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="404.html">404 Page</a></li>
                     <li><a href="#">Link Two</a></li>
-                    <li><a href="#">Link Three</a></li>               
+                    <li><a href="#">Link Three</a></li>
                   </ul>
-                </li>               
+                </li>
                 <li><a href="contact.html">Contact</a></li>
-              </ul>           
+              </ul>
             </div>
-          </div>     
-        </nav>  
+          </div>
+        </nav>
       </div>
  -->
 
@@ -119,10 +119,10 @@
 
       <div id="menu-area" class="menu_area">
 
-        
 
 
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
          <div class="mrex-top">
           <div class="container">
             <div class="row">
@@ -132,23 +132,23 @@
                   <li><a href="{{site_config.twitter_url}}"><i class="icon-twitter"></i></a></li>
                   <li><a href="{{site_config.facebook_url}}"><i class="icon-facebook"></i></a></li>
                   <li><a href="{{site_config.google_url}}"><i class="icon-google"></i></a></li>
-                </ul> 
+                </ul>
               </div>
             </div>
           </div>
         </div>
         <div class="container">
             <div class="navbar-header">
-            
+
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              
-               <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>             
-                     
+
+               <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+
             </div>
 
 
@@ -159,21 +159,21 @@
               <!-- {% if streams %}
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Courses<span class="caret"></span></a>
-                 
+
 
                   <ul class="dropdown-menu" role="menu">
                   {% for stream in streams %}
-                    <li><a href="{% url 'course_detail' pk=stream.pk %}">{{stream.title}}</a></li> 
-                    
-                  
-                    {% endfor %}             
+                    <li><a href="{% url 'course_detail' pk=stream.pk %}">{{stream.title}}</a></li>
+
+
+                    {% endfor %}
                   </ul>
-               </li>               
+               </li>
                 {% endif %} -->
               <li class="dropdown mega-dropdown">
                 <a href="{% url 'course_detail' pk=1 %}" class="dropdown-toggle" data-toggle="dropdown"><div class="dropdown-title">Courses<span class="caret"></span></div></span></a>
                  {% if streams %}
-               
+
                 <ul id="course_megamenu" class="dropdown-menu mega-dropdown-menu row" role="menu" >
 
                 <!-- Top Rated Courses - Disabled Uncomment to enable -->
@@ -191,28 +191,28 @@
                                 <div class="item" >
                               {% endif %}
                               {% url 'index' as home_url %}
-                        
+
                             <a href="{% url 'course_detail' pk=course.pk %}">
                               {% if request.get_full_path == home_url %}
-                                <img src="{{course.background.url}}" class="img-responsive" alt="Top Rated Course : {{course.title}}"> 
+                                <img src="{{course.background.url}}" class="img-responsive" alt="Top Rated Course : {{course.title}}">
                               {% else %}
                                 <img src="../../{{course.background.url}}" class="img-responsive" alt="Top Rated Course : {{course.title}}">
                               {% endif %}
                             </a>
-                           
+
                             <a class="btn-top-course btn-primary" href="{% url 'course_detail' pk=course.pk %}">{{course.title}} >></a>
-                            
-                         
+
+
                           </div>
                             {% endif %}
                            {% endfor %}
-                        
+
                         </div>
-                        
+
                       </div>
-                   
+
                       <li class="divider"></li>
-                  
+
                     </ul>
                   </li>  -->
                   {% for stream in streams%}
@@ -227,17 +227,17 @@
                          <li class="divider"></li>
                        {% endifchanged %}
                       <li><a href="{% url 'course_detail' pk=course.pk %}">{{course.title}}</a></li>
-                 
-                     
+
+
                       {% endif %}
                       {% endfor %}
-                      
+
                       {% endfor %}
-                     
+
                     </ul>
                   </li>
                   {% endfor %}
-                 
+
                 </ul>
                  {% endif %}
               </li>
@@ -245,43 +245,43 @@
               {% if results %}
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Results<span class="caret"></span></a>
-                 
+
 
                   <ul class="dropdown-menu" role="menu">
                   {% for result in results %}
-                    <li><a href="{% url 'result_detail' pk=result.pk %}">{{result.title}}</a></li> 
-                    
-                  
-                    {% endfor %}             
+                    <li><a href="{% url 'result_detail' pk=result.pk %}">{{result.title}}</a></li>
+
+
+                    {% endfor %}
                   </ul>
-               </li>               
+               </li>
                 {% endif %}
-              
-             
+
+
                <li class="navbar-listitem"><a href="{% url 'about' %}">About Us</a></li>
                <li class="navbar-listitem"><a href="{% url 'contact' %}">Contact Us</a></li>
-               
+
             </ul>
 
           </div>
 
 
-          </div>     
-        </nav>  
+          </div>
+        </nav>
       </div>
-      <!-- END MENU -->    
+      <!-- END MENU -->
     </header>
-    <!--=========== END HEADER SECTION ================--> 
+    <!--=========== END HEADER SECTION ================-->
 
    {% block content %}
    {% endblock %}
-  
+
      <section id="brandstrip">
       <div class="container-fluid">
         <div id="strip-row" class="row-fluid">
-     
+
           <div class="col-md-12" style="background-repeat:repeat-x;background-image:url('{% static 'images/btm-strip-img.png' %}');height: 10px;" ></div>
-          
+
         </div>
       </div>
     </section>
@@ -302,9 +302,9 @@
               </object>
               {% endif %}
               <div style="text-align:left;" >{{ site_config.company_info_footer|linebreaks|truncatewords:50 }}</div>
-              
-             
-              
+
+
+
                <!--  <h3>Quick Contact</h3>
                 <form role="form" action="" method="post">
 
@@ -312,33 +312,33 @@
                                   <div class="row form-group">
                                     <div class="col-md-12">
                                     {% render_field form.contact_name class+="form-control" placeholder="Your Name"%}
-                                    
-                                   
-                                
+
+
+
                                     </div>
-                                    
+
                                   </div>
 
                                   <div class="row form-group">
                                     <div class="col-md-12">
                                       {% render_field form.contact_phone class+="form-control" placeholder="Your Phone"%}
-                                    
+
                                     </div>
                                   </div>
 
                                   <div class="row form-group">
                                     <div class="col-md-12">
                                       {% render_field form.contact_email class+="form-control" placeholder="Your email"%}
-                                     
+
                                     </div>
                                   </div>
 
-                                 
+
 
                                   <div class="row form-group">
                                     <div class="col-md-12">
                                       {% render_field form.course_details class+="form-control" placeholder="Course Details" %}
-                                   
+
                                     </div>
                                   </div>
                                   <div class="form-group">
@@ -421,9 +421,9 @@
         </div>
       </div>
     </div>
-    <!--=========== END FOOTER SECTION ================--> 
+    <!--=========== END FOOTER SECTION ================-->
 
-  
+
 
     <!-- Javascript Files
     ================================================== -->
@@ -433,7 +433,7 @@
     <!-- Preloader js file -->
 <!--     <script src="{% static 'js/queryloader2.min.js' %}" type="text/javascript"></script> -->
     <!-- For smooth animatin  -->
-    <script src="{% static 'js/wow.min.js' %}"></script>  
+    <script src="{% static 'js/wow.min.js' %}"></script>
     <!-- Bootstrap js -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- slick slider -->
@@ -441,31 +441,31 @@
     <!-- superslides slider -->
     <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
     <script src="{% static 'js/jquery.animate-enhanced.min.js' %}"></script>
-    <script src="{% static 'js/jquery.superslides.min.js' %}" type="text/javascript" charset="utf-8"></script>   
+    <script src="{% static 'js/jquery.superslides.min.js' %}" type="text/javascript" charset="utf-8"></script>
     <!-- for circle counter -->
     <script src='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js'></script>
     <!-- Gallery slider -->
-    <script type="text/javascript" language="javascript" src="{% static 'js/jquery.tosrus.min.all.js' %}"></script>   
-   
+    <script type="text/javascript" language="javascript" src="{% static 'js/jquery.tosrus.min.all.js' %}"></script>
+
     <!-- Custom js-->
     <script src="{% static 'js/custom.js' %}"></script>
 
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
 
     <script src="{% static 'js/jquery.tabpager.min.js' %}"></script>
-  
 
-  
+
+
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgRhk_fVgkw8Y_YhtZwWPIdzbddij4V4o&callback=initMap">
 </script>
- 
+
 
 <script>
-  
+
 
   $(document).ready(function(){
- 
+
       $('#notice-carousel').owlCarousel({
         // stagePadding: 100,
         loop:true,
@@ -479,11 +479,11 @@
             },
             300:{
                 items:2,
-                
+
             },
             600:{
                 items:3,
-                
+
             },
             1000:{
                 items:4,
@@ -507,11 +507,11 @@
             },
             300:{
                 items:1,
-                
+
             },
             600:{
                 items:1,
-                
+
             },
             1000:{
                 items:1,
@@ -524,7 +524,7 @@
             items : 1,
             slideSpeed : 2000,
             nav: false,
-            
+
             autoplay: true,
             dots: false,
             loop: true,
@@ -536,17 +536,17 @@
             },
             300:{
                 items:1,
-                
+
             },
             480:{
                 items:2,
                 stagePadding: 50,
                 margin:10,
-                
+
             },
             768:{
                 items:2,
-                
+
             },
             1000:{
                 items:1,
@@ -558,7 +558,7 @@
 
 
 
-  
+
 
       function initMap() {
 
@@ -586,14 +586,14 @@
         map.setMapTypeId('styled_map');
 
 
-       
+
 
         setMarkers(map);
       }
 
       // Data for the markers consisting of a name, a LatLng and a zIndex for the
       // order in which these markers should display on top of each other.
-     
+
 
        var centers = [
         {% for center in centers %}
@@ -604,7 +604,7 @@
         {% endif %}
         {% endfor %}
        ];
-     
+
 
 
 

@@ -1,76 +1,12 @@
-﻿@charset "utf-8";
-
-/* Tab Bar */
-.jquery-tab-pager-tabbar {
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	width: 100%;
-}
-.jquery-tab-pager-tabbar li {
-	float: left;
-	padding: 20px 60px;
-	list-style: none;
-	cursor: pointer;
-	background: #585858;
-	color: #fff;
-
-	/*border-radius: 10px 10px 0px 0px;*/	
-}
-
-.jquery-tab-pager-tabbar li:hover {
-	
-	background: #7b7b7b;
-	color: #fff;
-	/*border-radius: 10px 10px 0px 0px;*/	
-}
-
-.jquery-tab-pager-tabbar li.current {
-	background: #ffcc2a;
-	color: #585858;
-}
-
-/* Page Navigation */
-
-#jquery-tab-pager-navi {
-
-	background-color: white;
-	float: right;
-}
-#jquery-tab-pager-navi {
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-#jquery-tab-pager-navi li {
-	list-style: none;
-	display: inline;
-}
-
-#jquery-tab-pager-navi li a, #jquery-tab-pager-navi li a.disable {
-	float: left;
-	display: block;
-	color: #ffcc29;
-	padding: 5px;
-	margin-right: 10px;
-	/*border: 1px solid #ccc;*/
-	text-decoration: none;
-	background: #fff;
-
-}
-
-#jquery-tab-pager-navi li:last-child a {
-	margin-right: 0px;
-}
-
+@charset "utf-8";.jquery-tab-pager-tabbar{margin:0;padding:0;overflow:hidden;width:100%;}
+.jquery-tab-pager-tabbar li{float:left;padding:20px 30px;list-style:none;cursor:pointer;background:#585858;color:#fff;}
+.jquery-tab-pager-tabbar li:hover{background:#7b7b7b;color:#fff;}
+.jquery-tab-pager-tabbar li.current{background:#ffcc2a;color:#585858;}
+#jquery-tab-pager-navi{background-color:white;float:right;}
+#jquery-tab-pager-navi{margin:0;padding:0;overflow:hidden;}
+#jquery-tab-pager-navi li{list-style:none;display:inline;}
+#jquery-tab-pager-navi li a, #jquery-tab-pager-navi li a.disable{float:left;display:block;color:#ffcc29;padding:5px;margin-right:10px;text-decoration:none;background:#fff;}
+#jquery-tab-pager-navi li:last-child a{margin-right:0px;}
 #jquery-tab-pager-navi li a.current,
-
-#jquery-tab-pager-navi li a:hover {
-	background: #fff;
-	color: #0f63ac;
-}
-
-#tab{
-
-  background-color: #585858;
-}
+#jquery-tab-pager-navi li a:hover{background:#fff;color:#0f63ac;}
+#tab{background-color:#585858;}
